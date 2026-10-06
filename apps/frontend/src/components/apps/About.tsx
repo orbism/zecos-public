@@ -51,7 +51,7 @@ function QrModal({ onClose }: { onClose: () => void }) {
 
 const ETH_HANDLE = 'orbgasm.eth';
 /** The public repository. Empty until it is published; the link appears once it is set. */
-const OPEN_SOURCE_REPO = '';
+const OPEN_SOURCE_REPO = 'https://github.com/orbism/zecos-public';
 
 /** The people who found it broken before anyone else had to. */
 const BETA_TESTERS: { name: string; handle: string; url: string }[] = [
