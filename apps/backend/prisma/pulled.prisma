@@ -1,0 +1,372 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Character {
+  id            String        @id @default(cuid())
+  username      String        @unique
+  characterKey  String        @unique
+  class         String
+  level         Int           @default(1)
+  hp            Int           @default(100)
+  maxHp         Int           @default(100)
+  atk           Int           @default(10)
+  def           Int           @default(5)
+  zatoshis      BigInt        @default(0)
+  gear          String[]      @default([])
+  payoutAddress String?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  leaderboard   Leaderboard[]
+  sessions      Session[]
+  weeklyEntries WeeklyEntry[]
+}
+
+model Session {
+  id          String    @id @default(cuid())
+  characterId String
+  token       String    @unique @default(cuid())
+  expiresAt   DateTime
+  createdAt   DateTime  @default(now())
+  character   Character @relation(fields: [characterId], references: [id], onDelete: Cascade)
+}
+
+model DepositAddress {
+  id          String   @id @default(cuid())
+  address     String   @unique
+  used        Boolean  @default(false)
+  characterId String?
+  expiresAt   DateTime
+  createdAt   DateTime @default(now())
+}
+
+model WeeklyEntry {
+  id           String    @id @default(cuid())
+  characterId  String
+  weekId       String
+  entryFeePaid Boolean   @default(false)
+  score        Int       @default(0)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  character    Character @relation(fields: [characterId], references: [id], onDelete: Cascade)
+
+  @@unique([characterId, weekId])
+}
+
+model WeeklyCommitment {
+  id              String   @id @default(cuid())
+  weekId          String   @unique
+  leaderboardHash String
+  txid            String?
+  paidOut         Boolean  @default(false)
+  createdAt       DateTime @default(now())
+}
+
+model Leaderboard {
+  id          String    @id @default(cuid())
+  weekId      String
+  characterId String
+  rank        Int
+  score       Int
+  payout      BigInt    @default(0)
+  character   Character @relation(fields: [characterId], references: [id], onDelete: Cascade)
+
+  @@unique([weekId, characterId])
+  @@index([weekId, rank])
+}
+
+model User {
+  id             String          @id @default(cuid())
+  address        String          @unique
+  displayName    String?
+  isVerified     Boolean         @default(false)
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+  passwordHash   String?
+  nameKey        String?         @unique
+  chatRole       String?
+  frozen         String?
+  challenges     AuthChallenge[]
+  mailSent       BbsMail[]       @relation("mailSent")
+  mailRecv       BbsMail[]       @relation("mailRecv")
+  posts          BbsPost[]
+  topics         BbsTopic[]
+  contestEntries ContestEntry[]
+  rpgEntries     RpgEntry[]
+  SwapJob        SwapJob[]
+  UserActivity   UserActivity[]
+  game           UserGame?
+  sessions       UserSession[]
+  settings       UserSettings?
+  state          UserState?
+  watchlist      UserWatchlist?
+}
+
+model BbsTopic {
+  id        String    @id @default(cuid())
+  authorId  String
+  title     String
+  pinned    Boolean   @default(false)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  posts     BbsPost[]
+  author    User      @relation(fields: [authorId], references: [id], onDelete: Cascade)
+}
+
+model BbsPost {
+  id        String   @id @default(cuid())
+  topicId   String
+  authorId  String
+  body      String
+  createdAt DateTime @default(now())
+  author    User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  topic     BbsTopic @relation(fields: [topicId], references: [id], onDelete: Cascade)
+
+  @@index([topicId, createdAt])
+}
+
+model BbsMail {
+  id        String    @id @default(cuid())
+  fromId    String
+  toId      String
+  body      String
+  createdAt DateTime  @default(now())
+  readAt    DateTime?
+  from      User      @relation("mailSent", fields: [fromId], references: [id], onDelete: Cascade)
+  to        User      @relation("mailRecv", fields: [toId], references: [id], onDelete: Cascade)
+
+  @@index([toId, readAt])
+}
+
+model BbsCounter {
+  id    String @id
+  value Int    @default(0)
+}
+
+model ChatMessage {
+  id        String   @id @default(cuid())
+  channel   String   @default("main")
+  handle    String
+  kind      String   @default("msg")
+  body      String
+  createdAt DateTime @default(now())
+
+  @@index([channel, createdAt])
+}
+
+model ChatChannel {
+  id    String  @id
+  topic String  @default("privacy is power · keep it comfy")
+  muted Boolean @default(false)
+}
+
+model ChatDM {
+  id        String   @id @default(cuid())
+  userId    String
+  status    String   @default("pending")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model RpgEntry {
+  id         String    @id @default(cuid())
+  userId     String
+  weekId     String
+  nonce      String    @unique
+  status     String    @default("pending")
+  valueZat   Int
+  memoText   String
+  zip321     String
+  fundedTxid String?
+  score      Int       @default(0)
+  rank       Int?
+  payoutZat  BigInt?
+  payoutTxid String?
+  paidAt     DateTime?
+  createdAt  DateTime  @default(now())
+  expiresAt  DateTime
+  user       User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, weekId])
+  @@index([weekId, status])
+}
+
+model UserGame {
+  id           String   @id @default(cuid())
+  userId       String   @unique
+  data         Json
+  level        Int      @default(1)
+  class        String?
+  score        Int      @default(0)
+  lastPlayedAt DateTime @default(now())
+  createdAt    DateTime @default(now())
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model UserSession {
+  id            String    @id @default(cuid())
+  userId        String
+  token         String    @unique @default(cuid())
+  expiresAt     DateTime
+  createdAt     DateTime  @default(now())
+  via           String    @default("login")
+  lastSeenAt    DateTime  @default(now())
+  revokedAt     DateTime?
+  revokedReason String?
+  lastIp        String?
+  user          User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model AuthChallenge {
+  id         String    @id @default(cuid())
+  nonce      String    @unique
+  userId     String
+  valueZat   Int
+  toAddress  String
+  zip321     String
+  verified   Boolean   @default(false)
+  sessionId  String?
+  expiresAt  DateTime
+  createdAt  DateTime  @default(now())
+  code       String?
+  codeTries  Int       @default(0)
+  fundedTxid String?
+  kind       String    @default("taddr")
+  status     String    @default("pending")
+  refundTxid String?
+  refundedAt DateTime?
+  user       User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([status])
+  @@index([userId, status])
+}
+
+model UserSettings {
+  id        String   @id @default(cuid())
+  userId    String   @unique
+  data      Json     @default("{}")
+  updatedAt DateTime @updatedAt
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model UserWatchlist {
+  id        String   @id @default(cuid())
+  userId    String   @unique
+  data      Json     @default("{\"addresses\": []}")
+  updatedAt DateTime @updatedAt
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model UserState {
+  id        String   @id @default(cuid())
+  userId    String   @unique
+  data      Json     @default("{}")
+  updatedAt DateTime @updatedAt
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Tournament {
+  id         String         @id @default(cuid())
+  game       String
+  name       String
+  feeZat     Int
+  splitCsv   String         @default("70,20,10")
+  startAt    DateTime
+  endAt      DateTime
+  status     String         @default("scheduled")
+  commitHash String?
+  commitTxid String?
+  createdAt  DateTime       @default(now())
+  entries    ContestEntry[]
+
+  @@index([game, status])
+}
+
+model ContestEntry {
+  id           String     @id @default(cuid())
+  tournamentId String
+  userId       String
+  nonce        String     @unique
+  status       String     @default("pending")
+  valueZat     Int
+  memoText     String
+  zip321       String
+  fundedTxid   String?
+  score        Int        @default(0)
+  rank         Int?
+  payoutZat    BigInt?
+  payoutTxid   String?
+  paidAt       DateTime?
+  createdAt    DateTime   @default(now())
+  expiresAt    DateTime
+  tournament   Tournament @relation(fields: [tournamentId], references: [id], onDelete: Cascade)
+  user         User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([tournamentId, userId])
+  @@index([tournamentId, status])
+}
+
+model SwapJob {
+  id                String    @id
+  userId            String?
+  depositAddress    String    @unique
+  provider          String    @default("near-intents")
+  fromSymbol        String    @default("ZEC")
+  fromAmount        String
+  toSymbol          String
+  toAssetId         String
+  toDecimals        Int       @default(18)
+  recipient         String
+  landing           String    @default("public")
+  relayerAddress    String?
+  status            String    @default("PENDING_DEPOSIT")
+  originTx          String?
+  destTx            String?
+  shieldTx          String?
+  amountOut         String?
+  notified          Boolean   @default(false)
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime
+  shieldFails       Int       @default(0)
+  refundTx          String?
+  zecRefundAddress  String?
+  adminNote         String?
+  adminResolutionTx String?
+  adminState        String?
+  adminUpdatedAt    DateTime?
+  adminUpdatedBy    String?
+  User              User?     @relation(fields: [userId], references: [id])
+
+  @@index([adminState])
+  @@index([status])
+  @@index([userId, createdAt])
+}
+
+model UserActivity {
+  id        String   @id
+  userId    String
+  app       String
+  category  String
+  type      String
+  status    String
+  title     String
+  detail    String?
+  amountIn  String?
+  symbolIn  String?
+  amountOut String?
+  symbolOut String?
+  originTx  String?
+  destTx    String?
+  meta      Json?
+  createdAt DateTime @default(now())
+  User      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, createdAt])
+}
+
+

@@ -1,0 +1,395 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ── ZEC-OS User Accounts ──────────────────────────────────────────────────
+
+model User {
+  id           String   @id @default(cuid())
+  address      String   @unique
+  /// A testnet address this account has PROVEN it controls, linked after the
+  /// account was verified. Never an identity: accounts are only ever created
+  /// from a mainnet address. Nullable and additive, so existing rows need no
+  /// data step. Unique so one address cannot stand for two accounts' cuts.
+  testnetAddress String? @unique
+  displayName  String?
+  // Lowercased displayName — DB-enforced case-insensitive uniqueness for handles
+  nameKey      String?  @unique
+  isVerified   Boolean  @default(false)
+  // One-way scrypt hash (scrypt:N:r:p:salt:hash) — the password itself is never stored
+  passwordHash String?
+  chatRole     String? // "op" | "voice" — persisted IRC-style channel status
+  frozen       String? // "bbs" (barred from BBS) | "all" (barred from everything)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  addresses      UserAddress[]
+  sessions       UserSession[]
+  challenges     AuthChallenge[]
+  settings       UserSettings?
+  watchlist      UserWatchlist?
+  state          UserState?
+  badges         UserBadge[]
+  /// Opt-in: show this (verified) account's name as the owner of its Pools in
+  /// the Marketplace, the Pool page and the Pools info box. Off by default.
+  showOwnerName  Boolean @default(false)
+  /// Sees the sysop's tooling read-only (never user management). Sysop-assigned.
+  sudobud        Boolean @default(false)
+  /// Soft-deleted by the sysop: frozen, emptied, handle freed; rows that point
+  /// here (posts, Pools records) are kept. Null = live account.
+  deletedAt      DateTime?
+  /// Made by the sysop, unverified, holding its handle for its address until the
+  /// owner proves that address (the signup flow then hands them this row).
+  reservedAt     DateTime?
+}
+
+// ── BBS message board ─────────────────────────────────────────────────────────
+// ── BBS private mail (user → user by unique display name) ────────────────────
+// ── BBS counters (calls today / all time) ─────────────────────────────────────
+// ── Chat lounge (single channel + sysop DM lines) ────────────────────────────
+// Sysop → user private line. User must accept; sysop can force.
+// Weekly paid-tournament entry for the BBS RPG. One entry per user per week;
+// the user's single RPG character IS their contest identity. Payment is a
+// 0.01 ZEC memo round-trip to the system wallet (same machinery as auth).
+// BBS RPG save — Json blob plus denormalized stats for the public users list
+model UserSession {
+  id            String    @id @default(cuid())
+  userId        String
+  token         String    @unique @default(cuid())
+  // "challenge" = fresh ownership verification (may reset password), "login" = password login
+  via           String    @default("login")
+  lastSeenAt    DateTime  @default(now()) // heartbeat — drives "users online"
+  lastIp        String? // last client IP seen for this session (sysop visibility)
+  revokedAt     DateTime? // set when a newer login for this user supersedes this session
+  revokedReason String? // e.g. "signed_in_elsewhere"
+  expiresAt     DateTime
+  createdAt     DateTime  @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+/// An address this account has PROVEN it controls, beyond the one it was
+/// created from.
+///
+/// A wallet issues a new unified address at every diversifier index, so the
+/// SAME key produces many valid strings and only the one typed at verification
+/// resolved to the account. Someone who proved with one receiver and later
+/// pasted a fresh UA was a stranger to us - and worse, verifying with it
+/// created a SECOND account, which then collided on the display name.
+///
+/// ADDITIVE, and deliberately not authoritative: `User.address` keeps its
+/// unique index and stays the account's primary. Lookups try that first and
+/// fall back to this table, so nothing existing changes behaviour. The unique
+/// index here is what keeps the old guarantee intact - one address can never
+/// resolve to two accounts.
+model UserAddress {
+  id         String   @id @default(cuid())
+  userId     String
+  /// The proven address, exactly as typed. Unique across every account.
+  address    String   @unique
+  /// 'mainnet' | 'testnet' - the chain this address is valid on.
+  network    String
+  /// True for the row backfilled from User.address. Never deletable.
+  isPrimary  Boolean  @default(false)
+  verifiedAt DateTime @default(now())
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, network])
+}
+
+model AuthChallenge {
+  /// Which chain this row belongs to. @default("mainnet") backfills every
+  /// existing row correctly, so the migration needs no data step and the live
+  /// app is unaffected.
+  network     String   @default("mainnet")
+  id         String    @id @default(cuid())
+  nonce      String
+  userId     String
+  valueZat   Int
+  toAddress  String
+  zip321     String
+  verified   Boolean   @default(false)
+  sessionId  String?
+  expiresAt  DateTime
+  createdAt  DateTime  @default(now())
+  code       String?
+  codeTries  Int       @default(0)
+  fundedTxid String?
+  kind       String    @default("taddr")
+  status     String    @default("pending")
+  refundTxid String?
+  refundedAt DateTime?
+  /// Automatic resends of the code by the funded-challenge resume (audit M3).
+  /// Capped, so a challenge that keeps failing waits for a human instead.
+  codeSends  Int       @default(0)
+  /// Set on a LINK challenge: the address being proven for an account that
+  /// already exists. The code memo goes here, not to the account's own address,
+  /// and success links it rather than issuing a session. Null for every login.
+  linkAddress String?
+  /// Mempool sighting from the memo-watch sidecar, as on the order tables.
+  /// Display only: it says the payment is on its way, never that it has paid.
+  seenTxid    String?
+  seenAt      DateTime?
+  seenExpiry  Int?
+  user       User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([status])
+  @@index([userId, status])
+
+  @@unique([network, nonce])
+
+}
+
+model UserSettings {
+  id        String   @id @default(cuid())
+  userId    String   @unique
+  data      Json     @default("{}")
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model UserWatchlist {
+  id        String   @id @default(cuid())
+  userId    String   @unique
+  data      Json     @default("{\"addresses\":[]}")
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model UserState {
+  id        String   @id @default(cuid())
+  userId    String   @unique
+  data      Json     @default("{}")
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+// ── Admin-configurable tournaments (multi-game, multiple concurrent) ──────────
+// ── User feedback ─────────────────────────────────────────────────────────────
+// Public inbox: topic, optional contact handles, a short note. Read/resolve
+// state is sysop-only. Intentionally not related to User — a sender may be a
+// guest, and a note must outlive the account that sent it.
+model Feedback {
+  id         String    @id @default(cuid())
+  topic      String
+  body       String
+  email      String?
+  discord    String?
+  twitter    String?
+  handle     String?
+  userId     String?
+  ip         String?
+  userAgent  String?
+  createdAt  DateTime  @default(now())
+  readAt     DateTime?
+  resolvedAt DateTime?
+
+  @@index([createdAt])
+  @@index([readAt])
+}
+
+/// A received payment, spent. One txid settles exactly one order (a cut BATCH
+/// counts as one order: every row shares the batch key). Without this, a note
+/// whose memo names several invoices would settle all of them, and the same
+/// note would go on settling anything else that named it. The unique index is
+/// the whole mechanism: the claim is inserted in the same transaction that
+/// flips the order to paid, so a second claimant's transaction rolls back.
+model PaymentClaim {
+  id        String   @id @default(cuid())
+  network   String
+  txid      String
+  /// 'ring-cut' | 'market-buy' | 'contest' | 'rpg'
+  purpose   String
+  /// Batch key (ring-cut) or the order / entry id.
+  orderKey  String
+  createdAt DateTime @default(now())
+
+  @@unique([network, txid])
+  @@index([network, orderKey])
+}
+
+/// One claim per payment OUTPUT (audit 15, round 119). noteRef is "<pool>:<output_index>"
+/// as Zallet lists it, unique within a transaction. A PaymentClaim row (above) still covers
+/// its whole transaction: those were written before outputs were told apart.
+model PaymentNoteClaim {
+  id        String   @id @default(cuid())
+  network   String
+  txid      String
+  noteRef   String
+  /// Same purposes as PaymentClaim.
+  purpose   String
+  orderKey  String
+  createdAt DateTime @default(now())
+
+  @@unique([network, txid, noteRef])
+  @@index([network, txid])
+  @@index([network, orderKey])
+}
+
+/// Help-video "huh?" buttons the sysop has switched on, keyed "<app>/<video>".
+///
+/// A missing row means OFF, which is also where every button starts on a
+/// fresh deployment - so this table only ever needs rows for the switches that
+/// have been touched, and an empty table is a correct state, not a broken one.
+model HelpVideoSwitch {
+  key       String   @id
+  enabled   Boolean  @default(false)
+  /// Handle (or address prefix) of the sysop who last flipped it.
+  updatedBy String?
+  updatedAt DateTime @updatedAt
+}
+
+/// Whether new accounts can be created, switched by the sysop. A single row.
+///
+/// A missing row means OPEN, so an empty table is the normal state and a fresh
+/// install registers people without anyone touching this. Closed stops only
+/// the creation of accounts: existing ones still sign in, re-verify and reset
+/// their passwords.
+model RegistrationGate {
+  id        String    @id @default("singleton")
+  open      Boolean   @default(true)
+  /// When the sysop expects to reopen. Shown on the login screen; optional.
+  reopensAt DateTime?
+  /// The sysop's own words for the login screen while closed; null = the default maintenance line.
+  message   String?
+  updatedBy String?
+  updatedAt DateTime  @updatedAt
+}
+
+/// Zcash Instant Messenger: a user's buddy link and picture. Created on first
+/// use, so users who never open the app have no row.
+model ImProfile {
+  userId     String   @id
+  /// The share link's key: /zim?add=<slug>. Random, never derived from the
+  /// handle or address, so it reveals nothing about the account.
+  slug       String   @unique
+  /// "gen" (the generator, from avatarSeed) | "preset" (avatarSeed names it) | "upload" (avatarData)
+  avatarKind String   @default("gen")
+  avatarSeed String
+  /// A small square image as a data URL, only for "upload".
+  avatarData String?
+  /// "online" | "away" | "invisible". Invisible looks offline to everyone but the sysop.
+  presence   String   @default("online")
+  /// What they are up to, shown under their name. Up to 80 characters.
+  doing      String?
+  updatedAt  DateTime @updatedAt
+}
+
+/// A buddy pair, stored ONCE with aId < bId. "pending" until the other side
+/// accepts; a decline deletes the row so a request can be made again later.
+/// The sysop is everybody's buddy without a row: that is computed, not stored.
+model ImBuddy {
+  id          String   @id @default(cuid())
+  aId         String
+  bId         String
+  status      String   @default("pending") // pending | accepted
+  requestedBy String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@unique([aId, bId])
+  @@index([bId])
+}
+
+/// One instant message. Plain text; readAt is set when the recipient opens the chat.
+model ImMessage {
+  id        String    @id @default(cuid())
+  fromId    String
+  toId      String
+  body      String
+  createdAt DateTime  @default(now())
+  readAt    DateTime?
+
+  @@index([toId, readAt])
+  @@index([fromId, toId, createdAt])
+}
+
+/// A badge shown beside a user's name in public places (chat, BBS, ZIM, Pools).
+/// The sysop defines them (one-word title, tooltip, image) and hands them out.
+model Badge {
+  id        String   @id @default(cuid())
+  /// One word, shown as the badge's label and alt text.
+  title     String
+  /// Lowercased title; what payloads carry.
+  key       String   @unique
+  tooltip   String
+  /// data:image/(png|webp|svg+xml);base64,... - small, stored like ZIM avatars.
+  imageData String
+  /// Cannot be deleted (OG): deleting and re-seeding would hand it out again.
+  locked    Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  holders   UserBadge[]
+}
+
+model UserBadge {
+  userId    String
+  badgeId   String
+  grantedAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  badge     Badge    @relation(fields: [badgeId], references: [id], onDelete: Cascade)
+
+  @@id([userId, badgeId])
+  @@index([badgeId])
+}
+
+/// Zeometry Wars runs (api/zeometry.ts). teamKey is the user id for solo and
+/// versus, the sorted name keys joined with "+" for co-op; names is what the
+/// board shows. Boards keep each key's best run.
+model ZeometryRun {
+  id        String   @id @default(cuid())
+  userId    String
+  mode      String
+  teamKey   String
+  names     String
+  score     Int
+  wave      Int
+  ship      String
+  seconds   Int
+  createdAt DateTime @default(now())
+
+  @@index([mode, createdAt, score])
+  @@index([mode, teamKey])
+  @@index([userId, createdAt])
+}
+
+/// Pay Me pages: one per verified account, found by the account's handle
+/// (User.nameKey), so a rename carries over. Request-only: ZEC-OS builds the
+/// payment request and never watches for the payment.
+model PayPage {
+  userId    String   @id
+  address   String
+  title     String?
+  bio       String?
+  /// Preset amounts in ZEC, as strings: ["0.05", "0.1"].
+  amounts   Json?
+  memoHint  String?
+  enabled   Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+/// Zkyline runs. A run row is opened when a verified player starts (the
+/// server's own clock) and closed when they fall; the score is time survived,
+/// in tenths of a second, and can never exceed the time the server saw pass.
+model ZkylineRun {
+  id         String    @id @default(cuid())
+  userId     String
+  startedAt  DateTime  @default(now())
+  finishedAt DateTime?
+  /// Time survived, tenths of a second. Null until the run ends.
+  tenths     Int?
+  /// The map seed the client played, for the record.
+  seed       Int?
+
+  @@index([userId, startedAt])
+  @@index([finishedAt, tenths])
+}

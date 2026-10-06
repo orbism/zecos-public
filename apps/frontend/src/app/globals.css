@@ -1,0 +1,961 @@
+@import "tailwindcss";
+
+:root {
+  /* Core colors - defaults (CRT Green theme) */
+  --bg-desktop: #0a0a1a;
+  --bg-window: #1a1a2e;
+  --bg-titlebar: #2a3a2a;
+  --bg-titlebar-inactive: #1a2a1a;
+  --border-window: #3a4a3a;
+  --border-light: #4a5a4a;
+  --border-dark: #0a0a0a;
+
+  /* Text colors */
+  --text-primary: #00ff88;
+  --text-secondary: #ffaa00;
+  --text-muted: #c8c090;        /* Warm cream - readable on dark bg */
+
+  /* ZEC branding */
+  --accent-gold: #f4b728;
+  --accent-green: #00ff88;
+  --accent-orange: #ff6600;
+  --accent-purple: #9966ff;
+  --accent-blue: #9966ff;       /* Defaults to purple; Obsidian overrides with true blue */
+
+  /* Legacy mappings for existing components */
+  --text-green: var(--text-primary);
+  --text-amber: var(--text-secondary);
+
+  /* Font stacks */
+  --font-primary: 'VT323', monospace;
+  --font-display: 'Press Start 2P', monospace;
+  --font-mono: 'VT323', monospace;
+
+  /* Border radius */
+  --radius-none: 0px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+
+  /* Window chrome */
+  --titlebar-height: 28px;
+  --taskbar-height: 54px;
+
+  /* Font sizes - base values, scaled by settings */
+  --font-size-base: 26px;
+  --font-size-title: 14px;
+  --font-size-value: 32px;
+  --font-size-label: 20px;
+  --font-size-button: 16px;
+  --font-size-icon: 16px;
+  --font-size-muted: 16px;      /* Larger than icon for muted/secondary text */
+  --font-size-menu: 18px;
+  --font-size-clock: 26px;
+  --font-size-chart: 16px;
+  --font-size-trinket: 12px;
+  --font-size-doc: 13px;
+}
+
+/* ============================================
+   Obsidian Theme (black + gold, blue highlights)
+   Default skin for standalone /<app> routes.
+   ============================================ */
+:root[data-theme="obsidian"] {
+  --bg-desktop: #101015;
+  --bg-window: #1b1b22;
+  --bg-inset: #2b2b37;
+  --bg-titlebar: #23232d;
+  --bg-titlebar-inactive: #1c1c23;
+  --border-window: #2a2a34;
+  --border-light: #3a3a48;
+  --border-dark: #0d0d11;
+
+  --text-primary: #eeecf3;
+  --text-secondary: #e8b53a;
+  --text-muted: #9b9bad;
+
+  --accent-gold: #e8b53a;
+  --accent-green: #3ddc84;
+  --accent-orange: #ff8a3d;
+  --accent-purple: #6aa9ff;
+  --accent-blue: #6aa9ff;
+
+  --text-green: var(--text-primary);
+  --text-amber: var(--text-secondary);
+
+  --font-primary: Inter, 'SF Pro Display', system-ui, sans-serif;
+  --font-display: Inter, 'SF Pro Display', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+
+  --radius-none: 0px;
+  --radius-sm: 14px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+
+  --titlebar-height: 32px;
+  --taskbar-height: 54px;
+}
+
+/* ============================================
+   Obsidian Light - daylight counterpart
+   ============================================ */
+:root[data-theme="obsidian-light"] {
+  --bg-desktop: #f4f1ec;
+  --bg-window: #fdfcfa;
+  --bg-inset: #eae6de;
+  --bg-titlebar: #f7f4ef;
+  --bg-titlebar-inactive: #efece6;
+  --border-window: #e8e4dc;
+  --border-light: #dcd8d0;
+  --border-dark: #c4c0b8;
+
+  --text-primary: #1b1b1f;
+  --text-secondary: #7a5c00;
+  --text-muted: #5c5f6b;
+
+  --accent-gold: #8a6a04;
+  --accent-green: #146c2e;
+  --accent-orange: #a63a00;
+  --accent-purple: #0b57d0;
+  --accent-blue: #0b57d0;
+
+  --text-green: var(--text-primary);
+  --text-amber: var(--text-secondary);
+
+  --font-primary: Inter, 'SF Pro Display', system-ui, sans-serif;
+  --font-display: Inter, 'SF Pro Display', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+
+  --radius-none: 0px;
+  --radius-sm: 14px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+
+  --titlebar-height: 32px;
+  --taskbar-height: 54px;
+}
+
+/* ============================================
+   Visualizer surface tokens
+   Graph/pulse/map views hardcoded near-black surfaces, which are invisible in
+   light mode. These give them a themeable surface + ink. SVG attributes accept
+   var(); WebGL canvases render with alpha so the CSS background shows through.
+   Defaults keep the original dark look for every existing theme.
+   ============================================ */
+:root {
+  /* Explorer overrides --border-window with this on its own root, so its many
+     section rules can carry accent tint without touching global chrome. */
+  --explorer-divider: var(--border-window);
+  --explorer-panel: var(--bg-inset);
+  --pane-bar: var(--bg-titlebar);
+  --pane-bar-active: var(--bg-titlebar);
+  --field-edge: var(--border-light);
+  --field-edge-hover: var(--text-muted);
+
+  --viz-bg: #06060f;
+  --viz-bg-elev: #0b0b1c;
+  --viz-bg-core: #0d1a2e;
+  --viz-grad-in: #0d1117;
+  --viz-grad-out: #050810;
+  --viz-ink: #d8d8e8;
+  --viz-ink-dim: #999999;
+  --viz-ink-faint: #888888;
+  --viz-ink-invert: #000000;
+  --viz-line: #1a1a3a;
+  --viz-ring: rgba(255,255,255,0.05);
+}
+:root[data-theme="obsidian"] {
+  --explorer-divider: rgba(232, 181, 58, 0.22);
+  --explorer-panel: #22222c;
+  /* Pane title bars sit clearly above the card body - they're the drag handle. */
+  --pane-bar: #33333f;
+  --pane-bar-active: #3d3d4b;
+  /* Form fields keep a visible edge at rest, not only on focus. */
+  --field-edge: #5a5a76;
+  --field-edge-hover: #7d7da0;
+}
+:root[data-theme="obsidian-light"] {
+  --explorer-divider: rgba(138, 106, 4, 0.24);
+  --explorer-panel: #f2efe8;
+  --pane-bar: #e6e1d8;
+  --pane-bar-active: #ddd6c8;
+  --field-edge: #b3ac9c;
+  --field-edge-hover: #8a8375;
+
+  --viz-bg: #f5f2ed;
+  --viz-bg-elev: #ffffff;
+  --viz-bg-core: #e4ecf7;
+  --viz-grad-in: #ffffff;
+  --viz-grad-out: #e9e5dd;
+  --viz-ink: #1b1b1f;
+  --viz-ink-dim: #4a4d59;
+  --viz-ink-faint: #5c5f6b;
+  --viz-ink-invert: #ffffff;
+  --viz-line: #d3cec4;
+  --viz-ring: rgba(0,0,0,0.07);
+}
+
+/* Blanket remap for panels that hardcode a near-black fill. Scoped to
+   standalone light mode so the desktop themes are untouched. */
+:root[data-theme="obsidian-light"] .standalone-root .bg-\[\#0a0c14\],
+:root[data-theme="obsidian-light"] .standalone-root .bg-\[\#0a0a1a\],
+:root[data-theme="obsidian-light"] .standalone-root .bg-\[\#0a0a12\],
+:root[data-theme="obsidian-light"] .standalone-root .bg-\[\#050510\],
+:root[data-theme="obsidian-light"] .standalone-root .bg-\[\#1a1a2e\] {
+  background-color: var(--bg-inset) !important;
+}
+:root[data-theme="obsidian-light"] .standalone-root .bg-black {
+  background-color: var(--viz-bg) !important;
+}
+
+/* ============================================
+   Material 3 tokens - standalone routes
+   Shape, type scale, state layers and elevation, applied only under
+   .standalone-root so the desktop themes are untouched.
+   ============================================ */
+.standalone-root {
+  /* MD3 shape scale */
+  --md-shape-xs: 10px;
+  --md-shape-sm: 14px;
+  --md-shape-md: 20px;
+  --md-shape-lg: 28px;
+  --md-shape-xl: 36px;
+  --md-shape-full: 999px;
+
+  /* MD3 state-layer opacities */
+  --md-state-hover: 0.08;
+  --md-state-focus: 0.10;
+  --md-state-pressed: 0.10;
+
+  /* MD3 easing + duration */
+  --md-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --md-ease-emphasized: cubic-bezier(0.2, 0, 0, 1);
+  --md-dur-short: 150ms;
+  --md-dur-medium: 250ms;
+
+  font-family: var(--font-primary);
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* MD3 elevation levels (dark themes need deeper shadows to read) */
+.standalone-root {
+  --md-elev-1: 0 1px 2px rgba(0,0,0,0.30), 0 1px 3px 1px rgba(0,0,0,0.15);
+  --md-elev-2: 0 1px 2px rgba(0,0,0,0.30), 0 2px 6px 2px rgba(0,0,0,0.15);
+  --md-elev-3: 0 4px 8px 3px rgba(0,0,0,0.15), 0 1px 3px rgba(0,0,0,0.30);
+}
+:root[data-theme="obsidian-light"] .standalone-root {
+  --md-elev-1: 0 1px 2px rgba(0,0,0,0.10), 0 1px 3px 1px rgba(0,0,0,0.06);
+  --md-elev-2: 0 1px 2px rgba(0,0,0,0.10), 0 2px 6px 2px rgba(0,0,0,0.07);
+  --md-elev-3: 0 4px 8px 3px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.10);
+}
+
+/* State layer: a tinted overlay on hover/press rather than a colour swap. */
+.md-state {
+  position: relative;
+  isolation: isolate;
+  transition:
+    background-color var(--md-dur-short) var(--md-ease-standard),
+    color var(--md-dur-short) var(--md-ease-standard),
+    border-color var(--md-dur-short) var(--md-ease-standard);
+}
+.md-state::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: currentColor;
+  opacity: 0;
+  transition: opacity var(--md-dur-short) var(--md-ease-standard);
+  pointer-events: none;
+}
+.md-state:hover::before { opacity: var(--md-state-hover); }
+.md-state:active::before { opacity: var(--md-state-pressed); }
+.md-state:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+/* ── Rounding sweep ───────────────────────────────────────────────────────
+   Apps were written for the retro themes and mostly render square-cornered
+   controls. Rather than touching every call site, standalone rounds them here.
+   Anything that already sets its own radius (inline style or a rounded-*
+   utility) still wins via specificity/inline style. */
+.standalone-root button,
+.standalone-root input,
+.standalone-root select,
+.standalone-root textarea,
+.standalone-root [role="button"] {
+  border-radius: var(--md-shape-sm);
+}
+.standalone-root input:not([data-field]),
+.standalone-root select:not([data-field]),
+.standalone-root textarea:not([data-field]) {
+  background: var(--bg-inset);
+  border-color: transparent;
+  padding-inline: 0.75rem;
+}
+/* Fields marked data-field carry a solid, always-visible edge so they read as
+   inputs before you touch them. Declared here rather than as Tailwind classes:
+   utilities sit in a cascade layer and were losing to the unlayered input rules
+   above, so the borders never painted. Width is constant - only colour changes -
+   so focusing a field cannot shift the layout. */
+input[data-field],
+select[data-field],
+textarea[data-field] {
+  border: 2px solid var(--field-edge) !important;
+  background: var(--bg-window);
+  border-radius: var(--radius-sm);
+  transition: border-color 150ms ease;
+}
+input[data-field]:hover,
+select[data-field]:hover,
+textarea[data-field]:hover {
+  border-color: var(--field-edge-hover) !important;
+}
+input[data-field]:focus,
+select[data-field]:focus,
+textarea[data-field]:focus {
+  border-color: var(--accent-gold) !important;
+  outline: none;
+}
+.standalone-root input[data-field],
+.standalone-root select[data-field] { color-scheme: dark; }
+:root[data-theme="obsidian-light"] .standalone-root input[data-field],
+:root[data-theme="obsidian-light"] .standalone-root select[data-field] { color-scheme: light; }
+/* Bordered panels/cards: round them and drop the hard line in favour of tone. */
+.standalone-root [class*="border-["]:not([class*="border-b"]):not([class*="border-t"]):not([class*="border-l"]):not([class*="border-r"]) {
+  border-radius: var(--md-shape-md);
+}
+/* Horizontal rules stay as rules, just softened. */
+.standalone-root [class*="border-b-"],
+.standalone-root [class*="border-t-"] { border-radius: 0; }
+
+/* Nested sections need to separate from their container by tone, not outline. */
+.standalone-root .bg-\[var\(--bg-inset\)\] { border-color: transparent; }
+
+/* Give plain (unstyled) buttons a real surface so they read as controls.
+   Hover uses a filter rather than a second background: an alternate colour
+   value here gets folded into the base rule by the minifier and the hover
+   state silently disappears.
+
+   Apps that style their own buttons opt out with [data-own-buttons] on their
+   root (Pools, Marketplace). Without it this rule's specificity beats their
+   class styles, so a filled button kept its dark label on this dark surface:
+   black text on a dark button. The class-pattern exclusions cannot catch that
+   - "pl-btn" and "ctr-btn" do not contain "btn-" - so the opt-out is explicit. */
+.standalone-root button:not([class*="bg-"]):not(.md-state):not([class*="btn-"]):not([data-own-buttons] *) {
+  background: var(--bg-inset);
+  transition: filter var(--md-dur-short) var(--md-ease-standard);
+}
+.standalone-root button:not([class*="bg-"]):not(.md-state):not([class*="btn-"]):not([data-own-buttons] *):hover {
+  filter: brightness(1.22);
+}
+:root[data-theme="obsidian-light"] .standalone-root button:not([class*="bg-"]):not(.md-state):not([class*="btn-"]):not([data-own-buttons] *):hover {
+  filter: brightness(0.94);
+}
+
+
+/* ── Text scaling (S/M/L/XL) ──────────────────────────────────────────────
+   Scales TEXT ONLY. An earlier version zoomed the whole content wrapper with
+   an inverse width/height, which shrank every container while its contents
+   grew and left dead space inside the parents. Containers now keep their
+   natural size and simply reflow around larger type.
+   Apps use a bounded set of Tailwind sizes, so each is remapped explicitly;
+   `.standalone-root .text-x` (0,2,0) outranks Tailwind's `.text-x` (0,1,0). */
+.standalone-root { --ss-scale: 1; }
+
+.standalone-root .text-\[9px\] { font-size: calc(9px * var(--ss-scale)) !important; }
+.standalone-root .text-\[10px\] { font-size: calc(10px * var(--ss-scale)) !important; }
+.standalone-root .text-\[11px\] { font-size: calc(11px * var(--ss-scale)) !important; }
+.standalone-root .text-\[12px\] { font-size: calc(12px * var(--ss-scale)) !important; }
+.standalone-root .text-\[13px\] { font-size: calc(13px * var(--ss-scale)) !important; }
+.standalone-root .text-\[15px\] { font-size: calc(15px * var(--ss-scale)) !important; }
+.standalone-root .text-\[17px\] { font-size: calc(17px * var(--ss-scale)) !important; }
+.standalone-root .text-xs { font-size: calc(12px * var(--ss-scale)) !important; line-height: calc(16px * var(--ss-scale)) !important; }
+.standalone-root .text-sm { font-size: calc(14px * var(--ss-scale)) !important; line-height: calc(20px * var(--ss-scale)) !important; }
+.standalone-root .text-base { font-size: calc(16px * var(--ss-scale)) !important; line-height: calc(24px * var(--ss-scale)) !important; }
+.standalone-root .text-lg { font-size: calc(18px * var(--ss-scale)) !important; line-height: calc(28px * var(--ss-scale)) !important; }
+.standalone-root .text-xl { font-size: calc(20px * var(--ss-scale)) !important; line-height: calc(28px * var(--ss-scale)) !important; }
+.standalone-root .text-2xl { font-size: calc(24px * var(--ss-scale)) !important; line-height: calc(32px * var(--ss-scale)) !important; }
+.standalone-root .text-3xl { font-size: calc(30px * var(--ss-scale)) !important; line-height: calc(36px * var(--ss-scale)) !important; }
+
+/* Theme-driven sizes used by the older apps. */
+.standalone-root {
+  --font-size-base:    calc(26px * var(--ss-scale));
+  --font-size-title:   calc(14px * var(--ss-scale));
+  --font-size-value:   calc(32px * var(--ss-scale));
+  --font-size-label:   calc(20px * var(--ss-scale));
+  --font-size-button:  calc(16px * var(--ss-scale));
+  --font-size-icon:    calc(16px * var(--ss-scale));
+  --font-size-muted:   calc(16px * var(--ss-scale));
+  --font-size-menu:    calc(18px * var(--ss-scale));
+  --font-size-clock:   calc(26px * var(--ss-scale));
+  --font-size-chart:   calc(16px * var(--ss-scale));
+  --font-size-trinket: calc(12px * var(--ss-scale));
+  --font-size-doc:     calc(13px * var(--ss-scale));
+}
+
+/* MD3 chrome type scale - single definition, scaled. Keep it that way: a second
+   unscaled copy later in the file silently wins and freezes the header size. */
+.standalone-root .md-label-sm { font-size: calc(11px * var(--ss-scale)); line-height: 1.45; letter-spacing: 0.05em; font-weight: 500; }
+.standalone-root .md-label-md { font-size: calc(12px * var(--ss-scale)); line-height: 1.35; letter-spacing: 0.04em; font-weight: 500; }
+.standalone-root .md-body-sm  { font-size: calc(12px * var(--ss-scale)); line-height: 1.35; letter-spacing: 0.03em; }
+.standalone-root .md-body-md  { font-size: calc(14px * var(--ss-scale)); line-height: 1.42; letter-spacing: 0.02em; }
+.standalone-root .md-title-sm { font-size: calc(14px * var(--ss-scale)); line-height: 1.42; letter-spacing: 0.01em; font-weight: 600; }
+.standalone-root .md-title-md { font-size: calc(16px * var(--ss-scale)); line-height: 1.5; letter-spacing: 0.01em; font-weight: 600; }
+.standalone-root .md-title-lg { font-size: calc(19px * var(--ss-scale)); line-height: 1.38; letter-spacing: 0.005em; font-weight: 600; }
+
+
+/* A stage that hands its own height down to the app inside it. Apps use
+   `h-full`, which resolves to auto against a min-height-only parent - so the
+   child is stretched with flex instead, letting it start at the stage's floor
+   and grow past it when content demands. */
+.standalone-stage {
+  display: flex;
+  flex-direction: column;
+}
+.standalone-stage > * {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+/* Standalone scrollbars - thin and unobtrusive, matching the surface */
+.standalone-root *::-webkit-scrollbar { width: 10px; height: 10px; }
+.standalone-root *::-webkit-scrollbar-track { background: transparent; }
+.standalone-root *::-webkit-scrollbar-thumb {
+  background: var(--border-light);
+  border-radius: var(--md-shape-full);
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+.standalone-root *::-webkit-scrollbar-thumb:hover { background-clip: content-box; background-color: var(--text-muted); }
+
+/* ============================================
+   Golden Gate Theme (Win95 / Mid 90s)
+   ============================================ */
+:root[data-theme="golden-gate"] {
+  --bg-desktop: #008080;
+  --bg-window: #c0c0c0;
+  --bg-titlebar: #c0c0c0;
+  --bg-titlebar-inactive: #808080;
+  --border-window: #808080;
+  --border-light: #ffffff;
+  --border-dark: #404040;
+
+  --text-primary: #00ff88;
+  --text-secondary: #cc7700;
+  --text-muted: #c0bfaa;        /* Warm gray - readable on dark content bg */
+
+  --accent-gold: #996600;
+  --accent-green: #00ff88;
+  --accent-orange: #cc5500;
+  --accent-purple: #9966ff;
+
+  --text-green: var(--text-primary);
+  --text-amber: var(--text-secondary);
+
+  --font-primary: 'MS Sans Serif', 'Segoe UI', Tahoma, sans-serif;
+  --font-display: 'MS Sans Serif', 'Segoe UI', Tahoma, sans-serif;
+  --font-mono: 'Courier New', Courier, monospace;
+
+  --titlebar-height: 24px;
+  --taskbar-height: 44px;
+}
+
+/* ============================================
+   Millennium Theme (Mac OS 9 Platinum / Late 90s)
+   ============================================ */
+:root[data-theme="millennium"] {
+  --bg-desktop: #5f5f8f;
+  --bg-window: #e8e8e8;
+  --bg-titlebar: #cccccc;
+  --bg-titlebar-inactive: #aaaaaa;
+  --border-window: #999999;
+  --border-light: #ffffff;
+  --border-dark: #666666;
+
+  --text-primary: #006644;
+  --text-secondary: #8b4513;
+  --text-muted: #8a9a88;        /* Medium green-gray - visible on dark window content */
+
+  --accent-gold: #996622;
+  --accent-green: #006644;
+  --accent-orange: #a0522d;
+  --accent-purple: #663399;
+
+  --text-green: var(--text-primary);
+  --text-amber: var(--text-secondary);
+
+  --font-primary: Charcoal, Chicago, 'Lucida Grande', sans-serif;
+  --font-display: Charcoal, Chicago, 'Lucida Grande', sans-serif;
+  --font-mono: Monaco, 'Courier New', monospace;
+
+  --radius-none: 0px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  --titlebar-height: 24px;
+  --taskbar-height: 54px;
+}
+
+/* Desktop icon labels for Millennium */
+:root[data-theme="millennium"] .desktop-icon-label {
+  color: #ffffff !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Millennium smooth rendering */
+:root[data-theme="millennium"] body {
+  image-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Millennium theme - dark colors for light background elements */
+:root[data-theme="millennium"] .titlebar {
+  color: #333333;
+}
+
+:root[data-theme="millennium"] .titlebar-title {
+  color: #333333 !important;
+}
+
+:root[data-theme="millennium"] .taskbar-clock {
+  color: #006644 !important;
+}
+
+:root[data-theme="millennium"] .taskbar-date {
+  color: #8b4513 !important;
+}
+
+/* Millennium window content - bright colors on dark background */
+:root[data-theme="millennium"] .window-content {
+  --text-primary: #00ff88;
+  --text-secondary: #ffaa00;
+  --accent-gold: #f4b728;
+  --accent-green: #00ff88;
+}
+
+/* Golden Gate - app titles should be bold and larger */
+:root[data-theme="golden-gate"] .window-content h2 {
+  font-weight: 700;
+  font-size: calc(var(--font-size-title) * 1.3);
+}
+
+/* Millennium - app titles should be bold and larger */
+:root[data-theme="millennium"] .window-content h2 {
+  font-weight: 700;
+  font-size: calc(var(--font-size-title) * 1.3);
+}
+
+/* Font size variants - use :root for proper specificity */
+:root[data-font-size="small"] {
+  --font-size-base: 22px;
+  --font-size-title: 12px;
+  --font-size-value: 28px;
+  --font-size-label: 16px;
+  --font-size-button: 14px;
+  --font-size-icon: 12px;
+  --font-size-muted: 14px;
+  --font-size-menu: 16px;
+  --font-size-clock: 22px;
+  --font-size-chart: 14px;
+  --font-size-trinket: 11px;
+  --font-size-doc: 13px;
+}
+
+:root[data-font-size="medium"] {
+  --font-size-base: 26px;
+  --font-size-title: 14px;
+  --font-size-value: 32px;
+  --font-size-label: 20px;
+  --font-size-button: 16px;
+  --font-size-icon: 14px;
+  --font-size-muted: 16px;
+  --font-size-menu: 18px;
+  --font-size-clock: 26px;
+  --font-size-chart: 16px;
+  --font-size-trinket: 12px;
+  --font-size-doc: 13px;
+}
+
+:root[data-font-size="large"] {
+  --font-size-base: 30px;
+  --font-size-title: 16px;
+  --font-size-value: 38px;
+  --font-size-label: 24px;
+  --font-size-button: 18px;
+  --font-size-icon: 16px;
+  --font-size-muted: 18px;
+  --font-size-menu: 22px;
+  --font-size-clock: 30px;
+  --font-size-chart: 18px;
+  --font-size-trinket: 13px;
+  --font-size-doc: 13px;
+}
+
+:root[data-font-size="xl"] {
+  --font-size-base: 34px;
+  --font-size-title: 19px;
+  --font-size-value: 45px;
+  --font-size-label: 28px;
+  --font-size-button: 21px;
+  --font-size-icon: 19px;
+  --font-size-muted: 21px;
+  --font-size-menu: 26px;
+  --font-size-clock: 35px;
+  --font-size-chart: 21px;
+  --font-size-trinket: 14px;
+  --font-size-doc: 15px;
+}
+
+@theme inline {
+  --font-body: var(--font-vt323);
+  --font-title: var(--font-press-start);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* The desktop OS locks scrolling above. Plain document pages (the embed
+   preview) opt back in by marking their root [data-scrollable-page]. */
+html:has([data-scrollable-page]),
+html:has([data-scrollable-page]) body {
+  height: auto;
+  min-height: 100%;
+  overflow: visible;
+  overflow-y: auto;
+}
+
+body {
+  background: var(--bg-desktop);
+  color: var(--text-primary);
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+}
+
+/* CRT Green theme - pixelated rendering */
+:root[data-theme="crt-green"] body {
+  image-rendering: pixelated;
+  -webkit-font-smoothing: none;
+}
+
+/* Golden Gate theme - smooth rendering */
+:root[data-theme="golden-gate"] body {
+  image-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'MS Sans Serif', 'Segoe UI', Tahoma, sans-serif;
+}
+
+/* ============================================
+   Retro Border Style (CRT Green default)
+   ============================================ */
+:root[data-border-style="retro"] .window-border {
+  border: 2px solid var(--border-window);
+  box-shadow:
+    inset 1px 1px 0 var(--border-light),
+    inset -1px -1px 0 var(--border-dark),
+    2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+:root[data-border-style="retro"] .titlebar {
+  background: var(--bg-titlebar);
+  border-bottom: 2px solid var(--border-dark);
+  font-family: var(--font-display);
+  font-size: var(--font-size-title);
+}
+
+:root[data-border-style="retro"] .btn-window {
+  background: var(--bg-window);
+  border: 2px solid var(--border-window);
+  box-shadow:
+    inset 1px 1px 0 var(--border-light),
+    inset -1px -1px 0 var(--border-dark);
+  cursor: pointer;
+  font-size: var(--font-size-button);
+}
+
+:root[data-border-style="retro"] .btn-window:active {
+  box-shadow:
+    inset -1px -1px 0 var(--border-light),
+    inset 1px 1px 0 var(--border-dark);
+}
+
+/* ============================================
+   Beveled Border Style (Golden Gate / Win95)
+   ============================================ */
+:root[data-border-style="beveled"] .window-border {
+  border: 2px outset var(--border-light);
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+  background: var(--bg-window);
+}
+
+/* Window titlebar in beveled style - blue gradient */
+:root[data-border-style="beveled"] .titlebar {
+  background: linear-gradient(90deg, #000080, #1084d0);
+  border-bottom: none;
+  font-family: var(--font-display);
+  font-size: var(--font-size-title);
+  color: white;
+  padding: 2px 4px;
+}
+
+:root[data-border-style="beveled"] .titlebar.inactive {
+  background: var(--bg-titlebar-inactive);
+}
+
+/* Dark interior for window content in beveled themes */
+:root[data-border-style="beveled"] .window-content {
+  background: #1a1a2e;
+  border: 2px inset var(--border-dark);
+}
+
+/* Desktop icon labels - white with shadow for visibility on any background */
+:root[data-theme="golden-gate"] .desktop-icon-label {
+  color: #ffffff !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* ============================================
+   Flat Border Style (Millennium / Mac-like)
+   ============================================ */
+:root[data-border-style="flat"] .window-border {
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  background: var(--bg-window);
+}
+
+:root[data-border-style="flat"] .titlebar {
+  background: linear-gradient(180deg, #e8e8e8 0%, #cccccc 100%);
+  border-bottom: 1px solid var(--border-dark);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  font-family: var(--font-display);
+  font-size: var(--font-size-title);
+}
+
+:root[data-border-style="flat"] .titlebar.inactive {
+  background: linear-gradient(180deg, #d0d0d0 0%, #b0b0b0 100%);
+}
+
+/* Dark interior for window content in flat style */
+:root[data-border-style="flat"] .window-content {
+  background: #1a1a2e;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+}
+
+:root[data-border-style="flat"] .btn-window {
+  background: linear-gradient(180deg, #f0f0f0 0%, #d0d0d0 100%);
+  border: 1px solid var(--border-dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: var(--font-size-button);
+}
+
+:root[data-border-style="flat"] .btn-window:hover {
+  background: linear-gradient(180deg, #ffffff 0%, #e0e0e0 100%);
+}
+
+:root[data-border-style="flat"] .btn-window:active {
+  background: linear-gradient(180deg, #c0c0c0 0%, #a0a0a0 100%);
+}
+
+/* Flat style menus with dark background for readability */
+:root[data-border-style="flat"] .window-border.menu-dropdown {
+  background: #1a1a2e;
+  border-radius: var(--radius-sm);
+}
+
+:root[data-border-style="beveled"] .btn-window {
+  background: var(--bg-window);
+  border: 2px outset var(--border-light);
+  cursor: pointer;
+  font-size: var(--font-size-button);
+  min-width: 16px;
+  min-height: 14px;
+}
+
+:root[data-border-style="beveled"] .btn-window:active {
+  border-style: inset;
+}
+
+/* Fallback window-border for unset border-style */
+.window-border {
+  border: 2px solid var(--border-window);
+  box-shadow:
+    inset 1px 1px 0 var(--border-light),
+    inset -1px -1px 0 var(--border-dark),
+    2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Active window - subtle gold tint, all border-style variants */
+.window-border.window-active,
+:root[data-border-style="retro"] .window-border.window-active,
+:root[data-border-style="beveled"] .window-border.window-active,
+:root[data-border-style="flat"] .window-border.window-active {
+  border-color: rgba(255, 215, 0, 0.55);
+  box-shadow:
+    inset 1px 1px 0 var(--border-light),
+    inset -1px -1px 0 var(--border-dark),
+    0 0 10px rgba(255, 215, 0, 0.10),
+    0 6px 20px rgba(0, 0, 0, 0.55);
+}
+
+.titlebar {
+  background: var(--bg-titlebar);
+  border-bottom: 2px solid var(--border-dark);
+  font-family: var(--font-display);
+  font-size: var(--font-size-title);
+}
+
+.btn-window {
+  background: var(--bg-window);
+  border: 2px solid var(--border-window);
+  box-shadow:
+    inset 1px 1px 0 var(--border-light),
+    inset -1px -1px 0 var(--border-dark);
+  cursor: pointer;
+  font-size: var(--font-size-button);
+}
+
+.btn-window:active {
+  box-shadow:
+    inset -1px -1px 0 var(--border-light),
+    inset 1px 1px 0 var(--border-dark);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-window);
+  border: 1px solid var(--border-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-titlebar);
+  border: 2px solid var(--border-window);
+  box-shadow:
+    inset 1px 1px 0 var(--border-light),
+    inset -1px -1px 0 var(--border-dark);
+}
+
+/* Selection */
+::selection {
+  background: var(--accent-gold);
+  color: var(--bg-desktop);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  :root {
+    --font-size-base: 22px;
+    --font-size-title: 11px;
+    --font-size-value: 26px;
+    --font-size-label: 16px;
+    --font-size-button: 14px;
+    --font-size-icon: 11px;
+    --font-size-muted: 13px;
+    --font-size-menu: 16px;
+    --font-size-clock: 20px;
+  }
+
+  .titlebar {
+    height: 36px;
+  }
+
+  .btn-window {
+    min-width: 32px;
+    min-height: 32px;
+  }
+
+  button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --font-size-base: 18px;
+    --font-size-title: 9px;
+    --font-size-value: 22px;
+    --font-size-label: 14px;
+    --font-size-button: 12px;
+    --font-size-icon: 9px;
+    --font-size-muted: 11px;
+    --font-size-menu: 14px;
+    --font-size-clock: 18px;
+  }
+}
+
+/* Taskbar logout button - red door icon, brighter red on hover */
+.logout-btn { color: #FF5555; }
+.logout-btn:hover { color: #FF8080 !important; }
+
+/* ============================================
+   Explorer alternating section bands
+   Derived from the window bg so they track any theme. Dark themes: header band
+   (a) darker, detail band (b) lighter. Light themes: inverted so the header
+   band reads lighter and the detail band darker. Adjacent bands are flush.
+   ============================================ */
+.exp-band-a { background: color-mix(in srgb, var(--bg-window), #000 16%); }
+.exp-band-b { background: color-mix(in srgb, var(--bg-window), #fff 8%); }
+
+:root[data-theme="golden-gate"] .exp-band-a,
+:root[data-theme="millennium"] .exp-band-a,
+:root[data-theme="lumen"] .exp-band-a,
+:root[data-theme="aqua-zec"] .exp-band-a { background: color-mix(in srgb, var(--bg-window), #fff 55%); }
+
+:root[data-theme="golden-gate"] .exp-band-b,
+:root[data-theme="millennium"] .exp-band-b,
+:root[data-theme="lumen"] .exp-band-b,
+:root[data-theme="aqua-zec"] .exp-band-b { background: color-mix(in srgb, var(--bg-window), #000 9%); }
+
+/* ── Mobile first-pass: bigger tap targets, roomier chrome ─────────────────── */
+@media (max-width: 640px) {
+  :root {
+    --titlebar-height: 40px;
+    --taskbar-height: 56px;
+    --font-size-button: 22px;
+    --font-size-title: 15px;
+  }
+  /* Window control buttons → ≥40px tap targets (override w-5/h-5 utilities) */
+  .btn-window {
+    min-width: 40px !important;
+    min-height: 40px !important;
+  }
+  /* Prevent iOS auto-zoom on focus and horizontal overflow */
+  input, select, textarea { font-size: 16px; }
+  html, body { max-width: 100vw; overflow-x: hidden; }
+}
+
+@media (max-width: 640px) {
+  /* Desktop icons: reflow the absolute layout into a scrollable grid */
+  .desktop-icons {
+    display: flex; flex-wrap: wrap; align-content: flex-start;
+    gap: 6px; padding: calc(var(--taskbar-height) + 10px) 8px 8px;
+    overflow-y: auto;
+  }
+  .desktop-icons > * {
+    position: static !important; left: auto !important; top: auto !important;
+    width: 74px !important; height: auto !important;
+  }
+  /* Taskbar: tighter, hide the date, keep the clock */
+  .taskbar-date { display: none !important; }
+  .taskbar { gap: 2px; }
+}

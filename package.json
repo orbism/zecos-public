@@ -1,0 +1,21 @@
+{
+  "name": "zec-os",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:frontend": "npm run dev --workspace=apps/frontend",
+    "dev:backend": "npm run dev --workspace=apps/backend",
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "build:frontend": "npm run build --workspace=apps/frontend",
+    "build:backend": "npm run build --workspace=apps/backend",
+    "build": "npm run build --workspace=packages/shared && npm run build:frontend && npm run build:backend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  },
+  "license": "AGPL-3.0-only"
+}

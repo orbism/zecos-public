@@ -1,0 +1,48 @@
+// MOTDs shown on the BBS splash + fortunes for the Terminal `fortune` command.
+// On-brand: privacy, cryptography, blockchain, and a little history.
+
+export const MOTDS: string[] = [
+  "Zcash's zk-SNARKs prove a statement true without revealing why. Math as a magic trick.",
+  "1976: Diffie & Hellman publish public-key crypto - the first handshake strangers could trust.",
+  "Privacy is not secrecy. Secrecy hides what you did; privacy chooses who gets to know.",
+  "The first message on ARPANET (1969) was 'LO' - it crashed before 'LOGIN' finished.",
+  "Shielded by default is the dream. Transparent by default is a receipt you didn't ask to print.",
+  "Jan 3, 2009: Satoshi mined the genesis block over a bank-bailout headline. Timestamps as protest.",
+  "A dust attack is a stalker with a magnifying glass. Shield your change.",
+  "The Enigma had 158 quintillion settings. It fell to human habit, not weak math.",
+  "Metadata is the new plaintext. They may not read your letter, but they know who you write at 3am.",
+  "Oct 28, 2016: Zcash launches - the first widely-used chain with zero-knowledge privacy.",
+  "'Cypherpunks write code.' - Eric Hughes, A Cypherpunk's Manifesto, 1993.",
+  "Your ISP sees every site you don't encrypt. HTTPS is the envelope. Use it.",
+  "Tor was first funded to protect intelligence comms. Privacy tools are dual-use by design.",
+  "A viewing key shares your history with an auditor without handing over your keys. Selective disclosure.",
+  "In WWII the Navajo Code Talkers built an unbroken cipher from a living language.",
+  "Bitcoin is pseudonymous, not anonymous. The ledger never forgets and chain analysis never sleeps.",
+  "1991: Phil Zimmermann releases PGP and gets investigated for 'exporting munitions.'",
+  "The best time to shield was your last transaction. The second best time is this one.",
+  "GDPR fines reach 4% of global revenue. Privacy stopped being optional in 2018.",
+  "The 1890 U.S. census invented punch-card tabulation - and modern mass data collection was born.",
+  "Zero-knowledge: I know the password. I won't tell you. Watch me prove I know it anyway.",
+  "Every 'anonymized' dataset is one join away from a name. Aggregation is not anonymity.",
+  "'Cipher' comes from the Arabic 'sifr' - zero. Nothing, weaponized.",
+  "Rotate your addresses. A reused address is a name tag.",
+  "1785: Jefferson designed a wheel cipher; the U.S. Army rediscovered it 140 years later.",
+  "Financial privacy isn't for the guilty. Ask anyone whose landlord read their bank statement.",
+  "The dark forest rule: stay quiet, stay shielded. Visibility is a vulnerability.",
+  "1989: Chaum's DigiCash had anonymous digital money a decade before Bitcoin. Ahead of its bandwidth.",
+  "A password manager you distrust beats a memory you overestimate.",
+  "Trust math, verify code, shield everything. Welcome to the forest.",
+];
+
+export const FORTUNES: string[] = [
+  "A shielded coin gathers no chain analysts.",
+  "The proof you seek requires no witness but your own.",
+  "He who reuses an address invites the whole forest to dinner.",
+  "Your keys are your castle; your seed phrase is the drawbridge. Don't screenshot the drawbridge.",
+  "Fortune favors the encrypted.",
+  "A wise node runs quiet and verifies loud.",
+  "The transparent pool remembers everything. Be more like the shielded pool.",
+  "Today is a good day to rotate your passwords and your suspicions.",
+  "Beware the free wifi that asks for nothing - it takes everything.",
+  "Zero knowledge, infinite peace.",
+];

@@ -1,0 +1,2329 @@
+[
+ {
+  "date": "2013-03",
+  "title": "The Zerocoin Police Backdoor",
+  "kind": "DISPUTED INTERPRETATION",
+  "pool": null,
+  "height": null,
+  "brief": "A pre-Zcash Zerocoin comment about possibly adding law-enforcement tracing became the seed for a decade-long claim that Zcash was designed with a secret police backdoor.",
+  "people": [
+   "Matthew Green",
+   "Ian Miers",
+   "Christina Garman",
+   "Zooko Wilcox"
+  ],
+  "notes": [
+   [
+    "ORIGIN",
+    [
+     "Thread ZC-001. First public mention found: March 2013.",
+     "Proposed or popularized by: Matthew Green's quoted comment in *New Scientist*, then Bitcointalk users and later privacy-coin critics."
+    ]
+   ],
+   [
+    "THE THEORY",
+    [
+     "Matthew Green was quoted saying Zerocoin could provide strong privacy and that features could later be added to let police track money laundering, calling such a capability “a back door.” Critics later treated this as evidence of the philosophy behind Zcash itself. The quote concerned Zerocoin, years before the deployed Zcash protocol, and is not evidence that a secret access mechanism was implemented in Zcash."
+    ]
+   ],
+   [
+    "DEEPER",
+    [
+     "The quote repeatedly resurfaces in Monero-versus-Zcash debates, often stripped of the Zerocoin context. It is frequently paired with Zooko Wilcox's 2017 WannaCry comments (see “Too Traceable for WannaCry Means Zcash Has a Police Backdoor”) and government-grant acknowledgements (see “DARPA / U.S. Military Created Zcash”) to construct a broader claim that law-enforcement access was always part of the plan. Public Zcash specifications and source code contain selective-disclosure mechanisms such as viewing keys, but those are holder-controlled disclosure mechanisms, not evidence of a universal secret law-enforcement key."
+    ]
+   ],
+   [
+    "WHAT IS DOCUMENTED",
+    [
+     "Matthew Green really made the quoted Zerocoin comment; Zerocoin preceded Zerocash/Zcash; the quote became public before Zcash existed. No public evidence located here shows that the proposed police-access idea became a hidden universal Zcash backdoor."
+    ]
+   ]
+  ],
+  "related": [
+   "Too Traceable for WannaCry Means Zcash Has a Police Backdoor",
+   "Shadow Brokers: U.S. Government + Israel Are Behind Zcash",
+   "The Modern Israeli / U.S. Intelligence Honeypot"
+  ],
+  "links": [
+   {
+    "label": "Bitcointalk, Mar. 2013",
+    "url": "https://bitcointalk.org/index.php?topic=152786.0%3Ball"
+   },
+   {
+    "label": "Blockonomi retrospective, 2018",
+    "url": "https://blockonomi.com/zcash-backdoor/"
+   },
+   {
+    "label": "Hacker News discussion, 2017",
+    "url": "https://news.ycombinator.com/item?id=15369670"
+   }
+  ],
+  "debunk": {
+   "verdict": "Matthew Green has publicly stated that the police-tracing feature he mused about for Zerocoin is not in Zcash, and Zcash's disclosure mechanism (viewing keys) is controlled only by the key holder.",
+   "points": [
+    "Responding to the resurfaced quote in 2017, Green wrote that he meant any fully anonymous currency could be deliberately weakened if adopters chose to, but \"that kind of feature is absolutely not included in ZCash. Anyone who implies so is selling FUD.\"",
+    "Green added that because the Zcash code and design are fully open source the claim is \"easily verifiable, and plenty of people have looked.\"",
+    "The quote itself was about Zerocoin in 2013; even the 2018 Blockonomi piece that revived it concluded there was no concrete proof of a backdoor in Zcash.",
+    "ECC's explanation of viewing keys states \"There is no central authority that controls access to viewing keys\" and that a viewing key \"can only be obtained from someone who holds it.\""
+   ],
+   "links": [
+    {
+     "label": "Matthew Green on Hacker News, 2017",
+     "url": "https://news.ycombinator.com/item?id=15369670"
+    },
+    {
+     "label": "Blockonomi, 2018",
+     "url": "https://blockonomi.com/zcash-backdoor/"
+    },
+    {
+     "label": "ECC, Explaining viewing keys, 2020",
+     "url": "https://zodl.com/explaining-viewing-keys-2/"
+    }
+   ]
+  }
+ },
+ {
+  "date": "2013-05",
+  "title": "DARPA / U.S. Military Created Zcash",
+  "kind": "DOCUMENTED BASIS / SPECULATIVE CONCLUSION",
+  "pool": null,
+  "height": null,
+  "brief": "U.S. defense-agency research grants became the basis for claims that Zcash was secretly created, controlled, or backdoored by the U.S. government.",
+  "people": [
+   "Matthew Green",
+   "Ian Miers",
+   "Christina Garman",
+   "DARPA",
+   "AFRL",
+   "Office of Naval Research",
+   "Johns Hopkins University",
+   "Zooko Wilcox"
+  ],
+  "notes": [
+   [
+    "ORIGIN",
+    [
+     "Thread ZC-002. First public mention found: May 2013.",
+     "Proposed or popularized by: Bitcointalk users noticing the Zerocoin research acknowledgements; later repeated by Shadow Brokers and many critics."
+    ]
+   ],
+   [
+    "THE THEORY",
+    [
+     "The factual kernel is durable: the Zerocoin/Zerocash academic work acknowledged funding connected to DARPA, AFRL and the Office of Naval Research. Critics infer that the U.S. government commissioned or controlled the currency. Researchers and DARPA publicly said the grants supported broader academic research programs rather than specifically commissioning Zcash as a government cryptocurrency."
+    ]
+   ],
+   [
+    "DEEPER",
+    [
+     "This claim predates the Zcash company by years. Matthew Green explained in 2017 that academics list the grants supporting their research and that neither DARPA nor ONR directly funded them “to make Zerocash.” DARPA confirmed that the cited contract funded the PROCEED program concerning computation on encrypted data. The distinction is important: grant-supported academic work is documented; government ownership, control, or a covert operating relationship is not."
+    ]
+   ],
+   [
+    "WHAT IS DOCUMENTED",
+    [
+     "The Zerocash paper lists DARPA/AFRL, ONR, NSF and other institutional funding. Researchers worked at universities receiving those grants. Zcash's later corporate funding came from separate private investors."
+    ]
+   ]
+  ],
+  "related": [
+   "Israeli-Government / Intelligence Origins",
+   "Shadow Brokers: U.S. Government + Israel Are Behind Zcash",
+   "The Modern Israeli / U.S. Intelligence Honeypot"
+  ],
+  "links": [
+   {
+    "label": "Bitcointalk discussion, 2013",
+    "url": "https://bitcointalk.org/index.php?topic=152786.0%3Ball"
+   },
+   {
+    "label": "Zerocash paper",
+    "url": "http://zerocash-project.org/media/pdf/zerocash-extended-20140518.pdf"
+   },
+   {
+    "label": "CyberScoop response to Shadow Brokers, 2017",
+    "url": "https://cyberscoop.com/cryptocurrency-company-pushes-back-shadow-brokers-latest-claims/"
+   }
+  ],
+  "debunk": {
+   "verdict": "The defense grants were general academic research funding acknowledged in the Zerocash paper, not a commission to build Zcash, and none of those agencies invested in or controlled the Zcash company.",
+   "points": [
+    "Matthew Green told CyberScoop in 2017 that \"DARPA did not fund us to make Zerocash, and neither did the Office of Naval Research,\" explaining that he thanks every grant supporting his work at Johns Hopkins in his papers.",
+    "DARPA's media relations chief said the contract number cited in the paper funded the PROCEED program on computation over encrypted data, led by Georgia Tech, from which Johns Hopkins research could have benefited.",
+    "The Zerocash paper lists DARPA/AFRL and ONR among more than ten sponsors, including Amazon, NSF, the European Community's FP7, the Simons Foundation and the Skolkovo Foundation.",
+    "Zooko Wilcox said none of these institutions invested in or supported the Zcash company: \"They don't have any financial stake in the company.\""
+   ],
+   "links": [
+    {
+     "label": "CyberScoop, 2017",
+     "url": "https://cyberscoop.com/cryptocurrency-company-pushes-back-shadow-brokers-latest-claims/"
+    },
+    {
+     "label": "Zerocash paper, acknowledgments, 2014",
+     "url": "http://zerocash-project.org/media/pdf/zerocash-extended-20140518.pdf"
+    }
+   ]
+  }
+ },
+ {
+  "date": "2014",
+  "title": "Israeli-Government / Intelligence Origins",
+  "kind": "DOCUMENTED BASIS / SPECULATIVE CONCLUSION",
+  "pool": null,
+  "height": null,
+  "brief": "Israeli academic contributors and Israeli research funding are repeatedly cited as evidence that Zcash was created or steered by Israeli intelligence.",
+  "people": [
+   "Eli Ben-Sasson",
+   "Eran Tromer",
+   "Technion",
+   "Tel Aviv University",
+   "Israeli Ministry of Science and Technology",
+   "I-CORE",
+   "Matthew Green",
+   "Zooko Wilcox"
+  ],
+  "notes": [
+   [
+    "ORIGIN",
+    [
+     "Thread ZC-003. First public mention found: 2014-era crypto discussion; explicit intelligence-service versions circulated by 2017 and later.",
+     "Proposed or popularized by: Crypto forum users; later Shadow Brokers and modern “Mossad coin” / “Unit 8200” narratives."
+    ]
+   ],
+   [
+    "THE THEORY",
+    [
+     "Zerocash included researchers from Tel Aviv University and Technion, and its acknowledgements include Israeli research programs and the Israeli Ministry of Science and Technology. Later posts convert those real academic affiliations into a claim of intelligence-service control, sometimes specifically naming Mossad or Unit 8200. No primary evidence located here shows that either organization directed Zcash development."
+    ]
+   ],
+   [
+    "DEEPER",
+    [
+     "The theory often merges nationality, university affiliation, grant support and intelligence-service membership into a single chain of inference. The original research team was international and also involved Johns Hopkins, MIT and other U.S./European institutions; the funding acknowledgement lists many unrelated public and private grant sources. Israeli participation is factual; intelligence control is a separate claim requiring evidence."
+    ]
+   ],
+   [
+    "WHAT IS DOCUMENTED",
+    [
+     "Eli Ben-Sasson and Eran Tromer were associated with Israeli academic institutions; the papers acknowledge Israeli research funding. Israeli media described Zcash as partly Israeli-developed. Those facts do not by themselves establish intelligence-agency operational control."
+    ]
+   ]
+  ],
+  "related": [
+   "DARPA / U.S. Military Created Zcash",
+   "Shadow Brokers: U.S. Government + Israel Are Behind Zcash",
+   "The Modern Israeli / U.S. Intelligence Honeypot"
+  ],
+  "links": [
+   {
+    "label": "Zerocash paper",
+    "url": "http://zerocash-project.org/media/pdf/zerocash-extended-20140518.pdf"
+   },
+   {
+    "label": "Times of Israel, 2017",
+    "url": "https://www.timesofisrael.com/zcash-the-israeli-developed-virtual-money-starts-to-make-its-mark/"
+   },
+   {
+    "label": "CyberScoop, 2017",
+    "url": "https://cyberscoop.com/cryptocurrency-company-pushes-back-shadow-brokers-latest-claims/"
+   },
+   {
+    "label": "Boycat, 2025",
+    "url": "https://blog.boycat.io/posts/avoid-zcash-israeli-military-ties-pentagon-funding-privacy-warning"
+   }
+  ],
+  "debunk": {
+   "verdict": "The documented Israeli link is an academic collaboration and research-grant acknowledgement; the people involved have explained how it arose, and no evidence of Mossad or Unit 8200 direction has been produced.",
+   "points": [
+    "The Zerocash authors came from Technion, MIT, Johns Hopkins and Tel Aviv University, a mixed academic team rather than a single national group.",
+    "Green described the Israeli collaboration as arising after the first Zerocoin paper: \"we had met them at a conference,\" and the team used parts of their existing technology to build Zerocash.",
+    "The Israeli I-CORE program and Ministry of Science are listed alongside U.S., European, Russian and private funders, and Zooko Wilcox said none of these sponsors invested in or supported the Zcash company."
+   ],
+   "links": [
+    {
+     "label": "Zerocash paper, authors and acknowledgments, 2014",
+     "url": "http://zerocash-project.org/media/pdf/zerocash-extended-20140518.pdf"
+    },
+    {
+     "label": "CyberScoop, 2017",
+     "url": "https://cyberscoop.com/cryptocurrency-company-pushes-back-shadow-brokers-latest-claims/"
+    }
+   ]
+  }
+ },
+ {
+  "date": "2016-10",
+  "title": "The Ceremony's Toxic Waste Was Secretly Retained",
+  "kind": "UNRESOLVED TECHNICAL UNCERTAINTY",
+  "pool": null,
+  "height": null,
+  "brief": "Critics argued that one or more Sprout ceremony participants may have secretly retained setup secrets that could enable counterfeit ZEC.",
+  "people": [
+   "Zooko Wilcox",
+   "Peter Todd",
+   "Peter Van Valkenburgh",
+   "Edward Snowden / John Dobbertin",
+   "Andrew Miller",
+   "Derek Hinch / Moses Spears"
+  ],
+  "notes": [
+   [
+    "ORIGIN",
+    [
+     "Thread ZC-004. First public mention found: October 2016.",
+     "Proposed or popularized by: Trusted-setup critics across Bitcoin and privacy-coin communities."
+    ]
+   ],
+   [
+    "THE THEORY",
+    [
+     "Sprout required a multiparty trusted setup. If all required participants were compromised or colluded and enough secret setup material survived, forged proofs could theoretically enable counterfeiting. The ceremony was explicitly engineered so that destroying even one honest participant's contribution would prevent reconstruction of the toxic waste."
+    ]
+   ],
+   [
+    "DEEPER",
+    [
+     "This is one of the few long-running Zcash suspicions whose core hypothetical risk was real by design, while the allegation of actual compromise remains unsupported. The toxic waste would not have been a wallet master key or universal privacy-decryption key; its relevant danger was counterfeit-proof generation. Later Halo/Orchard designs removed the trusted-setup requirement for the newer pool."
+    ]
+   ],
+   [
+    "WHAT IS DOCUMENTED",
+    [
+     "The 2016 Sprout ceremony used six participants and depended on at least one participant honestly destroying secret material. No evidence has surfaced that the toxic waste was reconstructed or used."
+    ]
+   ]
+  ],
+  "related": [
+   "The Ceremony's Common Software Was the Real Backdoor",
+   "Missing MPC Transcripts Mean the Ceremony Could Not Be Independently Verified",
+   "The Sprout Counterfeit Bug Was Exploited and Hidden"
+  ],
+  "links": [
+   {
+    "label": "IEEE Spectrum ceremony account",
+    "url": "https://spectrum.ieee.org/the-crazy-security-behind-the-birth-of-zcash"
+   },
+   {
+    "label": "Peter Todd's ceremony write-up",
+    "url": "https://petertodd.org/2016/cypherpunk-desert-bus-zcash-trusted-setup-ceremony"
+   },
+   {
+    "label": "OpenZcash ceremony history",
+    "url": "https://openzcash.org/ceremony/road"
+   },
+   {
+    "label": "Trusted-setup retrospective",
+    "url": "https://blofin.com/academy/education/zcash/zcash-trusted-setup-explained"
+   }
+  ]
+ },
+ {
+  "date": "2016-10",
+  "title": "The Ceremony's Common Software Was the Real Backdoor",
+  "kind": "DISPUTED INTERPRETATION",
+  "pool": null,
+  "height": null,
+  "brief": "Peter Todd argued that common setup software and build artifacts could undermine the independence of physically separated ceremony participants.",
+  "people": [
+   "Peter Todd",
+   "Zooko Wilcox",
+   "ceremony participants",
+   "NCC Group"
+  ],
+  "notes": [
+   [
+    "ORIGIN",
+    [
+     "Thread ZC-005. First public mention found: October 2016.",
+     "Proposed or popularized by: Peter Todd."
+    ]
+   ],
+   [
+    "THE THEORY",
+    [
+     "Todd argued that the deterministic-build process and common software image represented a possible single point of failure and initially lacked sufficient independent audit. In his threat model, compromising software used by every participant could undercut the protection gained from geographically separating operators. That is a legitimate security concern, not proof that compromise actually occurred."
+    ]
+   ],
+   [
+    "DEEPER",
+    [
+     "This theory is more technically specific than the generic toxic-waste claim (see “The Ceremony's Toxic Waste Was Secretly Retained”). It asks whether the implementation could have made apparently independent ceremony contributions non-independent. Todd was deliberately invited as a skeptic and documented extreme measures to reduce his own risk, including obtaining equipment and destroying it after the event."
+    ]
+   ],
+   [
+    "WHAT IS DOCUMENTED",
+    [
+     "Todd publicly criticized the build/audit situation; the ceremony relied on common software and artifacts; the event was extensively documented. No evidence located here demonstrates that the software was maliciously compromised."
+    ]
+   ]
+  ],
+  "related": [
+   "The Ceremony's Toxic Waste Was Secretly Retained",
+   "Missing MPC Transcripts Mean the Ceremony Could Not Be Independently Verified"
+  ],
+  "links": [
+   {
+    "label": "Peter Todd, Cypherpunk Desert Bus",
+    "url": "https://petertodd.org/2016/cypherpunk-desert-bus-zcash-trusted-setup-ceremony"
+   },
+   {
+    "label": "IEEE Spectrum",
+    "url": "https://spectrum.ieee.org/the-crazy-security-behind-the-birth-of-zcash"
+   }
+  ]
+ },
+ {
+  "date": "2016-11",
+  "title": "Founders' Reward / Slow Start Was an Insider Price Scheme",
+  "kind": "DOCUMENTED BASIS / SPECULATIVE CONCLUSION",
+  "pool": null,
+  "height": null,
+  "brief": "Critics claimed the slow-start issuance, extreme opening prices and Founders' Reward were deliberately structured to enrich insiders.",
+  "people": [
+   "Zooko Wilcox",
+   "ECC / Zcash Company",
+   "early investors",
+   "founders",
+   "miners",
+   "Founders' Reward recipients"
+  ],
+  "notes": [
+   [
+    "ORIGIN",
+    [
+     "Thread ZC-006. First public mention found: November 2016.",
+     "Proposed or popularized by: Early Zcash forum users and launch critics."
+    ]
+   ],
+   [
+    "THE THEORY",
+    [
+     "Zcash launched without an ICO or premine but used a slow-start mining schedule and diverted 20% of block subsidy during its first four years to Founders' Reward recipients, amounting to 2.1 million ZEC or 10% of eventual supply. Extremely low initial float produced spectacular quoted exchange prices. Critics interpreted the structure as deliberate price manipulation or an insider extraction mechanism."
+    ]
+   ],
+   [
+    "DEEPER",
+    [
+     "The economic structure itself was disclosed before launch. What remains speculative is the claim that the slow start was chosen to manufacture a pump rather than to reduce launch/security risk, or that insiders coordinated exchange-market manipulation. Later arguments about the Dev Fund (see “The Dev Fund Is a Perpetual Insider Funding Cartel”) often reuse the same history as evidence that a permanent insider funding class was intended from the beginning."
+    ]
+   ],
+   [
+    "WHAT IS DOCUMENTED",
+    [
+     "The Founders' Reward was real; early issuance was deliberately slow; ZEC briefly traded at extraordinary prices in thin markets; recipients included founders, employees, advisers, investors and organizations."
+    ]
+   ]
+  ],
+  "related": [
+   "The Dev Fund Is a Perpetual Insider Funding Cartel",
+   "The 2025 Rally Was a Coordinated VC / Influencer Pump-and-Dump"
+  ],
+  "links": [
+   {
+    "label": "Founders Reward is a scam going on?: Zcash Forum, 2016",
+    "url": "https://forum.zcashcommunity.com/t/founders-reward-is-a-scam-going-on/9036"
+   },
+   {
+    "label": "Zcash will not survive: forum, 2016",
+    "url": "https://forum.zcashcommunity.com/t/zcash-will-not-survive/8057"
+   },
+   {
+    "label": "SEC Zcash Trust filing describing Founders' Reward",
+    "url": "https://www.sec.gov/Archives/edgar/data/1720265/000119312526354794/zec_s-3_amendment_4.htm"
+   },
+   {
+    "label": "Zcash Stats: Founders' Reward",
+    "url": "https://zecstats.com/founders-reward"
+   }
+  ],
+  "debunk": {
+   "verdict": "Both mechanisms were publicly disclosed months before launch with stated safety and anti-dumping rationales, and ECC warned in advance that slow-start scarcity could cause price volatility; no evidence of coordinated insider manipulation has been documented.",
+   "points": [
+    "The Founders' Reward was announced by Zooko Wilcox in February 2016: 20% of newly created ZEC for the first four years, totalling 10% of supply, paid out per block so founders have \"limited ability to pump-and-dump.\"",
+    "The slow start was announced in June 2016 to limit the \"race to start\" by keeping rewards low just after launch, and ECC later added that it would minimize the impact of a major bug or vulnerability early on.",
+    "Two weeks before launch, ECC warned that \"increased scarcity at the start of Sprout may be a cause for price volatility\" and told users to \"never invest what you can't afford to lose.\""
+   ],
+   "links": [
+    {
+     "label": "Zooko Wilcox, Funding, Incentives, and Governance, 2016",
+     "url": "https://zodl.com/funding/"
+    },
+    {
+     "label": "ECC, New Alpha Release: Mining Slow Start, 2016",
+     "url": "https://zodl.com/new-alpha-release-mining-slow-start/"
+    },
+    {
+     "label": "ECC, Slow-Start Mining & Mining Ecosystem, 2016",
+     "url": "https://zodl.com/slow-start-and-mining-ecosystem/"
+    }
+   ]
+  }
+ },
+ {
+  "date": "2017-05-12",
+  "title": "Too Traceable for WannaCry Means Zcash Has a Police Backdoor",
+  "kind": "DISPUTED INTERPRETATION",
+  "pool": null,
+  "height": null,
+  "brief": "Zooko's statement that Zcash could be made “too traceable for criminals like WannaCry” became evidence, for critics, of a hidden tracing mechanism.",
+  "people": [
+   "Zooko Wilcox",
+   "Matthew Green",
+   "WannaCry operators",
+   "law enforcement",
+   "exchanges"
+  ],
+  "notes": [
+   [
+    "ORIGIN",
+    [
+     "Thread ZC-007. First public mention found: May 12, 2017.",
+     "Proposed or popularized by: Zooko Wilcox's tweet, then privacy-coin critics."
+    ]
+   ],
+   [
+    "THE THEORY",
+    [
+     "The quote is one of the most reused pieces of anti-Zcash evidence online. Defenders argued that the surrounding context referred to criminals' interactions with regulated exchanges and other operational mistakes, not decrypting shielded transactions. Critics connected it to Matthew Green's older Zerocoin “back door” comment (see “The Zerocoin Police Backdoor”)."
+    ]
+   ],
+   [
+    "DEEPER",
+    [
+     "Nothing in the tweet itself identifies a secret cryptographic mechanism. Zcash supports user-controlled selective disclosure and transparent transactions, both of which can make real-world tracing possible without breaking shielded cryptography. Later heuristic research likewise showed that poor usage patterns can leak information while fully shielded cryptography remains intact."
+    ]
+   ],
+   [
+    "WHAT IS DOCUMENTED",
+    [
+     "Zooko made the statement; transparent Zcash activity is traceable; shielded users can selectively disclose. A universal law-enforcement decryption key has not been publicly demonstrated."
+    ]
+   ]
+  ],
+  "related": [
+   "The Zerocoin Police Backdoor",
+   "Shadow Brokers: U.S. Government + Israel Are Behind Zcash",
+   "AlphaBay Was Taken Down Because Zcash Was a Honeypot",
+   "The Modern Israeli / U.S. Intelligence Honeypot"
+  ],
+  "links": [
+   {
+    "label": "Zcash Forum discussion",
+    "url": "https://forum.z.cash/t/defenders-of-the-zec/19622"
+   },
+   {
+    "label": "RUSI paper citing the tweet",
+    "url": "https://cointhinktank.com/upload/RUSI%202019%20-%20Preventing%20Criminal%20Abuse%20of%20cryptocurrencies.pdf"
+   },
+   {
+    "label": "Hacker News discussion",
+    "url": "https://news.ycombinator.com/item?id=15369670"
+   },
+   {
+    "label": "Kosher Cash archive/context",
+    "url": "https://kosher.cash/"
+   }
+  ],
+  "debunk": {
+   "verdict": "No tracing backdoor has ever been shown in Zcash's open-source code, and both Zooko and Matthew Green publicly denied that any such weakness exists or would be built.",
+   "points": [
+    "Three days after the WannaCry tweet, Zooko wrote: \"the Zcash Co will never endanger our users by building in a weakness. Any such weakness could be exploited to harm innocent users.\"",
+    "Zerocash co-author Matthew Green said deliberately weakened privacy \"is absolutely not included in ZCash,\" adding that because the code and design are fully open source \"this is easily verifiable, and plenty of people have looked.\"",
+    "The disclosure tool Zcash does have, viewing keys, is controlled by the user: ECC states \"There is no central authority that controls access to viewing keys\" and no one can get one without the holder's participation.",
+    "The official Zcash site states: \"Zcash does not contain a backdoor, it has never contained a backdoor, and it never will.\""
+   ],
+   "links": [
+    {
+     "label": "Zooko Wilcox on X, May 16 2017 (via fxtwitter)",
+     "url": "https://x.com/zooko/status/864341289374023680"
+    },
+    {
+     "label": "Matthew Green on Hacker News, 2017",
+     "url": "https://news.ycombinator.com/item?id=15369670"
+    },
+    {
+     "label": "ECC, Explaining viewing keys, 2020",
+     "url": "https://zodl.com/explaining-viewing-keys-2/"
+    },
+    {
+     "label": "z.cash, Does Zcash contain a backdoor?",
+     "url": "https://z.cash/learn/does-zcash-contain-a-backdoor/"
+    }
+   ]
+  }
+ },
+ {
+  "date": "2017-05-22",
+  "title": "JPMorgan Partnership Proves Bank / Establishment Capture",
+  "kind": "DOCUMENTED BASIS / SPECULATIVE CONCLUSION",
+  "pool": null,
+  "height": null,
+  "brief": "JPMorgan's use of Zcash privacy technology was interpreted by critics as proof that Zcash was a bank-friendly controlled privacy system.",
+  "people": [
+   "JPMorgan Chase",
+   "Zcash Company / ZECC",
+   "Zooko Wilcox",
+   "Quorum developers"
+  ],
+  "notes": [
+   [
+    "ORIGIN",
+    [
+     "Thread ZC-008. First public mention found: May 22, 2017.",
+     "Proposed or popularized by: Crypto commentators reacting to the JPMorgan/Zcash technology partnership."
+    ]
+   ],
+   [
+    "THE THEORY",
+    [
+     "JPMorgan publicly partnered with the Zcash Company to integrate zero-knowledge privacy technology into Quorum. Critics treated cooperation with a major bank as evidence of a compliance backdoor or institutional-finance influence over Zcash. The published arrangement was a technology collaboration involving open-source cryptography, not a purchase of the Zcash network or ownership stake in it."
+    ]
+   ],
+   [
+    "DEEPER",
+    [
+     "The partnership is historically important because it helped cement Zcash's unusual position: technology used by cypherpunks while also being attractive to regulated financial institutions. That ambiguity later fed the fake JPM Coin/ZEC merger rumor (see “The JPM Coin/ZEC Merger / Silver-Backed Leak”)."
+    ]
+   ],
+   [
+    "WHAT IS DOCUMENTED",
+    [
+     "JPMorgan really collaborated with the Zcash Company on privacy technology for Quorum; this does not establish control over Zcash consensus or a hidden backdoor."
+    ]
+   ]
+  ],
+  "related": [
+   "The JPM Coin/ZEC Merger / Silver-Backed Leak",
+   "Zcash Is Really a Centralized Company Disguised as a Network"
+  ],
+  "links": [
+   {
+    "label": "Forbes, May 22 2017",
+    "url": "https://www.forbes.com/sites/laurashin/2017/05/22/jpmorgan-chase-to-integrate-zcash-technology-to-its-enterprise-blockchain-platform/"
+   },
+   {
+    "label": "Zcash Forum discussion",
+    "url": "https://forum.zcashcommunity.com/t/jpmorgan-joins-zcash/16087"
+   }
+  ],
+  "debunk": {
+   "verdict": "The JPMorgan deal applied open-source Zcash-derived privacy tech to JPMorgan's own separate Ethereum-based Quorum chain; it did not touch the Zcash network or give JPMorgan a stake in it.",
+   "points": [
+    "Contemporary reporting describes the arrangement as integrating ZSL (a zero-knowledge security layer) into Quorum, an Ethereum-based enterprise platform, not the public Zcash blockchain; it discloses no JPMorgan investment in the Zcash Company.",
+    "ECC's October 2017 announcement describes ZSL as integrated into \"J.P. Morgan's enterprise, smart contract blockchain platform\" and released as open source software that anyone could download and evaluate.",
+    "The \"regulatory disclosure\" support mentioned in the announcement was a feature of the Quorum deployment for JPMorgan's financial applications, so it is not evidence of a compliance mechanism inside Zcash itself."
+   ],
+   "links": [
+    {
+     "label": "CoinDesk, May 22 2017",
+     "url": "https://www.coindesk.com/markets/2017/05/22/jpmorgan-partners-with-zcash-on-blockchain-security"
+    },
+    {
+     "label": "ECC, ZSL on J.P. Morgan's Quorum, 2017",
+     "url": "https://zodl.com/jpm-quorum-integration/"
+    }
+   ]
+  }
+ },
+ {
+  "date": "2017-06-01",
+  "title": "Shadow Brokers: U.S. Government + Israel Are Behind Zcash",
+  "kind": "DOCUMENTED BASIS / SPECULATIVE CONCLUSION",
+  "pool": null,
+  "height": null,
+  "brief": "The NSA-exploit-leaking group explicitly highlighted Zcash's government-research and Israeli academic connections while questioning why the U.S. government would “sponsor” a privacy coin.",
+  "people": [
+   "Shadow Brokers",
+   "Zooko Wilcox",
+   "Matthew Green",
+   "DARPA",
+   "AFRL",
+   "Office of Naval Research",
+   "Israeli research institutions"
+  ],
+  "notes": [
+   [
+    "ORIGIN",
+    [
+     "Thread ZC-009. First public mention found: June 1, 2017.",
+     "Proposed or popularized by: The Shadow Brokers."
+    ]
+   ],
+   [
+    "THE THEORY",
+    [
+     "Shadow Brokers asked why the U.S. government was “sponsoring” a privacy version of Bitcoin and pointed to DARPA, DOD/academic and Israeli ties. The insinuation was that the relationships were suspicious and perhaps meant Zcash was unsafe or government-connected. Their use of ZEC at the same time demonstrated that the group considered its privacy properties useful enough for payment."
+    ]
+   ],
+   [
+    "DEEPER",
+    [
+     "This is historically important because it fused the older funding theory (see “DARPA / U.S. Military Created Zcash”) and Israeli-origin theory (see “Israeli-Government / Intelligence Origins”) into a single adversarial-intelligence narrative. CyberScoop interviewed Zooko Wilcox, Matthew Green and DARPA, who distinguished academic grant acknowledgements from direct Zcash-company backing."
+    ]
+   ],
+   [
+    "WHAT IS DOCUMENTED",
+    [
+     "Zerocash acknowledged defense and Israeli research funding; Shadow Brokers used or requested ZEC; Zcash Company investors were separate from those grant agencies."
+    ]
+   ]
+  ],
+  "related": [
+   "DARPA / U.S. Military Created Zcash",
+   "Israeli-Government / Intelligence Origins",
+   "Too Traceable for WannaCry Means Zcash Has a Police Backdoor",
+   "The Modern Israeli / U.S. Intelligence Honeypot"
+  ],
+  "links": [
+   {
+    "label": "CyberScoop, June 1 2017",
+    "url": "https://cyberscoop.com/cryptocurrency-company-pushes-back-shadow-brokers-latest-claims/"
+   },
+   {
+    "label": "Emptywheel analysis",
+    "url": "https://emptywheel.net/2017/06/01/why-did-shadow-brokers-switch-crypto-currencies-to-not-make-money-with/"
+   },
+   {
+    "label": "Zcash Forum thread",
+    "url": "https://forum.zcashcommunity.com/t/this-is-why-people-will-start-moving-to-zec/16387"
+   }
+  ],
+  "debunk": {
+   "verdict": "The government links Shadow Brokers cited were academic research grants acknowledged in papers years earlier; Zcash's founders and DARPA itself said no agency funded Zerocash or holds a stake in the Zcash company.",
+   "points": [
+    "Matthew Green told CyberScoop: \"DARPA did not fund us to make Zerocash, and neither did the Office of Naval Research,\" explaining that listing sponsors in academic papers is standard acknowledgment of researchers' general grants.",
+    "DARPA's media chief said its PROCEED program (FY10 to FY14, led by Georgia Tech) may have had subcontractors who contributed research, but DARPA did not specifically fund Zerocash development.",
+    "Zooko said government agencies \"don't have any financial stake in the company\" and that there was no financial backing beyond what the company had published.",
+    "Emptywheel's contemporary analysis likewise relays Green's explanation that the agencies funded individual researchers, not this project."
+   ],
+   "links": [
+    {
+     "label": "CyberScoop, June 1 2017",
+     "url": "https://cyberscoop.com/cryptocurrency-company-pushes-back-shadow-brokers-latest-claims/"
+    },
+    {
+     "label": "Emptywheel, June 1 2017",
+     "url": "https://emptywheel.net/2017/06/01/why-did-shadow-brokers-switch-crypto-currencies-to-not-make-money-with/"
+    }
+   ]
+  }
+ },
+ {
+  "date": "2017-07",
+  "title": "AlphaBay Was Taken Down Because Zcash Was a Honeypot",
+  "kind": "UNSUPPORTED / FALSE",
+  "pool": null,
+  "height": null,
+  "brief": "AlphaBay's shutdown soon after adding or planning Zcash support prompted claims that Zcash contained a tracing backdoor or was a law-enforcement trap.",
+  "people": [
+   "AlphaBay",
+   "Alexandre Cazes",
+   "FBI",
+   "DEA",
+   "Thai authorities",
+   "Zooko Wilcox"
+  ],
+  "notes": [
+   [
+    "ORIGIN",
+    [
+     "Thread ZC-010. First public mention found: July 2017.",
+     "Proposed or popularized by: Bitcointalk and privacy-coin users after AlphaBay announced Zcash support immediately before its takedown."
+    ]
+   ],
+   [
+    "THE THEORY",
+    [
+     "The timing generated immediate “coincidence?” posts, with some users directly connecting the takedown to Zooko's WannaCry traceability comment (see “Too Traceable for WannaCry Means Zcash Has a Police Backdoor”). Subsequent court records and investigative reporting describe a much broader international investigation, operational-security failures, device seizure, servers and cryptocurrency evidence. They do not establish that Zcash cryptography exposed AlphaBay."
+    ]
+   ],
+   [
+    "DEEPER",
+    [
+     "The DOJ forfeiture complaint listed roughly 3,691.98 ZEC among Alexandre Cazes' seized assets, alongside extensive Bitcoin, Ethereum and Monero holdings. The theory's stronger claim (that shielded Zcash or a secret backdoor led investigators to Cazes) remains unsupported by the available investigative record."
+    ]
+   ],
+   [
+    "WHAT IS DOCUMENTED",
+    [
+     "AlphaBay did move toward Zcash support; Cazes held ZEC; the takedown followed soon after. Timing alone does not establish that Zcash caused his identification."
+    ]
+   ]
+  ],
+  "related": [
+   "Too Traceable for WannaCry Means Zcash Has a Police Backdoor",
+   "Shadow Brokers: U.S. Government + Israel Are Behind Zcash"
+  ],
+  "links": [
+   {
+    "label": "Bitcointalk: ZCash added on AlphaBay",
+    "url": "https://bitcointalk.org/index.php?topic=1987992.0%3Ball"
+   },
+   {
+    "label": "DOJ forfeiture complaint",
+    "url": "https://www.justice.gov/d9/press-releases/attachments/2017/07/20/alphabay-cazes_forfeiture_complaint.pdf"
+   },
+   {
+    "label": "WIRED AlphaBay investigation",
+    "url": "https://www.wired.com/story/alphabay-series-part-5-takedown"
+   },
+   {
+    "label": "RAND review of Zcash illicit-use evidence",
+    "url": "https://www.rand.org/content/dam/rand/pubs/research_reports/RR4400/RR4418/RAND_RR4418.pdf"
+   }
+  ],
+  "debunk": {
+   "verdict": "The DOJ's own complaint shows Cazes was identified through a personal Hotmail address in AlphaBay's 2014 emails and caught with an unlocked laptop; his ZEC was seized using private keys found on that computer, not by tracing Zcash.",
+   "points": [
+    "The forfeiture complaint states that in December 2016 investigators learned Cazes' personal email, \"Pimp_Alex_91@hotmail.com,\" was in the header of AlphaBay's welcome and password-reset emails from December 2014, before Zcash launched, and tied it to him via PayPal, LinkedIn and a 2008 forum post.",
+    "At his arrest the laptop was found \"open and in an unencrypted state,\" logged into AlphaBay's servers as \"Admin,\" with open text files holding the site's passwords.",
+    "The roughly 3,691.98 ZEC was seized after agents found a text file listing his offline wallet addresses with their private keys, and was moved to a transparent t1 government address, the same method used for his Bitcoin and Ethereum.",
+    "Press coverage of the identification (Daily Dot) attributes it to the Hotmail address and makes no mention of Zcash."
+   ],
+   "links": [
+    {
+     "label": "DOJ forfeiture complaint, US v. Cazes, 2017",
+     "url": "https://www.justice.gov/d9/press-releases/attachments/2017/07/20/alphabay-cazes_forfeiture_complaint.pdf"
+    },
+    {
+     "label": "Daily Dot, 2017",
+     "url": "https://dailydot.com/alphabays-alleged-kingpin-outed-use-mens-rights-forum"
+    }
+   ]
+  }
+ },
+ {
+  "date": "2018-10-18",
+  "title": "Missing MPC Transcripts Mean the Ceremony Could Not Be Independently Verified",
+  "kind": "DISPUTED INTERPRETATION",
+  "pool": null,
+  "height": null,
+  "brief": "Peter Todd argued that missing or unavailable ceremony transcript files prevented outsiders from independently verifying the published setup history.",
+  "people": [
+   "Peter Todd",
+   "Zcash Foundation",
+   "Zcash Company",
+   "ceremony participants"
+  ],
+  "notes": [
+   [
+    "ORIGIN",
+    [
+     "Thread ZC-011. First public mention found: October 18, 2018.",
+     "Proposed or popularized by: Peter Todd."
+    ]
+   ],
+   [
+    "THE THEORY",
+    [
+     "Todd publicly complained that MPC transcript files had been unavailable for months and said that without them there was no way to fully verify that the claimed trusted-setup ceremony produced the live parameters. This is narrower than claiming the toxic waste was retained (see “The Ceremony's Toxic Waste Was Secretly Retained”): it is a transparency/verifiability complaint about public evidence."
+    ]
+   ],
+   [
+    "DEEPER",
+    [
+     "The claim was discussed on the Zcash Community Forum and amplified by privacy-coin critics. Missing artifacts at a particular time do not prove that the ceremony was fraudulent, but they weaken independent reproducibility until the relevant records are restored or otherwise verified."
+    ]
+   ],
+   [
+    "WHAT IS DOCUMENTED",
+    [
+     "Todd publicly made the complaint; ceremony artifacts and verification transcripts are central to independent audit."
+    ]
+   ]
+  ],
+  "related": [
+   "The Ceremony's Toxic Waste Was Secretly Retained",
+   "The Ceremony's Common Software Was the Real Backdoor"
+  ],
+  "links": [
+   {
+    "label": "Zcash Forum: Peter Todd's statement on trusted setup",
+    "url": "https://forum.zcashcommunity.com/t/peter-todd-s-statement-on-trusted-setup/31424"
+   }
+  ],
+  "debunk": {
+   "verdict": "Todd's complaint about the Sprout transcript was accurate at the time, but the transcript was restored about a month later and is publicly downloadable with a hash and a verifier, so the ceremony can be independently checked; the Sapling files were never missing.",
+   "points": [
+    "On November 19, 2018 forum user ebfull announced that the Sprout MPC protocol transcript and other assets had been restored; it had been deleted from S3 earlier that year and was recovered from participants' DVDs.",
+    "The zcash/mpc README gives the transcript download URL and SHA256 hash, and states that with the r1cs and transcript \"you can verify the protocol transcript and construct pk/vk within a few hours\" using the included verifier.",
+    "The Sprout ceremony files were also mirrored to the Internet Archive (8.3 GB, uploaded November 19, 2018).",
+    "In the original forum thread, a respondent noted the \"Sapling files aren't missing,\" so the gap concerned only the older Sprout ceremony."
+   ],
+   "links": [
+    {
+     "label": "Zcash Forum: Transcript from Sprout MPC restored, 2018",
+     "url": "https://forum.zcashcommunity.com/t/transcript-from-sprout-mpc-restored/31969"
+    },
+    {
+     "label": "GitHub zcash/mpc README",
+     "url": "https://github.com/zcash/mpc/blob/master/README.md"
+    },
+    {
+     "label": "Internet Archive: Zcash Sprout MPC, 2018",
+     "url": "https://archive.org/details/zcashfinalmpc"
+    },
+    {
+     "label": "Zcash Forum: Peter Todd's statement, 2018",
+     "url": "https://forum.zcashcommunity.com/t/peter-todd-s-statement-on-trusted-setup/31424"
+    }
+   ]
+  }
+ },
+ {
+  "date": "2019-02-05",
+  "title": "The Sprout Counterfeit Bug Was Exploited and Hidden",
+  "kind": "UNRESOLVED TECHNICAL UNCERTAINTY",
+  "pool": null,
+  "height": null,
+  "brief": "A real pre-Sapling counterfeiting flaw led to suspicion that someone had secretly minted ZEC during the months before public disclosure.",
+  "people": [
+   "Ariel Gabizon",
+   "Sean Bowe",
+   "Zooko Wilcox",
+   "Nathan Wilcox",
+   "ECC",
+   "Zcash Foundation"
+  ],
+  "notes": [
+   [
+    "ORIGIN",
+    [
+     "Thread ZC-012. First public mention found: February 5, 2019 public disclosure; bug discovered March 1, 2018.",
+     "Proposed or popularized by: Public reaction after ECC disclosed CVE-2019-7167."
+    ]
+   ],
+   [
+    "THE THEORY",
+    [
+     "The vulnerability was real and potentially catastrophic: an attacker could have forged proofs and created counterfeit ZEC that could be cryptographically undetectable if executed perfectly. ECC found the bug in March 2018, secretly fixed it in the October 2018 Sapling upgrade and disclosed it in February 2019. ECC found no evidence of exploitation, while the Zcash Foundation acknowledged that historical certainty was difficult while value remained in Sprout."
+    ]
+   ],
+   [
+    "DEEPER",
+    [
+     "This episode created the factual template reused after Orchard (see “The Orchard Counterfeiting Bug Had Already Been Exploited”): privacy can make evidence of a perfectly executed proof-system inflation attack difficult or impossible to recover from chain history alone. Zooko stated that a perfectly executed attack could be undetectable by cryptographic means, while scripts looked for common attacker mistakes and found none. Later turnstile designs were intended to bound or retrospectively expose inflation when migrating between pools."
+    ]
+   ],
+   [
+    "WHAT IS DOCUMENTED",
+    [
+     "The bug existed; remediation was intentionally secret until after activation; no evidence of exploitation was found; perfect historical exploitation could have been difficult or impossible to prove at the time."
+    ]
+   ]
+  ],
+  "related": [
+   "The Ceremony's Toxic Waste Was Secretly Retained",
+   "The 2026 Sprout Verification Bugs Were Used for Hidden Minting",
+   "The Orchard Counterfeiting Bug Had Already Been Exploited"
+  ],
+  "links": [
+   {
+    "label": "ECC security announcement",
+    "url": "https://z.cash/security-announcement-2019-02-05-cve-2019-7167/"
+   },
+   {
+    "label": "Fortune investigation",
+    "url": "https://fortune.com/2019/02/05/zcash-vulnerability-cryptocurrency/"
+   },
+   {
+    "label": "Zcash Foundation response",
+    "url": "https://zfnd.org/concerning-the-sprout-vulnerability-cve-2019-7167/"
+   },
+   {
+    "label": "Zooko on detectability",
+    "url": "https://forum.zcashcommunity.com/t/zcash-counterfeiting-vulnerability-successfully-remediated/32671/39"
+   },
+   {
+    "label": "Turnstile enforcement",
+    "url": "https://z.cash/turnstile-enforcement-against-counterfeiting/"
+   }
+  ]
+ },
+ {
+  "date": "2019-03-26",
+  "title": "The JPM Coin/ZEC Merger / Silver-Backed Leak",
+  "kind": "UNSUPPORTED / FALSE",
+  "pool": null,
+  "height": null,
+  "brief": "A viral “leak” claimed JPMorgan would merge JPM Coin with ZEC or create a silver-backed institutional arrangement.",
+  "people": [
+   "JPMorgan Chase",
+   "JPM Coin",
+   "Zcash",
+   "Daira-Emma Hopwood"
+  ],
+  "notes": [
+   [
+    "ORIGIN",
+    [
+     "Thread ZC-013. First public mention found: March 26, 2019.",
+     "Proposed or popularized by: Anonymous social-media image / rumor reposted to the Zcash forum."
+    ]
+   ],
+   [
+    "THE THEORY",
+    [
+     "The rumor appears to have piggybacked on the real 2017 Quorum partnership (see “JPMorgan Partnership Proves Bank / Establishment Capture”). Forum participants immediately questioned its mechanics, and Zcash protocol engineer Daira Hopwood called it “completely made up.” No supporting primary documentation was located."
+    ]
+   ],
+   [
+    "DEEPER",
+    [
+     "This is a useful example of a derivative conspiracy: a real institutional relationship provides scaffolding for a fabricated later deal. It should not be conflated with JPMorgan's genuine use of Zcash-developed privacy technology."
+    ]
+   ],
+   [
+    "WHAT IS DOCUMENTED",
+    [
+     "JPMorgan did collaborate with Zcash developers on Quorum; no verified ZEC/JPM Coin merger or silver-backing agreement emerged."
+    ]
+   ]
+  ],
+  "related": [
+   "JPMorgan Partnership Proves Bank / Establishment Capture"
+  ],
+  "links": [
+   {
+    "label": "Zcash Forum: True or fake Leak Zcash/JPMorgan?",
+    "url": "https://forum.zcashcommunity.com/t/true-or-fake-leak-zcash-jpmorgan/33029"
+   }
+  ],
+  "debunk": {
+   "verdict": "The leak was denied as fabricated by a Zcash protocol engineer, and JPM Coin as announced is a dollar-redeemable token on JPMorgan's own Quorum ledger with no Zcash or silver component.",
+   "points": [
+    "On the forum thread where the leak circulated, Zcash engineer Daira Hopwood replied on March 26, 2019: \"This is completely made up.\"",
+    "Contemporary coverage of the February 2019 JPM Coin announcement describes each coin as redeemable for $1, with reserves held by the bank, running on JPMorgan's Quorum blockchain.",
+    "Reporting on the announcement describes the system as based on U.S. dollars and makes no mention of Zcash, ZEC or silver backing."
+   ],
+   "links": [
+    {
+     "label": "Zcash Community Forum thread, 2019",
+     "url": "https://forum.zcashcommunity.com/t/true-or-fake-leak-zcash-jpmorgan/33029"
+    },
+    {
+     "label": "SiliconANGLE, 2019",
+     "url": "https://siliconangle.com/2019/02/14/jpmorgan-chase-enters-digital-currency-space-jpm-coin/"
+    },
+    {
+     "label": "Phys.org (AFP), 2019",
+     "url": "https://phys.org/news/2019-02-jpmorgan-unveils-cryptocurrency-prototype.html"
+    }
+   ]
+  }
+ },
+ {
+  "date": "2019",
+  "title": "The Dev Fund Is a Perpetual Insider Funding Cartel",
+  "kind": "GOVERNANCE ALLEGATION",
+  "pool": null,
+  "height": null,
+  "brief": "Critics argued that founders and affiliated organizations replaced the expiring Founders' Reward with a mechanism that permanently funded insiders.",
+  "people": [
+   "ECC",
+   "Zcash Foundation",
+   "Zcash Community Grants",
+   "Zooko Wilcox",
+   "Josh Cincinnati",
+   "governance-panel members",
+   "Founders' Reward recipients"
+  ],
+  "notes": [
+   [
+    "ORIGIN",
+    [
+     "Thread ZC-014. First public mention found: 2019 governance debates.",
+     "Proposed or popularized by: Zcash forum participants and critics of extending protocol funding."
+    ]
+   ],
+   [
+    "THE THEORY",
+    [
+     "The original Founders' Reward was scheduled to end in 2020. The community then debated and adopted a Dev Fund allocating part of block rewards to ECC, the Zcash Foundation and grants. Critics argued that people financially or professionally connected to the ecosystem also participated in governance, creating incentives to perpetuate their own funding."
+    ]
+   ],
+   [
+    "DEEPER",
+    [
+     "The factual dispute is about incentives and governance design, not a secret contract. Funding percentages, recipients, polling, ZIPs and governance-panel membership were public. Calling the arrangement a cartel or rigged process requires an additional claim of coordinated improper control that the public documentation alone does not establish."
+    ]
+   ],
+   [
+    "WHAT IS DOCUMENTED",
+    [
+     "Founders' Reward ended on schedule; ZIP 1014 created a new 20% development allocation for 2020-2024; governance participants included people with various Zcash ecosystem ties."
+    ]
+   ]
+  ],
+  "related": [
+   "Founders' Reward / Slow Start Was an Insider Price Scheme",
+   "Zcash Is Really a Centralized Company Disguised as a Network",
+   "Zcash Foundation Board Capture / Undisclosed Conflicts"
+  ],
+  "links": [
+   {
+    "label": "Foundation governance-panel conflict discussion",
+    "url": "https://forum.zcashcommunity.com/t/proposal-possible-changes-in-the-foundation-governance/34104"
+   },
+   {
+    "label": "2018 Form 990 / governance dispute",
+    "url": "https://forum.zcashcommunity.com/t/2018-form-990/34510"
+   },
+   {
+    "label": "SEC filing summarizing Dev Fund history",
+    "url": "https://www.sec.gov/Archives/edgar/data/1720265/000119312526354794/zec_s-3_amendment_4.htm"
+   }
+  ],
+  "debunk": {
+   "verdict": "The Dev Fund was time-limited with public conflict-of-interest rules, and since November 2024 neither ECC nor the Zcash Foundation receives any block reward, so the \"perpetual insider funding\" claim does not hold.",
+   "points": [
+    "ZIP 1014 limited the 20% Dev Fund to the period from the 2020 halving to the 2024 halving, required quarterly and annual financial reports, barred ZF board members from ECC equity or business ties, and made BP, ECC and ZF ineligible for Major Grants.",
+    "When it expired, ZIP 1015 sent 12% of the subsidy to a lockbox with no disbursement mechanism and 8% to Zcash Community Grants; ECC wrote that with NU6 (November 2024) its address is no longer embedded in the protocol.",
+    "ZIP 1016 (NU6.1, activated November 24, 2025) also gives no direct allocation to ECC or ZF: 12% goes to a coinholder-controlled fund where \"Coinholders are not obligated to fund any grants and MAY leave the funds at rest\", ending at the third halving."
+   ],
+   "links": [
+    {
+     "label": "ZIP 1014: Dev Fund Proposal and Governance",
+     "url": "https://zips.z.cash/zip-1014"
+    },
+    {
+     "label": "ZIP 1015: Block Subsidy Allocation for Non-Direct Development Funding",
+     "url": "https://zips.z.cash/zip-1015"
+    },
+    {
+     "label": "ECC: Zcash Halvening and NU6, 2024",
+     "url": "https://zodl.com/zcash-halvening-nu6-embracing-the-new-dev-fund/"
+    },
+    {
+     "label": "ZIP 1016: Community and Coinholder Funding Model",
+     "url": "https://zips.z.cash/zip-1016"
+    }
+   ]
+  }
+ },
+ {
+  "date": "2019",
+  "title": "Zcash Is Really a Centralized Company Disguised as a Network",
+  "kind": "DISPUTED INTERPRETATION",
+  "pool": null,
+  "height": null,
+  "brief": "Critics claimed that ECC's historic dominance of core development meant Zcash functioned more like a company-controlled product than a decentralized cryptocurrency.",
+  "people": [
+   "Peter Todd",
+   "Peter McCormack",
+   "Zooko Wilcox",
+   "ECC",
+   "Zcash Foundation"
+  ],
+  "notes": [
+   [
+    "ORIGIN",
+    [
+     "Thread ZC-015. First public mention found: 2019-era public criticism; roots go back to launch.",
+     "Proposed or popularized by: Peter Todd and other decentralization critics."
+    ]
+   ],
+   [
+    "THE THEORY",
+    [
+     "Peter Todd publicly described Zcash as “effectively” a company and criticized its centralized development structure. The factual core is that ECC historically employed many core developers and produced the dominant zcashd releases, while the Zcash Foundation and later independent teams gradually diversified implementation and governance. The disputed leap is treating influence as equivalent to unilateral protocol control."
+    ]
+   ],
+   [
+    "DEEPER",
+    [
+     "This theory became especially relevant again during emergency upgrades (see “The Orchard Emergency Freeze Proves a Developer Kill Switch”), when critics argued that rapid ecosystem coordination demonstrated hidden central control. In practice, a software team can propose and ship code, while consensus changes still require deployment by miners/nodes and broader ecosystem adoption; this differs from an administrator key."
+    ]
+   ],
+   [
+    "WHAT IS DOCUMENTED",
+    [
+     "ECC historically had outsized development influence; Zcash later gained Zebra, Foundation governance, independent development teams and multiple organizational centers."
+    ]
+   ]
+  ],
+  "related": [
+   "JPMorgan Partnership Proves Bank / Establishment Capture",
+   "The Dev Fund Is a Perpetual Insider Funding Cartel",
+   "Zcash Foundation Board Capture / Undisclosed Conflicts",
+   "The Orchard Emergency Freeze Proves a Developer Kill Switch"
+  ],
+  "links": [
+   {
+    "label": "Transcript archive quoting Peter Todd",
+    "url": "https://rosenbaum.se/btcphil/sources/sources.html"
+   },
+   {
+    "label": "SEC filing on development/governance history",
+    "url": "https://www.sec.gov/Archives/edgar/data/1720265/000119312526104253/zcsh-20251231.htm"
+   }
+  ],
+  "debunk": {
+   "verdict": "ECC's early dominance is real, but today the network runs on node software from a different organization, ECC gets no protocol funding, and the network kept running after the whole ECC team left in 2026, which is not consistent with company control.",
+   "points": [
+    "ECC's zcashd node is deprecated and reached its automatic End-of-Support halt on July 18, 2026 at block height 3417100; its own documentation tells users to migrate to Zebra, the Zcash Foundation's Rust full node.",
+    "Since NU6 (November 2024), ECC's address is no longer embedded in the protocol and receives no block reward.",
+    "When the entire ECC team left the company in January 2026 after a dispute with the Bootstrap board, reporting noted the protocol itself was unaffected."
+   ],
+   "links": [
+    {
+     "label": "zcashd Book: End of Life, 2026",
+     "url": "https://zcash.github.io/zcash/user/end-of-life.html"
+    },
+    {
+     "label": "Zebra GitHub repository (Zcash Foundation)",
+     "url": "https://github.com/ZcashFoundation/zebra"
+    },
+    {
+     "label": "ECC: Zcash Halvening and NU6, 2024",
+     "url": "https://zodl.com/zcash-halvening-nu6-embracing-the-new-dev-fund/"
+    },
+    {
+     "label": "Decrypt, 2026",
+     "url": "https://decrypt.co/353948/zcash-plunges-double-digits-after-ecc-team-constructively-discharged"
+    }
+   ]
+  }
+ },
+ {
+  "date": "2020-07",
+  "title": "A Shielded Transaction Was Traced, Therefore Zcash Privacy Was Cracked",
+  "kind": "DISPUTED INTERPRETATION",
+  "pool": null,
+  "height": null,
+  "brief": "A public tracing challenge was framed by some observers as proof that Zcash's shielded cryptography had been broken.",
+  "people": [
+   "MoneyKnowledge0",
+   "Brian Deep",
+   "George Kappos",
+   "Haaroon Yousaf",
+   "Sarah Meiklejohn",
+   "Mary Maller"
+  ],
+  "notes": [
+   [
+    "ORIGIN",
+    [
+     "Thread ZC-016. First public mention found: July 2020.",
+     "Proposed or popularized by: Social-media challenge participants and resulting press coverage."
+    ]
+   ],
+   [
+    "THE THEORY",
+    [
+     "The traced flow exposed a recurring distinction between breaking zk-SNARK privacy and inferring user activity from transparent legs, timing, amounts or usage patterns. Academic research had already shown that users could shrink their anonymity sets through recognizable behavior. That does not mean the cryptography of a fully shielded transaction was decrypted."
+    ]
+   ],
+   [
+    "DEEPER",
+    [
+     "The conspiracy-adjacent version says analytics companies or governments possess a secret method to see inside the shielded pool. Public examples generally rely on metadata, transparent transactions, known exchange endpoints or heuristic linkage rather than extracting hidden sender/recipient/amount data from a correctly shielded transaction."
+    ]
+   ],
+   [
+    "WHAT IS DOCUMENTED",
+    [
+     "Zcash can be used privately; users can leak information through transaction patterns and transparent interactions; academic papers document effective heuristics."
+    ]
+   ]
+  ],
+  "related": [
+   "Arkham Tracked 53%, Therefore Shielded Zcash Is Broken"
+  ],
+  "links": [
+   {
+    "label": "Crypto Briefing tracing challenge",
+    "url": "https://cryptobriefing.com/zcash-privacy-back-question-user-traces-shielded-transaction/"
+   },
+   {
+    "label": "An Empirical Analysis of Anonymity in Zcash",
+    "url": "https://arxiv.org/abs/1805.03180"
+   },
+   {
+    "label": "Investigating transactions in cryptocurrencies",
+    "url": "https://arxiv.org/abs/2203.14684"
+   }
+  ],
+  "debunk": {
+   "verdict": "The 2020 trace used the transparent address that funded the shielded address plus transaction timing, not any break of the zk-SNARK cryptography.",
+   "points": [
+    "Crypto Briefing reported that the tracer identified the transparent address used to fund the shielded address, and that the transaction \"was easy to trace\" because the user made each transaction over a very short period.",
+    "The tracer's advice was operational (split funds, wait longer between transactions), and Zooko Wilcox said privacy comes from \"where you store your money at rest\", not from passing money through the pool.",
+    "The academic study cited by the theory concludes \"it is possible to use Zcash in a private way\" and that the anonymity set can shrink through \"simple heuristics based on identifiable patterns of usage\", meaning user behavior, not decryption."
+   ],
+   "links": [
+    {
+     "label": "Crypto Briefing, 2020",
+     "url": "https://cryptobriefing.com/zcash-privacy-back-question-user-traces-shielded-transaction/"
+    },
+    {
+     "label": "Kappos et al., An Empirical Analysis of Anonymity in Zcash, 2018",
+     "url": "https://arxiv.org/abs/1805.03180"
+    }
+   ]
+  }
+ },
+ {
+  "date": "2022-04-27",
+  "title": "Snowden's Ceremony Role Proves Intelligence / Controlled-Op Involvement",
+  "kind": "DOCUMENTED BASIS / SPECULATIVE CONCLUSION",
+  "pool": null,
+  "height": null,
+  "brief": "Snowden's secret participation in the 2016 setup, combined with his former CIA/NSA work, was used as evidence of an intelligence connection or “controlled opposition.”",
+  "people": [
+   "Edward Snowden / John Dobbertin",
+   "Zooko Wilcox",
+   "Peter Todd",
+   "ceremony participants",
+   "NSA",
+   "CIA"
+  ],
+  "notes": [
+   [
+    "ORIGIN",
+    [
+     "Thread ZC-017. First public mention found: April 27-30, 2022.",
+     "Proposed or popularized by: Social-media and Reddit critics after Edward Snowden was revealed as “John Dobbertin”."
+    ]
+   ],
+   [
+    "THE THEORY",
+    [
+     "Edward Snowden really was the pseudonymous sixth participant in the 2016 Sprout ceremony. He said he participated as a public-interest contribution, was not paid and held no stake. Critics already viewing Zcash through the military-funding narrative (see “DARPA / U.S. Military Created Zcash”) treated his presence as confirmation rather than as an independent privacy advocate helping destroy setup material."
+    ]
+   ],
+   [
+    "DEEPER",
+    [
+     "Snowden's role cut both ways rhetorically. Supporters saw his participation as an attempt to ensure at least one ceremony participant was honest and independent; skeptics saw his prior intelligence background as suspicious. His participation does not establish that NSA, CIA or another agency controlled the protocol."
+    ]
+   ],
+   [
+    "WHAT IS DOCUMENTED",
+    [
+     "Snowden really participated under a pseudonym; Zooko recruited him; he said he was unpaid; he previously worked in U.S. intelligence before becoming an NSA whistleblower."
+    ]
+   ]
+  ],
+  "related": [
+   "DARPA / U.S. Military Created Zcash",
+   "Shadow Brokers: U.S. Government + Israel Are Behind Zcash",
+   "The Modern Israeli / U.S. Intelligence Honeypot"
+  ],
+  "links": [
+   {
+    "label": "Zcash Media announcement",
+    "url": "https://www.prnewswire.com/news-releases/edward-snowden-revealed-as-john-dobbertin---the-final-pseudonymous-member-of-2016s-setup-process-for-privacy-preserving-cryptocurrency-zcash-confirmed-in-zcash-medias-latest-video-301534963.html"
+   },
+   {
+    "label": "Fortune, 2022",
+    "url": "https://fortune.com/2022/04/28/edward-snowden-crypto-zcash/"
+   },
+   {
+    "label": "Protos: Snowden says he was unpaid",
+    "url": "https://protos.com/zcash-snowden-wants-it-known-he-wasnt-paid-to-attend-crypto-ceremony/"
+   },
+   {
+    "label": "Reddit reaction",
+    "url": "https://www.reddit.com/r/btc/comments/uf4wyr"
+   }
+  ],
+  "debunk": {
+   "verdict": "Snowden's participation is real, but the ceremony was designed so that no single participant could control or compromise the outcome, and today's Sapling and Orchard pools do not depend on the 2016 ceremony he joined.",
+   "points": [
+    "ECC's 2016 ceremony design says that \"as long as at least one of the participants successfully deletes their private key shard, then the toxic waste is impossible for anyone to reconstruct\", so one participant, whatever their background, could not compromise the parameters alone.",
+    "Snowden said he joined because the ceremony needed many people cooperating \"in the hopes that just one of them might not be compromised\", and said he \"was never paid and had no stake\".",
+    "Sapling used a separate 2018 MPC with 87 Powers of Tau contributions and over 90 Sapling-phase contributions, and NU5 (May 2022) moved Orchard to Halo 2, \"removing the need for the trusted setup\"."
+   ],
+   "links": [
+    {
+     "label": "ECC: The Design of the Ceremony, 2016",
+     "url": "https://zodl.com/the-design-of-the-ceremony/"
+    },
+    {
+     "label": "Fortune, 2022",
+     "url": "https://fortune.com/2022/04/28/edward-snowden-crypto-zcash/"
+    },
+    {
+     "label": "Protos, 2022",
+     "url": "https://protos.com/zcash-snowden-wants-it-known-he-wasnt-paid-to-attend-crypto-ceremony/"
+    },
+    {
+     "label": "z.cash: Network Upgrade 5",
+     "url": "https://z.cash/upgrade/nu5/"
+    }
+   ]
+  }
+ },
+ {
+  "date": "2022-05-14",
+  "title": "Zcash Foundation Board Capture / Undisclosed Conflicts",
+  "kind": "GOVERNANCE ALLEGATION",
+  "pool": null,
+  "height": null,
+  "brief": "Zooko publicly alleged that undisclosed conflicts on the Zcash Foundation board compromised its independence during licensing/governance disputes.",
+  "people": [
+   "Zooko Wilcox",
+   "Matthew Green",
+   "Zcash Foundation board",
+   "ECC",
+   "Foundation leadership"
+  ],
+  "notes": [
+   [
+    "ORIGIN",
+    [
+     "Thread ZC-018. First public mention found: May 14, 2022.",
+     "Proposed or popularized by: Zooko Wilcox."
+    ]
+   ],
+   [
+    "THE THEORY",
+    [
+     "Zooko posted allegations about “undisclosed and actively relevant conflicts of interest” on the Foundation board during an open-source licensing dispute. Foundation leadership and board members responded, and Zooko later posted an apology. This is best catalogued as a documented governance accusation rather than an established covert conspiracy."
+    ]
+   ],
+   [
+    "DEEPER",
+    [
+     "The episode matters because capture allegations did not only come from outside critics; they were also made by a Zcash founder during an internal institutional conflict. Any app surfacing this entry should preserve the original allegation, responses and later apology together."
+    ]
+   ],
+   [
+    "WHAT IS DOCUMENTED",
+    [
+     "Specific organizational affiliations and professional relationships existed; whether they constituted disqualifying undisclosed conflicts was disputed."
+    ]
+   ]
+  ],
+  "related": [
+   "The Dev Fund Is a Perpetual Insider Funding Cartel",
+   "Zcash Is Really a Centralized Company Disguised as a Network"
+  ],
+  "links": [
+   {
+    "label": "Zcash Forum thread with moderator links to responses",
+    "url": "https://forum.zcashcommunity.com/t/undisclosed-and-actively-relevant-conflicts-of-interest-on-the-zcash-foundation-board-of-directors/41618"
+   }
+  ],
+  "debunk": {
+   "verdict": "The Zcash Foundation said the named interests had been disclosed, the accuser removed most of the accusations and later publicly apologized, and no finding of undisclosed conflicts followed.",
+   "points": [
+    "Zcash Foundation executive director Dodger replied on the forum that Matthew Green \"disclosed his involvement with Sealance to ZF\" (it was also on his LinkedIn), and that Josh Cincinnati confirmed Ian Miers had disclosed his Tezos involvement at the time.",
+    "The forum thread notes that Zooko's original Medium post was later edited to remove almost all of its accusations.",
+    "On July 8, 2022 Zooko apologized to the ZF and Bootstrap boards, writing that he \"was upset and acting in haste\" and \"seriously erred by taking my concerns public and naming names\"."
+   ],
+   "links": [
+    {
+     "label": "Zcash Community Forum thread, 2022",
+     "url": "https://forum.zcashcommunity.com/t/undisclosed-and-actively-relevant-conflicts-of-interest-on-the-zcash-foundation-board-of-directors/41618"
+    },
+    {
+     "label": "Zooko Wilcox apology, Medium (archived), 2022",
+     "url": "https://web.archive.org/web/20251010091147/https://medium.com/@zooko_25893/apology-to-members-of-the-zcash-community-for-some-recent-posts-7b219ada256"
+    }
+   ]
+  }
+ },
+ {
+  "date": "2025-11-03",
+  "title": "The 2025 Rally Was a Coordinated VC / Influencer Pump-and-Dump",
+  "kind": "MARKET ALLEGATION",
+  "pool": null,
+  "height": null,
+  "brief": "ZEC's sharp 2025 revival prompted claims that whales, venture investors and influencers accumulated first, manufactured a privacy narrative and planned to exit on retail demand.",
+  "people": [
+   "Bit Paine",
+   "Hunter Horsley",
+   "Mert Mumtaz",
+   "Zcash social-media promoters",
+   "Cypherpunk Technologies",
+   "Winklevoss Capital",
+   "Barry Silbert",
+   "DCG"
+  ],
+  "notes": [
+   [
+    "ORIGIN",
+    [
+     "Thread ZC-019. First public mention found: November 3, 2025.",
+     "Proposed or popularized by: Reddit users; later public critics including Bit Paine."
+    ]
+   ],
+   [
+    "THE THEORY",
+    [
+     "The theory emerged as ZEC rose dramatically after years of relative dormancy and several high-profile accounts became publicly bullish. Critics pointed to concentrated treasury purchases, institutional products, endorsements and unusually fast price appreciation. Public evidence confirms large acquisitions and promotional activity, but that alone does not prove a coordinated dump scheme."
+    ]
+   ],
+   [
+    "DEEPER",
+    [
+     "By mid-November, the allegation was explicit enough for mainstream crypto press to quote critics calling the move an “obviously coordinated pump and dump of a VC coin.” Public treasury companies were simultaneously disclosing acquisitions. Later filings showed some insiders selling trust shares, not necessarily underlying ZEC (see “Barry Silbert / DCG Sales Prove Coordinated ZEC Dumping”), while a separate exit-liquidity allegation involving Arthur Hayes emerged in 2026 (see “Arthur Hayes Used ZEC Followers as Exit Liquidity”)."
+    ]
+   ],
+   [
+    "WHAT IS DOCUMENTED",
+    [
+     "ZEC rallied sharply; large holders and institutional vehicles accumulated ZEC; prominent accounts promoted Zcash; public companies disclosed treasury strategies. Coordinated manipulative intent is not established by those facts alone."
+    ]
+   ]
+  ],
+  "related": [
+   "Founders' Reward / Slow Start Was an Insider Price Scheme",
+   "Arthur Hayes Used ZEC Followers as Exit Liquidity",
+   "TechLeaks24: Early AI Access + Orchard = Sophisticated Inflation Scam",
+   "Barry Silbert / DCG Sales Prove Coordinated ZEC Dumping"
+  ],
+  "links": [
+   {
+    "label": "Reddit: coordinated pump or organic volume?",
+    "url": "https://www.reddit.com/r/zec/comments/1onm4m0"
+   },
+   {
+    "label": "Cointelegraph, Nov. 16 2025",
+    "url": "https://ct.com/news/bitcoin-zcash-debate-intensify-zec-reclaim-700"
+   },
+   {
+    "label": "Cypherpunk SEC filing",
+    "url": "https://www.sec.gov/Archives/edgar/data/1509745/000110465925110357/tm2530735d3_defa14a.htm"
+   },
+   {
+    "label": "Cypherpunk Technologies",
+    "url": "https://www.cypherpunk.com/"
+   }
+  ]
+ },
+ {
+  "date": "2025-11-10",
+  "title": "The Modern Israeli / U.S. Intelligence Honeypot",
+  "kind": "DOCUMENTED BASIS / SPECULATIVE CONCLUSION",
+  "pool": null,
+  "height": null,
+  "brief": "The modern theory presents Zcash as an intentionally backdoored U.S./Israeli intelligence honeypot built to attract privacy-seeking users while remaining traceable or controllable.",
+  "people": [
+   "Zooko Wilcox",
+   "Matthew Green",
+   "Eli Ben-Sasson",
+   "Eran Tromer",
+   "DARPA",
+   "AFRL",
+   "ONR",
+   "Israeli Ministry of Science and Technology",
+   "Unit 8200",
+   "Mossad"
+  ],
+  "notes": [
+   [
+    "ORIGIN",
+    [
+     "Thread ZC-020. First public mention found: November 10, 2025 for a major modern write-up; narrative roots are much older.",
+     "Proposed or popularized by: Boycat article; later social-media and Reddit accounts."
+    ]
+   ],
+   [
+    "THE THEORY",
+    [
+     "This version consolidates nearly every earlier thread: defense grants (see “DARPA / U.S. Military Created Zcash”), Israeli academics/funding (see “Israeli-Government / Intelligence Origins”), Green's backdoor quote (see “The Zerocoin Police Backdoor”), Zooko's WannaCry comment (see “Too Traceable for WannaCry Means Zcash Has a Police Backdoor”), Shadow Brokers' insinuations (see “Shadow Brokers: U.S. Government + Israel Are Behind Zcash”), optional transparency and later emergency governance. Some versions explicitly name Unit 8200, Mossad or the “deep state.”"
+    ]
+   ],
+   [
+    "DEEPER",
+    [
+     "The theory's persuasive structure comes from combining many real but heterogeneous facts into a single intentional-design narrative. What is missing is evidence of the crucial connecting claim: that intelligence services directed the protocol, possess a secret decryption capability or operate Zcash as a trap. Public code and research have exposed implementation bugs and metadata weaknesses, but no universal intelligence backdoor has been demonstrated."
+    ]
+   ],
+   [
+    "WHAT IS DOCUMENTED",
+    [
+     "Academic government funding existed; Israeli academics helped invent Zerocash; selective disclosure exists; developers have coordinated emergency upgrades. Those facts do not by themselves prove intelligence control."
+    ]
+   ]
+  ],
+  "related": [
+   "The Zerocoin Police Backdoor",
+   "DARPA / U.S. Military Created Zcash",
+   "Israeli-Government / Intelligence Origins",
+   "Too Traceable for WannaCry Means Zcash Has a Police Backdoor",
+   "Shadow Brokers: U.S. Government + Israel Are Behind Zcash",
+   "Snowden's Ceremony Role Proves Intelligence / Controlled-Op Involvement"
+  ],
+  "links": [
+   {
+    "label": "Boycat: Hidden Israeli Intelligence Ties",
+    "url": "https://blog.boycat.io/posts/avoid-zcash-israeli-military-ties-pentagon-funding-privacy-warning"
+   },
+   {
+    "label": "Reddit: “Zioncash” honeypot claim",
+    "url": "https://www.reddit.com/r/CryptoCurrency/comments/1w9fk90/a_plea_for_privacy_dont_buy_zioncash/"
+   },
+   {
+    "label": "CyberScoop historical fact-check",
+    "url": "https://cyberscoop.com/cryptocurrency-company-pushes-back-shadow-brokers-latest-claims/"
+   }
+  ]
+ },
+ {
+  "date": "2025-11-13",
+  "title": "Monero Supporters Were Spamming / Sabotaging the Zcash Network",
+  "kind": "UNSUPPORTED SPECULATION",
+  "pool": null,
+  "height": null,
+  "brief": "A spike in Zcash transaction volume was attributed, without identified attackers, to Monero supporters allegedly trying to undermine Zcash during its rally.",
+  "people": [
+   "Zcash Community Forum users",
+   "Monero community",
+   "Zcash node operators"
+  ],
+  "notes": [
+   [
+    "ORIGIN",
+    [
+     "Thread ZC-021. First public mention found: November 13, 2025.",
+     "Proposed or popularized by: Zcash Community Forum user zecevangelist."
+    ]
+   ],
+   [
+    "THE THEORY",
+    [
+     "A forum user reported roughly 68,000 transactions in 24 hours, node congestion messages and concern that Monero supporters might be attacking Zcash as its price surged. Other participants discussed network load and transaction behavior, but no evidence located here attributes the traffic to Monero users or an organized campaign."
+    ]
+   ],
+   [
+    "DEEPER",
+    [
+     "This is a rivalry-driven attribution theory: the observable event (unusual transaction volume) was real, while identity and motive were inferred from competitive community tensions. It should be stored as an allegation rather than as an incident attribution."
+    ]
+   ],
+   [
+    "WHAT IS DOCUMENTED",
+    [
+     "Network traffic spiked and nodes logged mempool pressure; attribution to Monero supporters was speculation."
+    ]
+   ]
+  ],
+  "related": [
+   "The 2025 Rally Was a Coordinated VC / Influencer Pump-and-Dump"
+  ],
+  "links": [
+   {
+    "label": "Zcash Forum: Suspicious spike in Zcash transactions",
+    "url": "https://forum.zcashcommunity.com/t/suspicious-spike-in-zcash-transactions/53099"
+   }
+  ],
+  "debunk": {
+   "verdict": "Developers traced the spike to zero-value-output transactions tied to inscription and token-minting activity, called it not an attack, and found nothing linking it to Monero supporters.",
+   "points": [
+    "In the same forum thread, participants connected the traffic to Zerdinals inscriptions and the public mint of \"ZERO\", described as the \"1st ZRC-20 token\" on Zcash, and user conradoplg (who later opened the related Zebra issue) wrote, \"Also I'd guess this is related to the zerdinals thing.\"",
+    "The transactions had zero-value transparent outputs that zcashd's dust rule would have rejected but Zebra's mempool accepted; conradoplg concluded, \"It may be silly but it is not an attack.\"",
+    "The same day conradoplg opened Zebra issue #10094 to add the missing dust filter, citing \"a rush of txs with zero-valued outputs\" and noting ZIP-317 still makes those transactions pay fees. It treated the spike as a policy gap, not sabotage.",
+    "No one in the thread presented evidence identifying the senders as Monero supporters; that attribution was the original poster's speculation."
+   ],
+   "links": [
+    {
+     "label": "Zcash Community Forum: Suspicious spike in Zcash transactions, 2025",
+     "url": "https://forum.zcashcommunity.com/t/suspicious-spike-in-zcash-transactions/53099"
+    },
+    {
+     "label": "Zebra GitHub issue #10094: dust filtering, 2025",
+     "url": "https://github.com/ZcashFoundation/zebra/issues/10094"
+    }
+   ]
+  }
+ },
+ {
+  "date": "2025-12-08",
+  "title": "Arkham Tracked 53%, Therefore Shielded Zcash Is Broken",
+  "kind": "DISPUTED INTERPRETATION",
+  "pool": null,
+  "height": null,
+  "brief": "Arkham's claim to have labeled roughly 53% of Zcash activity was widely reframed as proof that Zcash's shielded cryptography had been cracked.",
+  "people": [
+   "Arkham Intelligence",
+   "Zooko Wilcox",
+   "Mert Mumtaz",
+   "Zcash users",
+   "exchanges"
+  ],
+  "notes": [
+   [
+    "ORIGIN",
+    [
+     "Thread ZC-022. First public mention found: December 8, 2025.",
+     "Proposed or popularized by: Arkham Intelligence marketing; amplified by press and social media."
+    ]
+   ],
+   [
+    "THE THEORY",
+    [
+     "Arkham announced broad entity labeling across Zcash and initially used language that blurred shielded and unshielded activity. Zcash figures pushed back that Arkham had not decrypted fully shielded transactions; later explanations emphasized transparent-side data, exchange information, clustering and known entities."
+    ]
+   ],
+   [
+    "DEEPER",
+    [
+     "The key distinction is coverage of the Zcash transaction graph versus decryption of shielded payloads. Analytics can label transparent addresses, follow transparent legs around shielding, use timing/amount heuristics and incorporate exchange or seizure data. None of those operations reveals hidden sender/recipient/amount data from a properly shielded transaction solely from the chain."
+    ]
+   ],
+   [
+    "WHAT IS DOCUMENTED",
+    [
+     "Arkham did label a large fraction of overall activity; it did not publicly demonstrate breaking Zcash zero-knowledge encryption."
+    ]
+   ]
+  ],
+  "related": [
+   "A Shielded Transaction Was Traced, Therefore Zcash Privacy Was Cracked"
+  ],
+  "links": [
+   {
+    "label": "Arkham LinkedIn announcement",
+    "url": "https://www.linkedin.com/posts/arkhamintelligence_zcash-is-live-on-arkham-arkham-has-now-labeled-activity-7403897681577734146-D28M"
+   },
+   {
+    "label": "Crypto.news analysis",
+    "url": "https://crypto.news/zcash-privacy-tested-as-arkham-tracks-53percent-of-zec/"
+   },
+   {
+    "label": "ZCashReveal evidence review",
+    "url": "https://zecreveal.vercel.app/flows"
+   }
+  ],
+  "debunk": {
+   "verdict": "Arkham itself said shielded-to-shielded transactions cannot be traced; its 53% figure came from labeling transparent activity, not from breaking Zcash's cryptography.",
+   "points": [
+    "Arkham said that \"shielded-to-shielded\" Zcash transactions are \"impossible to label and trace,\" and that these make up about 50% of all transactions. Its labeling covered the transparent side.",
+    "Reporting on the announcement states that Arkham \"did not crack Zcash's cryptography\" and instead combined entity clustering, exchange data, known government seizures and transparent address analysis.",
+    "Zooko Wilcox said Arkham \"didn't actually deanonymize any ZEC that was held at rest in the shielded pool,\" and that doing so would be \"impossible because the information just isn't there.\""
+   ],
+   "links": [
+    {
+     "label": "Coinspeaker: Arkham Zcash deanonymization controversy, 2025",
+     "url": "https://www.coinspeaker.com/arkham-intelligence-zcash-deanonymization-controversy/"
+    },
+    {
+     "label": "crypto.news: Zcash privacy tested as Arkham tracks 53% of ZEC, 2025",
+     "url": "https://crypto.news/zcash-privacy-tested-as-arkham-tracks-53percent-of-zec/"
+    }
+   ]
+  }
+ },
+ {
+  "date": "2026-01-31",
+  "title": "Zcash Co-Founder Met Jeffrey Epstein",
+  "kind": "DOCUMENTED CONTACT / OVERSTATED CLAIMS",
+  "pool": null,
+  "height": null,
+  "brief": "Epstein-file releases produced a viral claim that a “Zcash co-founder” had met or maintained a significant relationship with Jeffrey Epstein.",
+  "people": [
+   "Jeffrey Epstein",
+   "Madars Virza",
+   "Zooko Wilcox",
+   "Zcash Company"
+  ],
+  "notes": [
+   [
+    "ORIGIN",
+    [
+     "Thread ZC-023. First public mention found: January 31, 2026.",
+     "Proposed or popularized by: Viral social-media post, then Zcash Community Forum discussion."
+    ]
+   ],
+   [
+    "THE THEORY",
+    [
+     "Released material produced legitimate documentary links between Epstein and people connected to early Zcash, particularly correspondence/tax material involving Zerocash co-author and Zcash co-founder Madars Virza. Viral posts often compressed this into broader claims that “the Zcash founder” or Zooko Wilcox personally met Epstein. Available reporting does not support treating every version of that claim as equivalent."
+    ]
+   ],
+   [
+    "DEEPER",
+    [
+     "The key data-model distinction is documented contact or financial/tax correspondence involving a specific person versus the viral generic label “Zcash founder.” An app should attach primary-document claims to the exact named individual whenever possible rather than inherit social-media ambiguity. None of the located material by itself establishes project control or criminal conduct."
+    ]
+   ],
+   [
+    "WHAT IS DOCUMENTED",
+    [
+     "Epstein-file reporting documents correspondence involving Madars Virza and Zcash-related tax paperwork; this does not establish that Epstein controlled Zcash or that every named founder had contact with him."
+    ]
+   ]
+  ],
+  "related": [
+   "Epstein Invested in Zcash and Forced a Fork"
+  ],
+  "links": [
+   {
+    "label": "Zcash Forum: A new accusation",
+    "url": "https://forum.zcashcommunity.com/t/a-new-accusation/54523"
+   },
+   {
+    "label": "CCN: Epstein and Zcash documents",
+    "url": "https://www.ccn.com/education/crypto/jeffrey-epstein-satoshi-nakamoto-epstein-files-bitcoin-founders-ripple-xrp-stellar-xlm/"
+   },
+   {
+    "label": "DOJ Epstein Library",
+    "url": "https://www.justice.gov/epstein"
+   },
+   {
+    "label": "Bitrue fact-check",
+    "url": "https://www.bitrue.com/blog/zcash-epstein-connection-rumors-explained"
+   }
+  ]
+ },
+ {
+  "date": "2026-02",
+  "title": "Epstein Invested in Zcash and Forced a Fork",
+  "kind": "UNSUPPORTED / FALSE",
+  "pool": null,
+  "height": null,
+  "brief": "A stronger derivative rumor claimed Jeffrey Epstein financed Zcash, exercised control over its development and even forced the project to fork.",
+  "people": [
+   "Jeffrey Epstein",
+   "Madars Virza",
+   "Zooko Wilcox",
+   "Zcash Company",
+   "Coinbase-related figures",
+   "MIT / crypto researchers"
+  ],
+  "notes": [
+   [
+    "ORIGIN",
+    [
+     "Thread ZC-024. First public mention found: February 2026.",
+     "Proposed or popularized by: Viral Reddit / social-media posts following Epstein-file releases."
+    ]
+   ],
+   [
+    "THE THEORY",
+    [
+     "This is an expanded version of (see “Zcash Co-Founder Met Jeffrey Epstein”). Publicly released materials and reporting show contacts around people in the crypto research world and Zcash-related tax documentation, but reviews of those materials found no verified evidence that Epstein controlled Zcash development or forced a fork."
+    ]
+   ],
+   [
+    "DEEPER",
+    [
+     "The narrative uses genuine facts about Epstein's interest and investments across technology and crypto networks, then leaps from proximity to operational control. “Invested in Zcash,” “funded Zerocash,” “forced a fork,” and “controlled development” are separate claims requiring separate evidence; the strongest viral versions are not established by the documents located here."
+    ]
+   ],
+   [
+    "WHAT IS DOCUMENTED",
+    [
+     "Epstein had documented crypto-industry contacts; released documents mention Zcash-related matters. Control and forced-fork claims remain unsupported."
+    ]
+   ]
+  ],
+  "related": [
+   "Zcash Co-Founder Met Jeffrey Epstein"
+  ],
+  "links": [
+   {
+    "label": "Reddit: Epstein invested in Zcash / forced fork claim",
+    "url": "https://www.reddit.com/r/CryptoCurrency/comments/1qsmobn/jeffrey_epstein_invested_in_zcash_and_forced_them/"
+   },
+   {
+    "label": "CCN document review",
+    "url": "https://www.ccn.com/education/crypto/jeffrey-epstein-satoshi-nakamoto-epstein-files-bitcoin-founders-ripple-xrp-stellar-xlm/"
+   },
+   {
+    "label": "Bitrue: what documents actually show",
+    "url": "https://www.bitrue.com/blog/zcash-epstein-connection-rumors-explained"
+   },
+   {
+    "label": "DOJ Epstein Library",
+    "url": "https://www.justice.gov/epstein"
+   }
+  ],
+  "debunk": {
+   "verdict": "The \"fork\" in the April 2018 Virza email was Overwinter, a network upgrade the Zcash company had publicly scheduled months earlier, and no document shows Epstein funding, controlling or forking Zcash.",
+   "points": [
+    "The email posted as proof, dated 2 April 2018, is Madars Virza describing an upcoming fork expected to be uncontroversial, with a \"company-endorsed branch\"; forum members identified it as the scheduled Overwinter hard fork.",
+    "Overwinter was on the company's public roadmap by 8 December 2017 (\"Network Upgrade 0 - Overwinter\", activation scheduled for June 2018), and the company formally announced it on 2 March 2018 as a routine protocol upgrade paving the way for Sapling.",
+    "A review of the released documents found that claims Epstein \"invested in Zcash,\" \"forced a fork\" or had an operational role \"have no verified documentary basis in the public record.\""
+   ],
+   "links": [
+    {
+     "label": "Zcash Community Forum: A new accusation, 2026",
+     "url": "https://forum.zcashcommunity.com/t/a-new-accusation/54523"
+    },
+    {
+     "label": "Electric Coin Co.: Zcash for Everyone (roadmap), 2017",
+     "url": "https://zodl.com/roadmap-update-2017-12/"
+    },
+    {
+     "label": "Electric Coin Co.: Overwinter announcement, 2018",
+     "url": "https://zodl.com/overwinter/"
+    },
+    {
+     "label": "Bitrue: Zcash and the Epstein Files, 2026",
+     "url": "https://www.bitrue.com/blog/zcash-epstein-connection-rumors-explained"
+    }
+   ]
+  }
+ },
+ {
+  "date": "2026-03",
+  "title": "The 2026 Sprout Verification Bugs Were Used for Hidden Minting",
+  "kind": "DOCUMENTED BUG / NO EVIDENCE OF EXPLOITATION",
+  "pool": null,
+  "height": null,
+  "brief": "Long-lived Sprout/node-validation flaws led to suspicion that attackers or insiders may already have minted or spent invalid ZEC before disclosure.",
+  "people": [
+   "Alex “Scalar” Sol",
+   "Daira-Emma Hopwood",
+   "Jack Grigg",
+   "Judah Caruso",
+   "Jason McGee",
+   "Josh Swihart",
+   "ZODL",
+   "Shielded Labs",
+   "Zcash Foundation"
+  ],
+  "notes": [
+   [
+    "ORIGIN",
+    [
+     "Thread ZC-025. First public mention found: March/April 2026.",
+     "Proposed or popularized by: Security-incident speculation after disclosures by Alex “Scalar” Sol and Zcash developers."
+    ]
+   ],
+   [
+    "THE THEORY",
+    [
+     "A March 2026 disclosure revealed that zcashd could skip Sprout proof verification when processing new blocks; additional April disclosures covered consensus and turnstile-related bugs. Developers said the Sprout bug was not exploited, that the deprecated Sprout pool contained only around 25k ZEC, and that turnstiles plus the independent Zebra implementation constrained or exposed relevant attacks."
+    ]
+   ],
+   [
+    "DEEPER",
+    [
+     "Researcher Scalar later described the combined findings in a retroactive grant application as a temporary detectable unlimited mint-and-sell exploit path. That phrasing can sound like the 2019 or Orchard bugs, but the detectability and cross-implementation context differ materially. No public evidence located here establishes that the live chain was exploited."
+    ]
+   ],
+   [
+    "WHAT IS DOCUMENTED",
+    [
+     "Real validation vulnerabilities existed and had been present for years; patches were coordinated before public disclosure; developers report no consensus-chain exploitation."
+    ]
+   ]
+  ],
+  "related": [
+   "The Sprout Counterfeit Bug Was Exploited and Hidden",
+   "The Orchard Counterfeiting Bug Had Already Been Exploited"
+  ],
+  "links": [
+   {
+    "label": "Shielded Labs disclosure",
+    "url": "https://shieldedlabs.net/zcash-vulnerability-successfully-remediated/"
+   },
+   {
+    "label": "Zcash Forum disclosure",
+    "url": "https://forum.zcashcommunity.com/t/security-disclosure-we-remediated-a-vulnerability-in-sprout/55180"
+   },
+   {
+    "label": "April 2026 vulnerability bundle",
+    "url": "https://forum.zcashcommunity.com/t/several-zcash-vulnerabilities-successfully-remediated/55388"
+   },
+   {
+    "label": "Scalar retroactive-grant post",
+    "url": "https://forum.zcashcommunity.com/t/retroactive-grant-application-temporary-detectable-unlimited-mint-and-sell-bug-bounty/57033"
+   }
+  ],
+  "debunk": {
+   "verdict": "Unlike the Orchard flaw, these bugs could not be exploited silently: the independent Zebra node never shared them and would have forked off any invalid block, and no such fork occurred.",
+   "points": [
+    "The March 2026 disclosure states that \"Zebra never had this vulnerability\" and that any exploitation attempt would have caused Zebra to create a chain fork containing only valid transactions; anyone can re-check the chain by running Zebra or zcashd v6.12.0.",
+    "The April 2026 disclosure says the bugs \"were not exploited to affect the consensus chain\", that no triggering Orchard transactions or identity epk values exist on mainnet, and that turnstile-violating blocks would have been rejected by Zebra in a \"publicly visible chain fork\".",
+    "The finder's own grant application calls the attack path \"temporary detectable\" and lists the bugs as \"none ever publicly exploited\", which is the opposite of a hidden mint.",
+    "Even in a worst case, Sprout held only about 25,424 ZEC and turnstiles limited what could leave the pool."
+   ],
+   "links": [
+    {
+     "label": "Zcash Forum, Sprout disclosure, 2026",
+     "url": "https://forum.zcashcommunity.com/t/security-disclosure-we-remediated-a-vulnerability-in-sprout/55180"
+    },
+    {
+     "label": "Shielded Labs, Sprout remediation, 2026",
+     "url": "https://shieldedlabs.net/zcash-vulnerability-successfully-remediated/"
+    },
+    {
+     "label": "Zcash Forum, April vulnerability bundle, 2026",
+     "url": "https://forum.zcashcommunity.com/t/several-zcash-vulnerabilities-successfully-remediated/55388"
+    },
+    {
+     "label": "Scalar grant application, 2026",
+     "url": "https://forum.zcashcommunity.com/t/retroactive-grant-application-temporary-detectable-unlimited-mint-and-sell-bug-bounty/57033"
+    }
+   ]
+  }
+ },
+ {
+  "date": "2026-06-04",
+  "title": "The Orchard Counterfeiting Bug Had Already Been Exploited",
+  "kind": "UNRESOLVED TECHNICAL UNCERTAINTY",
+  "pool": null,
+  "height": null,
+  "brief": "The discovery of a real Orchard soundness flaw led to the unresolved suspicion that an unknown actor may have found it earlier and created counterfeit ZEC inside the shielded pool.",
+  "people": [
+   "Taylor Hornby",
+   "Zooko Wilcox",
+   "Jason McGee",
+   "ZODL",
+   "Shielded Labs",
+   "Zcash Foundation",
+   "mining pools",
+   "Vitalik Buterin"
+  ],
+  "notes": [
+   [
+    "ORIGIN",
+    [
+     "Thread ZC-026. First public mention found: June 4, 2026.",
+     "Proposed or popularized by: Market participants and social-media critics after Shielded Labs disclosure."
+    ]
+   ],
+   [
+    "THE THEORY",
+    [
+     "The vulnerability was real and exploitable. It existed from Orchard activation in May 2022 until emergency remediation in June 2026, and a complete exploit worked in local testing. Because a perfect exploit could leave no distinguishing on-chain evidence inside the affected shielded pool, developers cannot cryptographically prove that it was never exploited historically."
+    ]
+   ],
+   [
+    "DEEPER",
+    [
+     "That uncertainty is not equivalent to proof that circulating supply was inflated. The later GitHub advisory emphasizes the ZIP 209 turnstile: counterfeit value could exist inside the affected pool, but outflows were bounded by value legitimately entering, so the 21M cap / external circulating supply could not simply be exceeded through unrestricted Orchard withdrawal. Ironwood then sealed the old pool and provided a fresh migration path."
+    ]
+   ],
+   [
+    "WHAT IS DOCUMENTED",
+    [
+     "Orchard had a four-year exploitable soundness bug; no evidence of exploitation was found; non-exploitation cannot be perfectly proven from historical shielded data alone; turnstile rules constrained outflow."
+    ]
+   ]
+  ],
+  "related": [
+   "The Sprout Counterfeit Bug Was Exploited and Hidden",
+   "The 2026 Sprout Verification Bugs Were Used for Hidden Minting",
+   "The Orchard Emergency Freeze Proves a Developer Kill Switch",
+   "TechLeaks24: Early AI Access + Orchard = Sophisticated Inflation Scam"
+  ],
+  "links": [
+   {
+    "label": "Shielded Labs disclosure",
+    "url": "https://shieldedlabs.net/the-orchard-counterfeiting-vulnerability/"
+   },
+   {
+    "label": "Zcash Forum disclosure",
+    "url": "https://forum.zcashcommunity.com/t/the-orchard-counterfeiting-vulnerability-and-next-steps/56015"
+   },
+   {
+    "label": "GitHub security advisory",
+    "url": "https://github.com/zcash/zcash/security/advisories/GHSA-ghc3-g8w4-whf9"
+   },
+   {
+    "label": "Four Questions About the Orchard Vulnerability",
+    "url": "https://forum.zcashcommunity.com/t/four-questions-about-the-orchard-vulnerability/56212"
+   },
+   {
+    "label": "Project Tachyon on post-Ironwood verification",
+    "url": "https://tachyon.z.cash/blog/detecting-counterfeiting-in-zcash/"
+   }
+  ]
+ },
+ {
+  "date": "2026-06",
+  "title": "The Orchard Emergency Freeze Proves a Developer Kill Switch",
+  "kind": "DISPUTED INTERPRETATION",
+  "pool": null,
+  "height": null,
+  "brief": "Rapid emergency coordination to disable vulnerable Orchard actions was interpreted as proof that developers possess a centralized privacy “kill switch.”",
+  "people": [
+   "ZODL",
+   "Shielded Labs",
+   "Zcash Foundation",
+   "mining pools",
+   "Zooko Wilcox",
+   "Taylor Hornby"
+  ],
+  "notes": [
+   [
+    "ORIGIN",
+    [
+     "Thread ZC-027. First public mention found: June 2026.",
+     "Proposed or popularized by: Critics reacting to private remediation and temporary disabling of Orchard actions."
+    ]
+   ],
+   [
+    "THE THEORY",
+    [
+     "During remediation, developers coordinated with mining pools and network operators on a soft fork that temporarily prohibited Orchard actions, followed by a hard fork with corrected logic. Critics interpreted the speed and secrecy as evidence of centralized control. The counterargument is that this was not activation of a hidden administrator key; it was a coordinated consensus change participants had to deploy."
+    ]
+   ],
+   [
+    "DEEPER",
+    [
+     "The distinction matters architecturally. Social and operational centralization can let a relatively small ecosystem coordinate quickly without a protocol-level unilateral kill switch. The incident is evidence that major developers, miners and operators could coordinate an emergency fork rapidly; it is not evidence of a secret master key capable of freezing the network by itself."
+    ]
+   ],
+   [
+    "WHAT IS DOCUMENTED",
+    [
+     "Orchard actions were temporarily disabled; remediation was initially coordinated privately to avoid revealing an exploitable vulnerability; miners/operators deployed the change; a later hard fork re-enabled corrected functionality."
+    ]
+   ]
+  ],
+  "related": [
+   "Zcash Is Really a Centralized Company Disguised as a Network",
+   "The Orchard Counterfeiting Bug Had Already Been Exploited"
+  ],
+  "links": [
+   {
+    "label": "Orchard vulnerability successfully remediated",
+    "url": "https://forum.zcashcommunity.com/t/orchard-vulnerability-successfully-remediated/55976"
+   },
+   {
+    "label": "GitHub advisory with remediation sequence",
+    "url": "https://github.com/zcash/zcash/security/advisories/GHSA-ghc3-g8w4-whf9"
+   },
+   {
+    "label": "Critical editorial framing: The Frontier",
+    "url": "https://thefrontier.fm/article/2026/06/06/zcashs-secret-patch-shatters-trust-private"
+   }
+  ],
+  "debunk": {
+   "verdict": "The freeze was a soft fork shipped as new node software that miners and operators chose to run, not a hidden key or switch held by developers.",
+   "points": [
+    "The remediation post says the fix \"could not be resolved by ZODL or any other single organization acting alone\" and needed \"voluntary cooperation from miners, node operators, infrastructure operators, exchanges\".",
+    "The freeze was a consensus rule in new releases (zcashd v6.20.0, zebrad v5.0.0): a soft fork that banned new Orchard outputs and spends, followed by a hard fork that restored corrected Orchard.",
+    "The GitHub advisory records the same steps through network upgrades (soft fork at block 3363366, NU6.2 at block 3364600) coordinated with mining pools. Neither source mentions any administrator key or remote-disable mechanism.",
+    "The critical Frontier editorial itself describes miners upgrading as the mechanism and does not claim a hidden key exists. Its point is about how few parties needed to coordinate, not about a protocol kill switch."
+   ],
+   "links": [
+    {
+     "label": "Zcash Forum, Orchard remediated, 2026",
+     "url": "https://forum.zcashcommunity.com/t/orchard-vulnerability-successfully-remediated/55976"
+    },
+    {
+     "label": "zcash GitHub advisory GHSA-ghc3-g8w4-whf9, 2026",
+     "url": "https://github.com/zcash/zcash/security/advisories/GHSA-ghc3-g8w4-whf9"
+    },
+    {
+     "label": "The Frontier, 2026",
+     "url": "https://thefrontier.fm/article/2026/06/06/zcashs-secret-patch-shatters-trust-private"
+    }
+   ]
+  }
+ },
+ {
+  "date": "2026-06-06",
+  "title": "Arthur Hayes Used ZEC Followers as Exit Liquidity",
+  "kind": "MARKET ALLEGATION",
+  "pool": null,
+  "height": null,
+  "brief": "ZachXBT accused Arthur Hayes of publicly promoting ZEC and other tokens and later selling into demand generated by his followers.",
+  "people": [
+   "Arthur Hayes",
+   "ZachXBT",
+   "Maelstrom",
+   "ZEC holders",
+   "HYPE",
+   "NEAR",
+   "WLD traders"
+  ],
+  "notes": [
+   [
+    "ORIGIN",
+    [
+     "Thread ZC-028. First public mention found: June 6, 2026.",
+     "Proposed or popularized by: ZachXBT."
+    ]
+   ],
+   [
+    "THE THEORY",
+    [
+     "Hayes had recently described HYPE, ZEC and NEAR as a bullish “Holy Trinity,” then exited them over a short period; he sold ZEC after the Orchard disclosure and publicly cited the vulnerability. ZachXBT accused him of using followers as exit liquidity across several promoted tokens. Hayes rejected the framing and argued that he was simply trading his own portfolio and selling to willing buyers."
+    ]
+   ],
+   [
+    "DEEPER",
+    [
+     "The timing pattern is real, while intent is disputed. Public promotion followed by sale can be ethically controversial without proving a preplanned pump-and-dump. ZEC is also harder than transparent chains to reconstruct completely when activity uses shielded infrastructure or exchange custody, so some public accounts rely on self-reporting and attributed wallets rather than a complete ZEC trail."
+    ]
+   ],
+   [
+    "WHAT IS DOCUMENTED",
+    [
+     "Hayes was publicly bullish; he exited ZEC after the Orchard news; ZachXBT made the exit-liquidity accusation; Hayes disputed wrongdoing."
+    ]
+   ]
+  ],
+  "related": [
+   "The 2025 Rally Was a Coordinated VC / Influencer Pump-and-Dump",
+   "The Orchard Counterfeiting Bug Had Already Been Exploited"
+  ],
+  "links": [
+   {
+    "label": "Cryptopolitan, June 6 2026",
+    "url": "https://www.cryptopolitan.com/zachxbt-hayes-face-off-over-exit-liquidity/"
+   },
+   {
+    "label": "Crypto Briefing",
+    "url": "https://cryptobriefing.com/crypto-token-dumps-arthur-hayes/"
+   },
+   {
+    "label": "Crypto.news on Hayes' ZEC exit",
+    "url": "https://crypto.news/zcash-price-plunges-50-amid-bug-fallout-and-hayes-selloff-can-whales-reverse-the-trend/"
+   }
+  ]
+ },
+ {
+  "date": "2026-08-08",
+  "title": "TechLeaks24: Early AI Access + Orchard = Sophisticated Inflation Scam",
+  "kind": "UNSUPPORTED / SPECULATIVE",
+  "pool": null,
+  "height": null,
+  "brief": "TechLeaks24 alleged that venture investors with early frontier-AI access could have discovered Orchard's flaw before disclosure, minted counterfeit ZEC and later migrated it through Ironwood.",
+  "people": [
+   "TechLeaks24",
+   "Taylor Hornby",
+   "Anthropic",
+   "venture investors",
+   "ZODL",
+   "Shielded Labs",
+   "ZEC holders"
+  ],
+  "notes": [
+   [
+    "ORIGIN",
+    [
+     "Thread ZC-029. First public mention found: August 8, 2026.",
+     "Proposed or popularized by: TechLeaks24."
+    ]
+   ],
+   [
+    "THE THEORY",
+    [
+     "The theory combines the real Orchard vulnerability, the fact that Taylor Hornby used an advanced AI model during security research, venture-capital relationships around frontier-AI companies, ZEC accumulation before disclosure and rapid Orchard-to-Ironwood migration. TechLeaks24 argues that those correlations justify treating Zcash as fraudulent until proven otherwise."
+    ]
+   ],
+   [
+    "DEEPER",
+    [
+     "An independent evidence review by ZCashReveal found that the allegation supplied no attacker address, transaction, supply audit or chain evidence demonstrating exploitation. The migration speed also has a straightforward alternative explanation: Ironwood made old Orchard exit-only, giving legitimate users strong reason to migrate. The theory remains notable because it turns (see “The Orchard Counterfeiting Bug Had Already Been Exploited”)'s real historical unknowability into a specific accused-exploitation narrative."
+    ]
+   ],
+   [
+    "WHAT IS DOCUMENTED",
+    [
+     "Orchard bug was real; Hornby used frontier AI during discovery; large investors accumulated ZEC; Orchard funds migrated rapidly after Ironwood. None of those facts identifies a prior exploiter."
+    ]
+   ]
+  ],
+  "related": [
+   "The 2025 Rally Was a Coordinated VC / Influencer Pump-and-Dump",
+   "The Orchard Counterfeiting Bug Had Already Been Exploited",
+   "Barry Silbert / DCG Sales Prove Coordinated ZEC Dumping"
+  ],
+  "links": [
+   {
+    "label": "ZCashReveal allegation/evidence review",
+    "url": "https://zecreveal.vercel.app/flows"
+   },
+   {
+    "label": "Shielded Labs Orchard disclosure",
+    "url": "https://shieldedlabs.net/the-orchard-counterfeiting-vulnerability/"
+   }
+  ]
+ },
+ {
+  "date": "2026-08",
+  "title": "Barry Silbert / DCG Sales Prove Coordinated ZEC Dumping",
+  "kind": "MARKET ALLEGATION",
+  "pool": null,
+  "height": null,
+  "brief": "SEC filings showing Barry Silbert and DCG-related sales of Grayscale Zcash Trust shares were reframed as proof that insiders were secretly dumping ZEC itself.",
+  "people": [
+   "Barry Silbert",
+   "Digital Currency Group",
+   "DCG International Investments",
+   "Silbert Family Investments",
+   "Grayscale",
+   "Grayscale Zcash Trust"
+  ],
+  "notes": [
+   [
+    "ORIGIN",
+    [
+     "Thread ZC-030. First public mention found: 2026 resurgence; underlying trust-share sales occurred in 2024-2025.",
+     "Proposed or popularized by: Social-media / market critics interpreting SEC Form 144 sales."
+    ]
+   ],
+   [
+    "THE THEORY",
+    [
+     "SEC filings do document repeated sales involving Grayscale Zcash Trust shares (ZCSH) by DCG-related entities and Barry Silbert / Silbert-linked entities. Selling trust shares on OTCQX is not the same transaction as sending underlying ZEC to an exchange. Claims that the forms alone prove direct ZEC dumping therefore overstate what the filings establish."
+    ]
+   ],
+   [
+    "DEEPER",
+    [
+     "ZCashReveal's review counted extensive Form 144 activity and classified the underlying events as share sales rather than on-chain ZEC sales. DCG/Grayscale also had longstanding economic exposure to Zcash and disclosed potential conflicts. A coordinated ZEC-market manipulation claim would require additional evidence connecting share transactions, underlying trust redemptions or coin flows, and manipulative intent."
+    ]
+   ],
+   [
+    "WHAT IS DOCUMENTED",
+    [
+     "Silbert/DCG entities sold ZCSH shares; DCG/Grayscale had substantial Zcash economic interests; SEC filings disclose conflicts and ownership. The cited share-sale filings do not by themselves prove ZEC was dumped on exchanges."
+    ]
+   ]
+  ],
+  "related": [
+   "The 2025 Rally Was a Coordinated VC / Influencer Pump-and-Dump",
+   "Arthur Hayes Used ZEC Followers as Exit Liquidity",
+   "TechLeaks24: Early AI Access + Orchard = Sophisticated Inflation Scam"
+  ],
+  "links": [
+   {
+    "label": "SEC Form 144: Barry Silbert, Nov. 6 2025",
+    "url": "https://www.otcmarkets.com/filing/html?guid=-Bb-kHDJT6y2B3h&id=18900906"
+   },
+   {
+    "label": "SEC Form 144: DCG-related sales",
+    "url": "https://www.sec.gov/Archives/edgar/data/1720265/000197745425000044/xsl144X01/primary_doc.xml"
+   },
+   {
+    "label": "Grayscale Zcash Trust 10-K",
+    "url": "https://www.sec.gov/Archives/edgar/data/1720265/000119312526104253/zcsh-20251231.htm"
+   },
+   {
+    "label": "ZCashReveal flow analysis",
+    "url": "https://zecreveal.vercel.app/flows"
+   },
+   {
+    "label": "ZCashReveal network map",
+    "url": "https://zecreveal.vercel.app/network"
+   }
+  ],
+  "debunk": {
+   "verdict": "The cited Form 144 filings cover secondary-market sales of Grayscale Zcash Trust shares on OTCQX. Under the Trust's own SEC disclosures, those sales cannot have moved or sold ZEC.",
+   "points": [
+    "The filings name the issuer as Grayscale Zcash Trust and the security as \"Common\" shares sold through brokers on OTCQX (for example, DCG International Investments Ltd, 1,833 shares, Jan 2025; Barry E Silbert, 1,000 shares, Nov 2025). No ZEC is involved in these sales.",
+    "The Trust's 10-K states that \"the Sponsor is not operating a redemption program for the Shares and therefore Shares are not redeemable\", so selling shares cannot pull ZEC out of the Trust.",
+    "The 10-K says the Trust transfers or sells ZEC only as needed to cover the Sponsor's Fee and other Trust expenses. Trading shares between investors does not trigger a ZEC sale.",
+    "Proving coordinated ZEC dumping would need separate evidence such as coin flows to exchanges, which these filings do not contain."
+   ],
+   "links": [
+    {
+     "label": "SEC Form 144, DCG International, 2025",
+     "url": "https://www.sec.gov/Archives/edgar/data/1720265/000197745425000044/xsl144X01/primary_doc.xml"
+    },
+    {
+     "label": "SEC Form 144, Barry Silbert, 2025",
+     "url": "https://www.otcmarkets.com/filing/html?guid=-Bb-kHDJT6y2B3h&id=18900906"
+    },
+    {
+     "label": "Grayscale Zcash Trust 10-K, 2026",
+     "url": "https://www.sec.gov/Archives/edgar/data/1720265/000119312526104253/zcsh-20251231.htm"
+    }
+   ]
+  }
+ }
+]

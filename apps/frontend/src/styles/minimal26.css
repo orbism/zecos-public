@@ -1,0 +1,212 @@
+/*
+ * minimal26 - the readability layer.
+ *
+ * Laid over whatever theme is chosen, keyed on <html data-ui="minimal26">,
+ * so switching back restores the theme untouched. What it does, and why:
+ *
+ *  - Atkinson Hyperlegible Next / Mono (Braille Institute): every character
+ *    drawn to be told apart, which is what hashes and amounts need.
+ *  - Type a step larger (root 112.5%, so every rem-sized thing follows),
+ *    line height 1.55: dark backgrounds read better with a little more air.
+ *  - Graphite #15171c and navy #172338 rather than black: no glare, and
+ *    alternating the two is how sections and rows are told apart.
+ *  - Text at 4.5:1 or better; borders reduced to hairlines or nothing.
+ *
+ * Overrides sit on `body`, not `html`: the theme writes its variables inline
+ * on <html>, and the font variables from next/font live on <body>.
+ */
+
+html[data-ui="minimal26"] {
+  font-size: 112.5%;
+}
+
+html[data-ui="minimal26"] body {
+  --m26-bg: #15171c;
+  --m26-grey: #1d2027;
+  --m26-navy: #172338;
+  --m26-line: #262a33;
+  --m26-text: #eef0f4;
+  --m26-soft: #b4bac7;
+  --m26-mute: #9aa3b5;
+  --m26-gold: #e8b53a;
+  --m26-green: #6ee7a6;
+  --m26-amber: #ffc46b;
+  --m26-blue: #9cc4ff;
+
+  --bg-window: var(--m26-bg);
+  --bg-inset: var(--m26-grey);
+  --bg-titlebar: var(--m26-bg);
+  --bg-titlebar-inactive: var(--m26-bg);
+  --border-light: transparent;
+  --border-dark: transparent;
+  --border-window: var(--m26-line);
+  --explorer-divider: var(--m26-line);
+  --text-primary: var(--m26-text);
+  --text-green: var(--m26-text);
+  --text-secondary: var(--m26-gold);
+  --text-amber: var(--m26-soft);
+  --text-muted: var(--m26-mute);
+  --accent-gold: var(--m26-gold);
+  --accent-green: var(--m26-green);
+  --accent-orange: var(--m26-amber);
+  --accent-purple: var(--m26-blue);
+  --accent-blue: var(--m26-blue);
+
+  --font-primary: var(--font-atkinson), system-ui, sans-serif;
+  --font-display: var(--font-atkinson), system-ui, sans-serif;
+  --font-mono: var(--font-atkinson-mono), ui-monospace, monospace;
+
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+
+  --font-size-title: 16px;
+  --font-size-label: 15px;
+  --font-size-button: 15px;
+  --font-size-menu: 17px;
+  --font-size-icon: 15px;
+  --font-size-muted: 15px;
+
+  font-family: var(--font-primary);
+  line-height: 1.55;
+}
+
+/* Everything in a window speaks Atkinson, mono included. */
+html[data-ui="minimal26"] .window-content,
+html[data-ui="minimal26"] .window-content * {
+  font-family: var(--font-primary);
+}
+html[data-ui="minimal26"] .window-content .font-mono,
+html[data-ui="minimal26"] .window-content code,
+html[data-ui="minimal26"] .window-content pre {
+  font-family: var(--font-mono) !important;
+}
+
+/* Windows: rounded, a hairline at most, a soft shadow instead of bevels. */
+html[data-ui="minimal26"] .window-border,
+html[data-ui="minimal26"] .window-border.window-active {
+  border: 1px solid var(--m26-line) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.5) !important;
+  overflow: hidden;
+}
+html[data-ui="minimal26"] .window-border.window-active {
+  border-color: #3a3f4c !important;
+}
+html[data-ui="minimal26"] .titlebar {
+  border-bottom: 1px solid var(--m26-line) !important;
+  font-weight: 600;
+  min-height: 44px;
+  padding-left: 14px !important;
+  padding-right: 10px !important;
+}
+html[data-ui="minimal26"] .btn-window {
+  border: 1px solid var(--m26-line) !important;
+  border-radius: 10px;
+  box-shadow: none !important;
+  background: var(--m26-grey);
+}
+html[data-ui="minimal26"] .window-content {
+  padding: 20px !important;
+}
+
+/* Inputs and buttons: big enough to hit (40px+), obvious focus. */
+html[data-ui="minimal26"] .window-content input[type="text"],
+html[data-ui="minimal26"] .window-content input:not([type]),
+html[data-ui="minimal26"] .window-content select {
+  min-height: 48px;
+  border-radius: 12px !important;
+  border: 2px solid #2e3340 !important;
+  background: var(--m26-grey) !important;
+  font-size: 1rem !important;
+  padding-left: 16px !important;
+}
+html[data-ui="minimal26"] .window-content input:focus {
+  border-color: var(--m26-gold) !important;
+  outline: none;
+}
+html[data-ui="minimal26"] .window-content button {
+  border-radius: 10px;
+}
+
+/* Generic sections inside any app alternate graphite and navy. */
+html[data-ui="minimal26"] .m26-zebra > :nth-child(odd) { background: var(--m26-grey); }
+html[data-ui="minimal26"] .m26-zebra > :nth-child(even) { background: var(--m26-navy); }
+
+/* ── The Explorer, which has its own minimal26 views ──────────────────────── */
+html[data-ui="minimal26"] .explorer-app {
+  padding: 8px 6px !important;
+  gap: 18px !important;
+}
+html[data-ui="minimal26"] .explorer-app > .flex-1.overflow-y-auto {
+  border: 0 !important;
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+/* ── minimal26 Explorer views (src/components/apps/explorer/Minimal26.tsx) ── */
+.m26 { display: flex; flex-direction: column; gap: 16px; color: var(--m26-text, #eef0f4); font-size: 1rem; line-height: 1.55; max-width: 980px; margin: 0 auto; }
+.m26-mono { font-family: var(--font-mono) !important; font-size: 1rem; word-spacing: 0.3em; letter-spacing: 0.02em; }
+.m26-wrap { word-break: break-word; }
+.m26-grey { background: #1d2027; } .m26-navy { background: linear-gradient(180deg, #1a2540, #16203a); }
+
+.m26-hero { border-radius: 20px; padding: 26px 30px; }
+.m26-eyebrow { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; color: #9cb3df; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; }
+.m26-hero p { font-size: 1.6rem; line-height: 1.35; font-weight: 600; margin-top: 10px; max-width: 32ch; }
+.m26-hero em { font-style: normal; color: #e8b53a; }
+
+.m26-tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; }
+.m26-tile { background: #1d2027; border-radius: 18px; padding: 20px 22px; }
+.m26-tile-v { font-size: 1.7rem; font-weight: 700; line-height: 1.2; word-break: break-word; }
+.m26-tile-l { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: #a3aab8; margin-top: 6px; }
+
+.m26-sec h3 { display: flex; justify-content: space-between; align-items: center; font-size: 1.1rem; font-weight: 700; margin: 6px 4px 10px; }
+.m26-sec h3 > span { font-size: 0.9rem; color: #9cb3df; font-weight: 400; }
+.m26-rows { border-radius: 16px; overflow: hidden; }
+.m26-row { display: grid; grid-template-columns: minmax(150px, 34%) 1fr auto; gap: 18px; align-items: center; padding: 16px 22px; min-height: 64px; }
+.m26-rows > .m26-row:nth-child(odd) { background: #1d2027; }
+.m26-rows > .m26-row:nth-child(even) { background: #172338; }
+.m26-k-line { display: flex; align-items: center; gap: 8px; font-weight: 600; }
+.m26-k small { display: block; color: #8e97a8; font-size: 0.82rem; margin-top: 2px; font-weight: 400; }
+.m26-v { min-width: 0; font-size: 1.05rem; }
+.m26-a { display: flex; justify-content: flex-end; }
+@media (max-width: 620px) { .m26-row { grid-template-columns: 1fr; gap: 8px; } .m26-a { justify-content: flex-start; } }
+
+.m26-btn { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 16px; border-radius: 10px;
+  border: 1.5px solid #3a4560; background: transparent; color: #c8d6f2; font-weight: 600; font-size: 0.9rem; cursor: pointer; white-space: nowrap; }
+.m26-btn:hover { border-color: #e8b53a; color: #e8b53a; }
+.m26-link { min-height: 40px; padding: 0 6px; background: none; border: 0; color: #9cc4ff; font-weight: 600; cursor: pointer; font-size: 1.05rem; }
+.m26-link:hover { color: #e8b53a; }
+.m26-nav { display: flex; gap: 18px; flex-wrap: wrap; }
+.m26-more { width: 100%; min-height: 52px; background: #1d2027; border: 0; color: #e8b53a; font-weight: 600; font-size: 1rem; cursor: pointer; }
+.m26-fold { display: flex; justify-content: space-between; align-items: center; width: 100%; min-height: 56px; padding: 0 22px; border-radius: 16px;
+  background: #172338; border: 0; color: inherit; font: inherit; font-weight: 700; cursor: pointer; }
+.m26-fold span { font-size: 0.9rem; color: #9cb3df; font-weight: 400; }
+.m26-in { color: #6ee7a6; font-weight: 700; } .m26-out { color: #ffc46b; font-weight: 700; }
+
+.m26-pill { display: inline-block; border-radius: 999px; padding: 3px 12px; font-size: 0.85rem; font-weight: 700; letter-spacing: 0; text-transform: none; }
+.m26-pill-private { background: rgba(61, 220, 132, 0.14); color: #6ee7a6; }
+.m26-pill-public { background: rgba(255, 183, 77, 0.14); color: #ffc46b; }
+.m26-pill-mixed { background: rgba(255, 183, 77, 0.12); color: #ffd28a; }
+.m26-pill-new { background: rgba(106, 169, 255, 0.16); color: #9cc4ff; }
+
+.m26-help { width: 26px; height: 26px; flex-shrink: 0; border-radius: 50%; border: 2px solid #3b4252; background: transparent; color: #c3c9d4;
+  font-weight: 700; font-size: 0.8rem; line-height: 1; cursor: pointer; display: inline-grid; place-items: center; text-transform: none; letter-spacing: 0; }
+.m26-help:hover { border-color: #e8b53a; color: #e8b53a; }
+.m26-modal-back { position: fixed; inset: 0; z-index: 100000; background: rgba(8, 9, 12, 0.55); display: grid; place-items: center; padding: 24px; cursor: pointer;
+  animation: m26-fade 0.15s ease-out; }
+.m26-modal { max-width: 440px; background: #1d2027; border: 1px solid #2e3340; border-radius: 18px; padding: 24px 26px; box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6);
+  font-family: var(--font-atkinson), system-ui, sans-serif; color: #eef0f4; animation: m26-pop 0.18s ease-out; }
+.m26-modal-title { font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; }
+.m26-modal p { font-size: 1rem; line-height: 1.6; color: #d3d8e1; }
+.m26-modal-hint { margin-top: 14px; font-size: 0.8rem; color: #8e97a8; }
+@keyframes m26-fade { from { opacity: 0; } }
+@keyframes m26-pop { from { opacity: 0; transform: translateY(6px) scale(0.98); } }
+
+/* The switch in the Explorer's title bar. */
+.m26-switch { display: inline-flex; padding: 3px; gap: 2px; border-radius: 999px; background: var(--bg-inset); border: 1px solid var(--border-window); }
+.m26-switch button { padding: 3px 12px; border-radius: 999px; font-size: 12px; font-weight: 600; color: var(--text-muted); background: transparent; border: 0; cursor: pointer; white-space: nowrap; }
+.m26-switch button[aria-pressed="true"] { background: var(--accent-gold); color: #15171c; }
+html[data-ui="minimal26"] .m26-switch button { font-size: 13px; padding: 5px 14px; }
+html[data-ui="minimal26"] .explorer-app button { font-size: 0.95rem !important; }
+html[data-ui="minimal26"] .explorer-app .btn-window { min-height: 48px; padding-left: 18px !important; padding-right: 18px !important; }

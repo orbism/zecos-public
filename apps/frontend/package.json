@@ -1,0 +1,39 @@
+{
+  "name": "@zec-os/frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "NODE_OPTIONS='--no-network-family-autoselection --dns-result-order=ipv4first' next dev",
+    "build": "next build",
+    "start": "NODE_OPTIONS='--no-network-family-autoselection --dns-result-order=ipv4first' next start",
+    "vercel-build": "node tools/music-manifest.mjs && next build",
+    "music": "node tools/music-manifest.mjs"
+  },
+  "dependencies": {
+    "@types/three": "^0.185.4",
+    "butterchurn": "^2.6.7",
+    "butterchurn-presets": "^2.4.7",
+    "gifenc": "^1.0.3",
+    "hls.js": "^1.7.3",
+    "next": "16.1.1",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-qr-code": "^2.2.0",
+    "react-rnd": "^10.5.2",
+    "three": "^0.185.1",
+    "topojson-client": "^3.1.0",
+    "uplot": "^1.6.32",
+    "world-atlas": "^2.0.2",
+    "zustand": "^5.0.9"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/topojson-client": "^3.1.5",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "license": "AGPL-3.0-only"
+}

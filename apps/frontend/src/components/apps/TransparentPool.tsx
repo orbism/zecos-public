@@ -1,0 +1,54 @@
+'use client';
+
+import { useState } from 'react';
+import { useStatus, useCurrentPrice } from '@/hooks/useZecData';
+import { AppLoader } from '@/components/ui/AppLoader';
+import { GlyphStat } from '@/lib/generative/GlyphStat';
+
+function formatZec(amount: number): string {
+  if (amount >= 1e6) return (amount / 1e6).toFixed(2) + 'M';
+  if (amount >= 1e3) return (amount / 1e3).toFixed(2) + 'K';
+  return amount.toFixed(2);
+}
+
+function formatUsd(amount: number): string {
+  if (amount >= 1e9) return '$' + (amount / 1e9).toFixed(2) + 'B';
+  if (amount >= 1e6) return '$' + (amount / 1e6).toFixed(2) + 'M';
+  if (amount >= 1e3) return '$' + (amount / 1e3).toFixed(2) + 'K';
+  return '$' + amount.toFixed(2);
+}
+
+export function TransparentPool() {
+  const [showUsd, setShowUsd] = useState(false);
+  const { data, loading, error } = useStatus();
+  const { price } = useCurrentPrice();
+
+  const transparent = data?.pools?.transparent ?? 0;
+  const usdValue = transparent * (price ?? 0);
+
+  return (
+    <GlyphStat value={transparent} accent="#8899aa" label="Transparent pool">
+      <div className="flex flex-col h-full justify-center items-center">
+        {loading && !data ? (
+          <AppLoader />
+        ) : error ? (
+          <span className="text-[var(--accent-orange)]" style={{ fontSize: 'var(--font-size-label)' }}>Error</span>
+        ) : (
+          <>
+            <div
+              className="text-[var(--accent-orange)] cursor-pointer"
+              style={{ fontFamily: 'var(--font-vt323)', fontSize: 'var(--font-size-value)' }}
+              onClick={() => setShowUsd(!showUsd)}
+              title="Click to toggle ZEC/USD"
+            >
+              {showUsd ? formatUsd(usdValue) : formatZec(transparent)}
+            </div>
+            <div className="text-[var(--text-green)] mt-1" style={{ fontSize: 'var(--font-size-label)' }}>
+              {showUsd ? 'USD' : 'ZEC'} (Transparent)
+            </div>
+          </>
+        )}
+      </div>
+    </GlyphStat>
+  );
+}

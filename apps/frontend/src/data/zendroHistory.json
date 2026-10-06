@@ -1,0 +1,1286 @@
+[
+ {
+  "date": "2013-05",
+  "title": "Zerocoin",
+  "kind": "RESEARCH",
+  "pool": null,
+  "height": null,
+  "brief": "Ian Miers, Christina Garman, Matthew Green and Aviel Rubin at Johns Hopkins show how to bolt anonymous coins onto Bitcoin using zero-knowledge proofs. It works, but coins come in fixed denominations and the proofs are bulky.",
+  "people": [
+   "Ian Miers",
+   "Christina Garman",
+   "Matthew Green",
+   "Aviel D. Rubin"
+  ],
+  "notes": [
+   [
+    "PAPER",
+    [
+     "Zerocoin: Anonymous Distributed E-Cash from Bitcoin, IEEE Symposium on Security and Privacy, 2013"
+    ]
+   ],
+   [
+    "WHY IT MATTERS",
+    [
+     "The first serious design for unlinkable payments on a public chain. Its limits set the problem the next paper solved."
+    ]
+   ]
+  ],
+  "links": []
+ },
+ {
+  "date": "2014-05",
+  "title": "Zerocash",
+  "kind": "RESEARCH",
+  "pool": null,
+  "height": null,
+  "brief": "Seven researchers replace Zerocoin's proofs with zk-SNARKs. Payments now hide sender, receiver and amount, transactions are under 1 kB and verify in under 6 ms. This is the protocol Zcash ships.",
+  "people": [
+   "Eli Ben-Sasson",
+   "Alessandro Chiesa",
+   "Christina Garman",
+   "Matthew Green",
+   "Ian Miers",
+   "Eran Tromer",
+   "Madars Virza"
+  ],
+  "notes": [
+   [
+    "PAPER",
+    [
+     "Zerocash: Decentralized Anonymous Payments from Bitcoin, IEEE Symposium on Security and Privacy, 2014"
+    ]
+   ]
+  ],
+  "links": [
+   {
+    "label": "zerocash-project.org",
+    "url": "http://zerocash-project.org"
+   }
+  ]
+ },
+ {
+  "date": "2016-10",
+  "title": "The Ceremony",
+  "kind": "EVENT",
+  "pool": "sprout",
+  "height": null,
+  "brief": "Six people in six places jointly generate Zcash's zk-SNARK parameters. As long as one of them destroyed their share of the secret, nobody can forge coins. Laptops were wiped and hardware destroyed.",
+  "people": [
+   "Zooko Wilcox",
+   "Peter Todd",
+   "Derek Hinch",
+   "Andrew Miller",
+   "Peter Van Valkenburgh",
+   "John Dobbertin: revealed in 2022 to be Edward Snowden"
+  ],
+  "notes": [
+   [
+    "WHAT IT PRODUCED",
+    [
+     "The Sprout proving and verifying keys. The toxic waste behind them had to be destroyed: the trusted setup Halo later removed."
+    ]
+   ]
+  ],
+  "links": []
+ },
+ {
+  "date": "2016-10-28",
+  "title": "Genesis",
+  "kind": "MILESTONE",
+  "pool": "sprout",
+  "height": 0,
+  "brief": "Zcash mainnet launches. Shielded value lives in the Sprout pool; blocks every 150 seconds; Equihash proof of work; a 21 million cap with a slow start over the first 20,000 blocks.",
+  "people": [
+   "Zooko Wilcox-O'Hearn: founder and CEO",
+   "Zooko Wilcox: CEO, Zerocoin Electric Coin Company"
+  ],
+  "notes": [
+   [
+    "LAUNCH FACTS",
+    [
+     "Founders' Reward: 20% of the block subsidy for the first four years",
+     "Equihash, by Alex Biryukov and Dmitry Khovratovich",
+     "Slow start: rewards ramped up over the first 20,000 blocks"
+    ]
+   ]
+  ],
+  "links": [
+   {
+    "label": "z.cash",
+    "url": "https://z.cash"
+   },
+   {
+    "label": "ECC blog",
+    "url": "https://electriccoin.co/blog/zcash-begins/"
+   },
+   {
+    "label": "electriccoin.co/blog/zcash-begins/",
+    "url": "https://web.archive.org/web/2022/https://electriccoin.co/blog/zcash-begins/"
+   }
+  ],
+  "hash": "00040fe8ec8471911baa1db1266ea15dd06b4a8a5c453883c000b031973dce08"
+ },
+ {
+  "date": "2018-10-29",
+  "title": "Sapling",
+  "kind": "NETWORK UPGRADE",
+  "pool": "sapling",
+  "height": 419200,
+  "brief": "Sapling activated at 02:15 UTC (28 October US time). It cut shielded proving to seconds and about 40 MB of memory with Groth16, separated proving from spend authority, and added full viewing keys. ZIPs: 205 (deployment) and 243; it also closed CVE-2019-7167.",
+  "people": [
+   "Sean Bowe: BLS12-381, Jubjub, the MPC",
+   "Daira Hopwood: protocol specification",
+   "Jack Grigg: the Rust implementation",
+   "Ariel Gabizon: MPC design, with Bowe and Ian Miers"
+  ],
+  "notes": [
+   [
+    "WHAT CHANGED",
+    [
+     "New curves: BLS12-381 and Jubjub",
+     "A new shielded pool, Sapling, with zs1 addresses",
+     "Viewing keys that work in practice",
+     "New parameters from Powers of Tau plus a Sapling MPC, with many participants instead of six"
+    ]
+   ]
+  ],
+  "links": [
+   {
+    "label": "Zcash protocol specification",
+    "url": "https://zips.z.cash/protocol/protocol.pdf"
+   },
+   {
+    "label": "z.cash Sapling",
+    "url": "https://z.cash/upgrade/sapling/"
+   },
+   {
+    "label": "zips.z.cash/",
+    "url": "https://zips.z.cash/"
+   }
+  ],
+  "hash": "00000000025a57200d898ac7f21e26bf29028bbe96ec46e05b2c17cc9db9e4f3"
+ },
+ {
+  "date": "2019-09",
+  "title": "Halo",
+  "kind": "RESEARCH",
+  "pool": "orchard",
+  "height": null,
+  "brief": "Sean Bowe, Jack Grigg and Daira Hopwood publish recursive proof composition without a trusted setup. The ceremonies are no longer needed. It becomes Halo 2, and Halo 2 becomes Orchard.",
+  "people": [
+   "Sean Bowe",
+   "Jack Grigg",
+   "Daira Hopwood"
+  ],
+  "notes": [
+   [
+    "PAPER",
+    [
+     "Recursive Proof Composition without a Trusted Setup, 2019"
+    ]
+   ]
+  ],
+  "links": []
+ },
+ {
+  "date": "2022-05-31",
+  "title": "NU5 / Orchard",
+  "kind": "NETWORK UPGRADE",
+  "pool": "orchard",
+  "height": 1687104,
+  "brief": "NU5 activated at 17:50 UTC, adding the Orchard pool on Halo 2 with no trusted setup, Unified Addresses, v5 transactions and non-malleable txids. ZIPs: 252 (deployment), 224, 225, 216, 239, 244 and 316.",
+  "people": [
+   "Daira Hopwood, Sean Bowe, Jack Grigg: Halo 2 and Orchard",
+   "Kris Nuttycombe: Unified Addresses"
+  ],
+  "notes": [
+   [
+    "WHAT CHANGED",
+    [
+     "Halo 2 proofs on the Pallas and Vesta curves",
+     "The Orchard shielded pool",
+     "Unified Addresses (u1), ZIP 316"
+    ]
+   ]
+  ],
+  "links": [
+   {
+    "label": "ZIP 316",
+    "url": "https://zips.z.cash/zip-0316"
+   },
+   {
+    "label": "z.cash NU5",
+    "url": "https://z.cash/upgrade/nu5/"
+   },
+   {
+    "label": "ZIP 252",
+    "url": "https://zips.z.cash/zip-0252"
+   }
+  ],
+  "hash": "0000000000d723156d9b65ffcf4984da7a19675ed7e2f06d9e5d5188af087bf8"
+ },
+ {
+  "date": "2024-11-23",
+  "title": "NU6 + 2nd halving",
+  "kind": "NETWORK UPGRADE",
+  "pool": "transparent",
+  "height": 2726400,
+  "brief": "NU6 activated with the second halving and replaced the ZIP 1014 dev fund: 8% to Zcash Community Grants and 12% to an in-protocol lockbox. It also required coinbase to claim the full subsidy plus fees. ZIPs: 253 (deployment), 236, 1015, 2001.",
+  "people": [],
+  "notes": [
+   [
+    "FUNDING",
+    [
+     "Zcash Community Grants: 8% of the subsidy",
+     "Lockbox: 12%, held by the protocol",
+     "ZIP 1015"
+    ]
+   ]
+  ],
+  "links": [
+   {
+    "label": "ZIP 1015",
+    "url": "https://zips.z.cash/zip-1015"
+   },
+   {
+    "label": "z.cash NU6",
+    "url": "https://z.cash/upgrade/nu6/"
+   }
+  ],
+  "hash": "000000000032935a403a29822df72549d9a201e08cfbd5b3c770bb0d66615247"
+ },
+ {
+  "date": "2026-07-28",
+  "title": "NU6.3 / Ironwood",
+  "kind": "NETWORK UPGRADE",
+  "pool": "ironwood",
+  "height": 3428143,
+  "brief": "NU6.3 created the Ironwood shielded pool with quantum-recoverable notes (ZIP 2005) and v6 transactions (ZIP 229). It restricted Orchard so no new value can enter, and coins leaving Orchard pass a turnstile so supply integrity can be checked. Deployment ZIP 258 (branch ID 0x37A5165B), also ZIP 2006, with wallet ZIPs 318 and 326.",
+  "people": [
+   "Daira-Emma Hopwood: ZIP 258 author"
+  ],
+  "notes": [],
+  "links": [
+   {
+    "label": "z.cash NU6.3",
+    "url": "https://z.cash/upgrade/nu6-3/"
+   },
+   {
+    "label": "ZIP 258",
+    "url": "https://zips.z.cash/zip-0258"
+   },
+   {
+    "label": "zips.z.cash/",
+    "url": "https://zips.z.cash/"
+   }
+  ],
+  "hash": "00000000001a8b54bbde4e8996373417a6b33ee2bd984bcf02882e5d8128d761"
+ },
+ {
+  "date": "1983",
+  "title": "Chaum blind signatures",
+  "kind": "RESEARCH",
+  "pool": null,
+  "height": null,
+  "brief": "David Chaum's paper \"Blind Signatures for Untraceable Payments\" appeared in Advances in Cryptology, the CRYPTO '82 proceedings, published 1983 (pp. 199-203). It introduced blind signatures, the basis for anonymous digital cash and a direct ancestor of the privacy goals behind Zcash.",
+  "people": [
+   "David Chaum: author"
+  ],
+  "links": [
+   {
+    "label": "Springer chapter",
+    "url": "https://link.springer.com/chapter/10.1007/978-1-4757-0602-4_18"
+   },
+   {
+    "label": "api.crossref.org/works/10.1007/978-1-4757-0602-4_18",
+    "url": "https://api.crossref.org/works/10.1007/978-1-4757-0602-4_18"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "1985",
+  "title": "Zero-knowledge proofs",
+  "kind": "RESEARCH",
+  "pool": null,
+  "height": null,
+  "brief": "Shafi Goldwasser, Silvio Micali and Charles Rackoff presented \"The Knowledge Complexity of Interactive Proof-Systems\" at STOC '85 in Providence, Rhode Island. The paper defined zero-knowledge proofs, the concept every Zcash shielded transaction relies on.",
+  "people": [
+   "Shafi Goldwasser: author",
+   "Silvio Micali: author",
+   "Charles Rackoff: author"
+  ],
+  "links": [
+   {
+    "label": "ACM DL",
+    "url": "https://dl.acm.org/doi/10.1145/22145.22178"
+   },
+   {
+    "label": "api.crossref.org/works/10.1145/22145.22178",
+    "url": "https://api.crossref.org/works/10.1145/22145.22178"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2013-05",
+  "title": "Pinocchio",
+  "kind": "RESEARCH",
+  "pool": null,
+  "height": null,
+  "brief": "Bryan Parno, Craig Gentry, Jon Howell and Mariana Raykova published Pinocchio: Nearly Practical Verifiable Computation (IEEE S&P 2013; ePrint received 16 May 2013). It produced 288-byte proofs with about 10 ms verification, making zk-SNARKs practical.",
+  "people": [
+   "Bryan Parno: author",
+   "Craig Gentry: author",
+   "Jon Howell: author",
+   "Mariana Raykova: author"
+  ],
+  "links": [
+   {
+    "label": "ePrint 2013/279",
+    "url": "https://eprint.iacr.org/2013/279"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2013-12",
+  "title": "BCTV14 SNARK",
+  "kind": "RESEARCH",
+  "pool": "sprout",
+  "height": null,
+  "brief": "Eli Ben-Sasson, Alessandro Chiesa, Eran Tromer and Madars Virza posted \"Succinct Non-Interactive Zero Knowledge for a von Neumann Architecture\" (ePrint received 30 Dec 2013; USENIX Security 2014). This BCTV14 proving system was used for Sprout, and a flaw in the paper later led to CVE-2019-7167.",
+  "people": [
+   "Eli Ben-Sasson: author",
+   "Alessandro Chiesa: author",
+   "Eran Tromer: author",
+   "Madars Virza: author"
+  ],
+  "links": [
+   {
+    "label": "ePrint 2013/879",
+    "url": "https://eprint.iacr.org/2013/879"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2015-09",
+  "title": "Equihash paper",
+  "kind": "RESEARCH",
+  "pool": null,
+  "height": null,
+  "brief": "Alex Biryukov and Dmitry Khovratovich posted Equihash, a memory-hard proof-of-work based on the generalized birthday problem (ePrint received 28 Sep 2015). It was accepted at NDSS 2016 and became Zcash's mining algorithm.",
+  "people": [
+   "Alex Biryukov: author",
+   "Dmitry Khovratovich: author"
+  ],
+  "links": [
+   {
+    "label": "ePrint 2015/946",
+    "url": "https://eprint.iacr.org/2015/946"
+   },
+   {
+    "label": "NDSS 2016 papers",
+    "url": "https://www.ndss-symposium.org/ndss2016/accepted-papers/"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2016-01",
+  "title": "Zcash tech preview",
+  "kind": "EVENT",
+  "pool": null,
+  "height": null,
+  "brief": "Zooko Wilcox's team released a public alpha \"Technology Preview\" of Zcash, a Bitcoin Core fork implementing the Zerocash protocol on a test network. The company had raised more than $715,000 from early investors including Naval Ravikant, Barry Silbert and Roger Ver.",
+  "people": [
+   "Zooko Wilcox: project lead"
+  ],
+  "links": [
+   {
+    "label": "Bitcoin Magazine",
+    "url": "https://bitcoinmagazine.com/business/zcash-a-privacy-focused-alternative-to-bitcoin-launches-technology-preview-1453821228"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2016-03",
+  "title": "Groth16",
+  "kind": "RESEARCH",
+  "pool": "sapling",
+  "height": null,
+  "brief": "Jens Groth published \"On the Size of Pairing-based Non-interactive Arguments\" (EUROCRYPT 2016; ePrint received 8 Mar 2016), with proofs of only 3 group elements. Groth16 replaced BCTV14 in the Sapling upgrade, which also closed the counterfeiting bug.",
+  "people": [
+   "Jens Groth: author"
+  ],
+  "links": [
+   {
+    "label": "ePrint 2016/260",
+    "url": "https://eprint.iacr.org/2016/260"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2017-03-07",
+  "title": "Zcash Foundation",
+  "kind": "ORG",
+  "pool": null,
+  "height": null,
+  "brief": "The Zcash Foundation made its first announcement, having incorporated in Delaware on 14 Feb 2017 as a nonprofit. Its bootstrap board was Andrew Miller (chair), Peter Van Valkenburgh, Matthew Green and Naval Ravikant. CoinDesk reported on 17 March an endowment of 273,000 ZEC pledged from Founders' Reward recipients.",
+  "people": [
+   "Andrew Miller: board chair",
+   "Peter Van Valkenburgh: board secretary",
+   "Matthew Green: board member",
+   "Naval Ravikant: board member",
+   "Zooko Wilcox: pledged half his Founders' Reward"
+  ],
+  "links": [
+   {
+    "label": "ZF announcement",
+    "url": "https://zfnd.org/first-announcement-from-the-zcash-foundation/"
+   },
+   {
+    "label": "CoinDesk",
+    "url": "https://www.coindesk.com/markets/2017/03/17/zcash-launches-non-profit-foundation-to-advance-adoption/"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2017-05-22",
+  "title": "J.P. Morgan Quorum ZSL",
+  "kind": "INDUSTRY",
+  "pool": null,
+  "height": null,
+  "brief": "The Zerocoin Electric Coin Company announced a partnership with J.P. Morgan to add a Zero-knowledge Security Layer (ZSL) to Quorum, J.P. Morgan's enterprise blockchain. The integration and first open-source release followed on 17 Oct 2017.",
+  "people": [
+   "Zooko Wilcox: CEO, ZECC",
+   "Paige Peterson: co-author of announcement",
+   "Jack Gavigan: author of Oct 2017 release post"
+  ],
+  "links": [
+   {
+    "label": "Press release",
+    "url": "https://electriccoin.co/blog/zsl-quorum/"
+   },
+   {
+    "label": "Integration release",
+    "url": "https://electriccoin.co/blog/jpm-quorum-integration/"
+   },
+   {
+    "label": "electriccoin.co/blog/zsl-quorum/",
+    "url": "https://web.archive.org/web/2023/https://electriccoin.co/blog/zsl-quorum/"
+   },
+   {
+    "label": "electriccoin.co/blog/jpm-quorum-integration/",
+    "url": "https://web.archive.org/web/2023/https://electriccoin.co/blog/jpm-quorum-integration/"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2017-10",
+  "title": "Powers of Tau paper",
+  "kind": "RESEARCH",
+  "pool": "sapling",
+  "height": null,
+  "brief": "Sean Bowe, Ariel Gabizon and Ian Miers published \"Scalable Multi-party Computation for zk-SNARK Parameters in the Random Beacon Model\" (ePrint received 31 Oct 2017). It removed the precommitment round, so ceremonies could scale to many participants.",
+  "people": [
+   "Sean Bowe: author",
+   "Ariel Gabizon: author",
+   "Ian Miers: author"
+  ],
+  "links": [
+   {
+    "label": "ePrint 2017/1050",
+    "url": "https://eprint.iacr.org/2017/1050"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2017-10-23",
+  "title": "Zcash Trust formed",
+  "kind": "INDUSTRY",
+  "pool": null,
+  "height": null,
+  "brief": "The Zcash Investment Trust, later Grayscale Zcash Trust (ZEC), was formed as a Delaware statutory trust and offered by private placement. Its shares were later quoted on OTCQX under ZCSH.",
+  "people": [],
+  "links": [
+   {
+    "label": "Trust 10-K (2024)",
+    "url": "https://www.sec.gov/Archives/edgar/data/1720265/000095017025035469/zcsh-20241231.htm"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2018-03-01",
+  "title": "Counterfeit bug found",
+  "kind": "SECURITY",
+  "pool": "sprout",
+  "height": null,
+  "brief": "Ariel Gabizon, a cryptographer at the Zerocoin Electric Coin Company, discovered a flaw inherited from the BCTV14 paper that could allow undetectable counterfeiting of shielded ZEC. It was kept secret until Sapling fixed it.",
+  "people": [
+   "Ariel Gabizon: discoverer"
+  ],
+  "links": [
+   {
+    "label": "ECC disclosure",
+    "url": "https://electriccoin.co/blog/zcash-counterfeiting-vulnerability-successfully-remediated/"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2018-03-12",
+  "title": "First ZF director",
+  "kind": "GOVERNANCE",
+  "pool": null,
+  "height": null,
+  "brief": "Josh Cincinnati became the Zcash Foundation's first Executive Director, leaving Lyft to work full time from 12 March 2018. He resigned on 31 July 2020 after three years.",
+  "people": [
+   "Josh Cincinnati: Executive Director, Zcash Foundation"
+  ],
+  "links": [
+   {
+    "label": "ZF post",
+    "url": "https://zfnd.org/an-executive-director-and-the-year-ahead/"
+   },
+   {
+    "label": "Departure (forum)",
+    "url": "https://forum.zcashcommunity.com/t/josh-cincinnati-leaving-the-zcash-foundation/36961"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2018-04",
+  "title": "Powers of Tau done",
+  "kind": "EVENT",
+  "pool": "sapling",
+  "height": null,
+  "brief": "The Zcash Foundation's Powers of Tau ceremony ran from November 2017 to April 2018 and accepted 87 contributions. Andrew Miller and Ryan Pierce flew with radioactive material to seed randomness, and Filippo Valsorda wrote an independent Go implementation.",
+  "people": [
+   "Sean Bowe: announced completion",
+   "Andrew Miller: participant",
+   "Ryan Pierce: participant",
+   "Filippo Valsorda: participant"
+  ],
+  "links": [
+   {
+    "label": "CoinDesk",
+    "url": "https://www.coindesk.com/markets/2018/04/13/zcash-completes-powers-of-tau-privacy-ceremony"
+   },
+   {
+    "label": "electriccoin.co/blog/completion-of-the-sapling-mpc/",
+    "url": "https://web.archive.org/web/2023/https://electriccoin.co/blog/completion-of-the-sapling-mpc/"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2018-05-14",
+  "title": "Gemini lists ZEC",
+  "kind": "INDUSTRY",
+  "pool": null,
+  "height": null,
+  "brief": "Gemini announced Zcash trading and custody with NYDFS approval, calling itself the first licensed Zcash exchange in the world. That made the NYDFS the first regulator to supervise Zcash.",
+  "people": [
+   "Zooko Wilcox: ECC CEO"
+  ],
+  "links": [
+   {
+    "label": "ECC post",
+    "url": "https://blog.z.cash/gemini-announces-support-for-zcash/"
+   },
+   {
+    "label": "blog.z.cash/gemini-announces-support-for-zcash/",
+    "url": "https://web.archive.org/web/2020/https://blog.z.cash/gemini-announces-support-for-zcash/"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2018-06-26",
+  "title": "Overwinter",
+  "kind": "NETWORK UPGRADE",
+  "pool": "transparent",
+  "height": 347500,
+  "brief": "Zcash's first network upgrade activated at 01:37 UTC, adding versioning and replay protection for future upgrades, faster transparent transaction verification, and transaction expiry. ZIPs: 143, 200, 201, 202 (v3 transactions) and 203 (expiry).",
+  "people": [],
+  "links": [
+   {
+    "label": "z.cash Overwinter",
+    "url": "https://z.cash/upgrade/overwinter/"
+   },
+   {
+    "label": "zips.z.cash/",
+    "url": "https://zips.z.cash/"
+   }
+  ],
+  "hash": "0000000003761c0d0c3974b54bdb425613bbb1eaadd6e70b764de82f195ea243",
+  "notes": []
+ },
+ {
+  "date": "2018-06-26",
+  "title": "Zcon0 Montreal",
+  "kind": "EVENT",
+  "pool": null,
+  "height": null,
+  "brief": "The Zcash Foundation held its first annual conference, Zcon0, on 26 to 28 June 2018 in Montreal under the theme \"Privacy from A to Zcon\". Developers from Ethereum, Monero, ZenCash, Siacoin and Coda attended.",
+  "people": [],
+  "links": [
+   {
+    "label": "ZF Zcon0",
+    "url": "https://zfnd.org/zcon0/"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2018-08-14",
+  "title": "Sapling MPC done",
+  "kind": "EVENT",
+  "pool": "sapling",
+  "height": null,
+  "brief": "Sean Bowe announced completion of the Sapling MPC, the circuit-specific second phase run by the Zcash Company from May to early August 2018 with over 90 contributions. ECC said the Powers of Tau and Sapling MPC were the largest multi-party computations ever performed.",
+  "people": [
+   "Sean Bowe: ECC engineer"
+  ],
+  "links": [
+   {
+    "label": "ECC blog",
+    "url": "https://electriccoin.co/blog/completion-of-the-sapling-mpc/"
+   },
+   {
+    "label": "electriccoin.co/blog/completion-of-the-sapling-mpc/",
+    "url": "https://web.archive.org/web/2023/https://electriccoin.co/blog/completion-of-the-sapling-mpc/"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2018-11-29",
+  "title": "Coinbase Pro lists ZEC",
+  "kind": "INDUSTRY",
+  "pool": null,
+  "height": null,
+  "brief": "Coinbase Pro began accepting ZEC deposits at 10am PT on 29 November 2018, then opened a ZEC/USDC order book. Trading was initially available in the US (excluding NY), UK, EU, Canada, Singapore and Australia.",
+  "people": [],
+  "links": [
+   {
+    "label": "Coinbase blog",
+    "url": "https://www.coinbase.com/blog/zcash-zec-is-launching-on-coinbase-pro"
+   },
+   {
+    "label": "www.coinbase.com/blog/zcash-zec-is-launching-on-coinbase-pro",
+    "url": "https://web.archive.org/web/2019/https://www.coinbase.com/blog/zcash-zec-is-launching-on-coinbase-pro"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2019-02-05",
+  "title": "CVE-2019-7167 public",
+  "kind": "SECURITY",
+  "pool": "sprout",
+  "height": null,
+  "brief": "ECC disclosed the counterfeiting vulnerability Ariel Gabizon found on 1 March 2018 and that Sapling fixed by moving Sprout proofs to Groth16. It did not affect privacy, and ECC found no evidence it was exploited.",
+  "people": [
+   "Ariel Gabizon: discoverer"
+  ],
+  "links": [
+   {
+    "label": "ECC disclosure",
+    "url": "https://electriccoin.co/blog/zcash-counterfeiting-vulnerability-successfully-remediated/"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2019-02-21",
+  "title": "Electric Coin Co. name",
+  "kind": "ORG",
+  "pool": null,
+  "height": null,
+  "brief": "The \"Zcash Company\" (legal name Zerocoin Electric Coin Company, LLC) renamed itself the Electric Coin Company. The goal was to avoid confusion with Zcash itself and with the separate Zcash Foundation.",
+  "people": [
+   "Josh Swihart: author of announcement"
+  ],
+  "links": [
+   {
+    "label": "ECC blog",
+    "url": "https://electriccoin.co/blog/goodbye-zcash-company-hello-electric-coin-company/"
+   },
+   {
+    "label": "electriccoin.co/blog/goodbye-zcash-company-hello-electric-co",
+    "url": "https://web.archive.org/web/2023/https://electriccoin.co/blog/goodbye-zcash-company-hello-electric-coin-company/"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2019-06-22",
+  "title": "Zcon1 Split",
+  "kind": "EVENT",
+  "pool": null,
+  "height": null,
+  "brief": "Zcon1, the Zcash Foundation's second annual conference, ran 22 to 24 June 2019 in Split, Croatia, under the theme \"Zero to Privacy Hero\". Its three days covered the Zcash protocol, other privacy coins and governance.",
+  "people": [],
+  "links": [
+   {
+    "label": "ZF announcement",
+    "url": "https://zfnd.org/zcon1-june-22-24-in-split-croatia/"
+   },
+   {
+    "label": "zfnd.org/zcon0/",
+    "url": "https://zfnd.org/zcon0/"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2019-12-11",
+  "title": "Blossom",
+  "kind": "NETWORK UPGRADE",
+  "pool": null,
+  "height": 653600,
+  "brief": "Blossom activated at 21:51 UTC and halved the target block time from 150 to 75 seconds, doubling throughput. The per-block reward was cut in proportion so total issuance stayed the same. ZIPs: 206 (deployment) and 208.",
+  "people": [],
+  "links": [
+   {
+    "label": "z.cash Blossom",
+    "url": "https://z.cash/upgrade/blossom/"
+   },
+   {
+    "label": "ZIP 206",
+    "url": "https://zips.z.cash/zip-0206"
+   }
+  ],
+  "hash": "00000000020bebb33c1b34b67a982a328ab212a206dacbe561a7cc94aab3e9bb",
+  "notes": []
+ },
+ {
+  "date": "2020-01-30",
+  "title": "ZIP 1014 poll",
+  "kind": "GOVERNANCE",
+  "pool": null,
+  "height": null,
+  "brief": "The Zcash Foundation published poll results approving ZIP 1014, which splits the post-Canopy 20% dev fund as ECC 35%, Zcash Foundation 25% and Major Grants 40%. 88 of 119 eligible panelists voted. ZF and ECC agreed on a Major Grant Review Committee by 14 Feb 2020.",
+  "people": [],
+  "links": [
+   {
+    "label": "ZF poll results",
+    "url": "https://zfnd.org/zip-1014-poll-results/"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2020-07",
+  "title": "FROST paper",
+  "kind": "RESEARCH",
+  "pool": null,
+  "height": null,
+  "brief": "Chelsea Komlo and Ian Goldberg published FROST: Flexible Round-Optimized Schnorr Threshold Signatures (ePrint received 12 July 2020; SAC 2020). It is the basis for the Zcash Foundation's shielded multisig work.",
+  "people": [
+   "Chelsea Komlo: author",
+   "Ian Goldberg: author"
+  ],
+  "links": [
+   {
+    "label": "ePrint 2020/852",
+    "url": "https://eprint.iacr.org/2020/852"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2020-07-16",
+  "title": "Heartwood",
+  "kind": "NETWORK UPGRADE",
+  "pool": "sapling",
+  "height": 903000,
+  "brief": "Heartwood activated around 10:56 UTC. It allowed coinbase rewards to be mined directly to shielded Sapling addresses (ZIP 213) and added Flyclient support for light clients (ZIP 221). Deployment ZIP: 250.",
+  "people": [],
+  "links": [
+   {
+    "label": "z.cash Heartwood",
+    "url": "https://z.cash/upgrade/heartwood/"
+   },
+   {
+    "label": "ZIP 250",
+    "url": "https://zips.z.cash/zip-0250"
+   },
+   {
+    "label": "www.coindesk.com/tech/2020/07/16/zcash-latest-hard-fork-hear",
+    "url": "https://www.coindesk.com/tech/2020/07/16/zcash-latest-hard-fork-heartwood-makes-mining-private"
+   }
+  ],
+  "hash": "0000000000aad1c8698964a93c35ecf8b4d05e848de9e2fe7606067139be5643",
+  "notes": []
+ },
+ {
+  "date": "2020-09-29",
+  "title": "Gemini shielded",
+  "kind": "INDUSTRY",
+  "pool": "sapling",
+  "height": null,
+  "brief": "Gemini became the first regulated financial institution to support ZEC withdrawals to shielded addresses, with NYDFS approval. ECC's Jack Gavigan said it showed Zcash is compatible with a robust AML/CFT regime.",
+  "people": [
+   "Jack Gavigan: ECC"
+  ],
+  "links": [
+   {
+    "label": "ECC blog",
+    "url": "https://electriccoin.co/blog/gemini-becomes-first-regulated-institution-to-support-shielded-zcash-withdrawals/"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2020-11-18",
+  "title": "Canopy",
+  "kind": "NETWORK UPGRADE",
+  "pool": "sprout",
+  "height": 1046400,
+  "brief": "Canopy, the fifth upgrade, activated at 12:34 UTC along with the first halving, ending the Founders' Reward. It started the ZIP 1014 dev fund (miners 80%, Major Grants 8%, ECC 7%, ZF 5%) and stopped new value entering Sprout. ZIPs: 251, 207, 211, 212, 214, 215.",
+  "people": [],
+  "links": [
+   {
+    "label": "z.cash Canopy",
+    "url": "https://z.cash/upgrade/canopy/"
+   },
+   {
+    "label": "ZIP 251",
+    "url": "https://zips.z.cash/zip-0251"
+   }
+  ],
+  "hash": "00000000002038016f976744c369dce7419fca30e7171dfac703af5e5f7ad1d4",
+  "notes": []
+ },
+ {
+  "date": "2022-02-01",
+  "title": "ZOMG becomes ZCG",
+  "kind": "ORG",
+  "pool": null,
+  "height": null,
+  "brief": "Zcash Open Major Grants (ZOMG), the committee managing the 8% Major Grants slice, renamed itself Zcash Community Grants. It moved to zcashcommunitygrants.org and @ZcashCommGrants.",
+  "people": [],
+  "links": [
+   {
+    "label": "ZCG post",
+    "url": "https://zcashcommunitygrants.org/news/2022/02/01/zomg-is-now-zcg/"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2022-04-07",
+  "title": "Halo 2 goes MIT/Apache",
+  "kind": "INDUSTRY",
+  "pool": "orchard",
+  "height": null,
+  "brief": "Through an agreement with the Filecoin Foundation, ECC relicensed the Halo 2 codebase from BOSL to MIT or Apache 2.0, with a grant pool of up to $9M for Filecoin-Zcash projects. Orchard itself stayed under BOSL.",
+  "people": [
+   "Sean Bowe: Halo inventor, ECC"
+  ],
+  "links": [
+   {
+    "label": "ECC blog",
+    "url": "https://electriccoin.co/blog/zero-knowledge-proving-system-halo-now-licensed-under-mit-making-it-available-for-anyone-to-use/"
+   },
+   {
+    "label": "electriccoin.co/blog/zero-knowledge-proving-system-halo-now-",
+    "url": "https://web.archive.org/web/2023/https://electriccoin.co/blog/zero-knowledge-proving-system-halo-now-licensed-under-mit-making-it-available-for-anyone-to-use/"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2022-08-07",
+  "title": "Zcon3 Las Vegas",
+  "kind": "EVENT",
+  "pool": null,
+  "height": null,
+  "brief": "Zcon3 took place in Las Vegas from 7 to 9 August 2022 under the theme \"Code Alone Doesn't Cut It\". Speakers included Jack Gavigan, Daira Hopwood, Jack Grigg and QEDIT's Daniel Benarroch.",
+  "people": [
+   "Jack Gavigan: ZF Executive Director",
+   "Daira Hopwood: ECC",
+   "Jack Grigg: ECC",
+   "Daniel Benarroch: QEDIT"
+  ],
+  "links": [
+   {
+    "label": "ZF Zcon3",
+    "url": "https://zfnd.org/zcon3/"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2022-08-15",
+  "title": "ZIP 317 fees",
+  "kind": "SECURITY",
+  "pool": null,
+  "height": null,
+  "brief": "ZIP 317 was created to replace the flat 1,000-zatoshi fee with fees proportional to transaction actions, after chain usage included 1,100-output transactions paying the same fee as 2-output ones (the \"sandblasting\" spam). zcashd v5.5.0 made it the default.",
+  "people": [
+   "Aditya Bharadwaj: original author",
+   "Daira-Emma Hopwood: owner",
+   "Kris Nuttycombe: owner",
+   "Jack Grigg: owner"
+  ],
+  "links": [
+   {
+    "label": "ZIP 317",
+    "url": "https://zips.z.cash/zip-0317"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2022-12",
+  "title": "Shielded Labs",
+  "kind": "ORG",
+  "pool": null,
+  "height": null,
+  "brief": "Shielded Labs was founded as a donation-funded Swiss association and introduced publicly by Jason McGee on 30 Jan 2023 as an independent, non-US Zcash organization. It later drove the Crosslink hybrid PoS work and engaged Taylor Hornby for the 2026 Orchard audit.",
+  "people": [
+   "Jason McGee: founder"
+  ],
+  "links": [
+   {
+    "label": "Forum intro",
+    "url": "https://forum.zcashcommunity.com/t/shielded-labs-an-independent-non-us-organization/43855"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2023-06-14",
+  "title": "Zebra 1.0",
+  "kind": "ORG",
+  "pool": null,
+  "height": null,
+  "brief": "The Zcash Foundation released Zebra 1.0.0, the first stable, audited version of its Rust Zcash node. It was the first Zcash node written entirely in Rust and gave the network a second independent implementation alongside zcashd.",
+  "people": [],
+  "links": [
+   {
+    "label": "ZF post",
+    "url": "https://zfnd.org/zebra-stable-release/"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2023-07-30",
+  "title": "Zcon4 Barcelona",
+  "kind": "EVENT",
+  "pool": null,
+  "height": null,
+  "brief": "Zcon4 ran from 30 July to 1 August 2023 in Barcelona, Spain, under the theme \"The Future Has Not Been Written\". It was organized by the Zcash Foundation.",
+  "people": [],
+  "links": [
+   {
+    "label": "ZF Zcon4",
+    "url": "https://zfnd.org/zcon4/"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2023-12-18",
+  "title": "Zooko steps down",
+  "kind": "GOVERNANCE",
+  "pool": null,
+  "height": null,
+  "brief": "Zooko Wilcox stepped down as CEO of Electric Coin Co., saying Zcash had taken over his identity. Josh Swihart, previously SVP of growth, became ECC's second CEO, and Zooko stayed on the Bootstrap board.",
+  "people": [
+   "Zooko Wilcox: outgoing CEO",
+   "Josh Swihart: incoming CEO"
+  ],
+  "links": [
+   {
+    "label": "CoinDesk",
+    "url": "https://www.coindesk.com/tech/2023/12/18/zcash-developer-electric-coin-ceo-zooko-wilcox-steps-downs-swihart-named-to-role"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2024-01-04",
+  "title": "Binance monitoring tag",
+  "kind": "INDUSTRY",
+  "pool": null,
+  "height": null,
+  "brief": "Binance put ZEC, XMR, FIRO, ZEN and six other tokens under its Monitoring Tag, signaling possible delisting. Zcash responded with exchange-only address proposals (TEX and traceable UA), which DL News reported protected ZEC from immediate delisting.",
+  "people": [
+   "Jason McGee: Shielded Labs"
+  ],
+  "links": [
+   {
+    "label": "Binance notice",
+    "url": "https://www.binance.com/en/support/announcement/binance-will-extend-the-monitoring-tag-to-include-ant-firo-kp3r-mdx-mob-reef-vai-xmr-zec-zen-and-remove-the-seed-tag-for-gmx-sushi-on-2024-01-04-fd710b5e647c480ab9fe2d87e3cd4b39"
+   },
+   {
+    "label": "DL News",
+    "url": "https://www.dlnews.com/articles/defi/how-privacy-coins-firo-and-zcash-dodged-binance-delisting/"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2024-02-19",
+  "title": "FROST 1.0",
+  "kind": "ORG",
+  "pool": "orchard",
+  "height": null,
+  "brief": "The Zcash Foundation released frost-core 1.0.0, an audited Rust reference implementation of two-round FROST threshold Schnorr signatures. It included the frost-rerandomized variant needed for unlinkable Zcash shielded multisig (ZIP 312).",
+  "people": [],
+  "links": [
+   {
+    "label": "ZF post",
+    "url": "https://zfnd.org/frost-reference-implementation-v1-0-0-stable-release/"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2024-03-28",
+  "title": "Zashi wallet",
+  "kind": "WALLET",
+  "pool": "orchard",
+  "height": null,
+  "brief": "ECC launched Zashi, its own mobile Zcash wallet, on iOS, with Android to follow in late April. Version 1.0 supported Sapling and Orchard, unified addresses and \"Spend before Sync\".",
+  "people": [],
+  "links": [
+   {
+    "label": "ECC blog",
+    "url": "https://electriccoin.co/blog/meet-zashi-eccs-new-mobile-wallet-for-zcash/"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2025-03-04",
+  "title": "Gavigan leaves ZF",
+  "kind": "GOVERNANCE",
+  "pool": null,
+  "height": null,
+  "brief": "Jack Gavigan stepped down after four years as Zcash Foundation Executive Director, saying there was no disagreement with the board. COO Alex Bornstein became interim Executive Director.",
+  "people": [
+   "Jack Gavigan: outgoing Executive Director",
+   "Alex Bornstein: interim Executive Director"
+  ],
+  "links": [
+   {
+    "label": "ZF post",
+    "url": "https://zfnd.org/changing-of-the-guard/"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2025-11-11",
+  "title": "Bornstein ZF director",
+  "kind": "GOVERNANCE",
+  "pool": null,
+  "height": null,
+  "brief": "The Zcash Foundation named Alex Bornstein permanent Executive Director. It also promoted Pili Guerra to Head of Engineering and Danika Delano to COO.",
+  "people": [
+   "Alex Bornstein: Executive Director",
+   "Pili Guerra: Head of Engineering",
+   "Danika Delano: COO"
+  ],
+  "links": [
+   {
+    "label": "ZF post",
+    "url": "https://zfnd.org/zcash-foundation-announces-new-leadership-appointments/"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2025-11-24",
+  "title": "NU6.1",
+  "kind": "NETWORK UPGRADE",
+  "pool": null,
+  "height": 3146400,
+  "brief": "NU6.1 activated at 19:56 UTC with a dual funding model: 8% of block rewards to Zcash Community Grants and 12% to a fund directed by coinholder decisions. It also provided a one-time lockbox disbursement. ZIPs: 255 (deployment), 271, 1016, 214.",
+  "people": [],
+  "links": [
+   {
+    "label": "z.cash NU6.1",
+    "url": "https://z.cash/upgrade/nu6-1/"
+   },
+   {
+    "label": "ZIP 255",
+    "url": "https://zips.z.cash/zip-0255"
+   }
+  ],
+  "hash": "0000000000b98a7d8f390793fa113bf6755935f0c14ea817af07d2c16f2c3ef4",
+  "notes": []
+ },
+ {
+  "date": "2026-01-07",
+  "title": "ECC team resigns",
+  "kind": "GOVERNANCE",
+  "pool": null,
+  "height": null,
+  "brief": "The entire Electric Coin Company staff, led by CEO Josh Swihart, resigned in what he called constructive discharge after a dispute with the Bootstrap board. He named board members Zaki Manian, Christina Garman, Alan Fairless and Michelle Lai as misaligned with Zcash's mission.",
+  "people": [
+   "Josh Swihart: ECC CEO",
+   "Zaki Manian: Bootstrap board",
+   "Christina Garman: Bootstrap board",
+   "Alan Fairless: Bootstrap board",
+   "Michelle Lai: Bootstrap board"
+  ],
+  "links": [
+   {
+    "label": "The Block",
+    "url": "https://www.theblock.co/post/384737/zcash-developers-form-new-company"
+   },
+   {
+    "label": "electriccoin.co/blog/",
+    "url": "https://electriccoin.co/blog/"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2026-01-09",
+  "title": "cashZ announced",
+  "kind": "WALLET",
+  "pool": null,
+  "height": null,
+  "brief": "Less than a day after leaving ECC, the former team announced a new Zcash startup and the cashZ wallet, built on the Zashi codebase with migration for Zashi users. Swihart said startups can scale and nonprofits cannot.",
+  "people": [
+   "Josh Swihart: founder"
+  ],
+  "links": [
+   {
+    "label": "Unchained",
+    "url": "https://unchainedcrypto.com/zcash-dev-team-launches-new-wallet-after-ecc-exit/"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2026-03",
+  "title": "ZODL raises $25M",
+  "kind": "ORG",
+  "pool": null,
+  "height": null,
+  "brief": "Zcash Open Development Lab (ZODL), the company formed by the ex-ECC team, announced a seed round of over $25M. Backers included Paradigm, a16z crypto, Winklevoss Capital and Coinbase Ventures, and the wallet once called Zashi is now named Zodl.",
+  "people": [
+   "Josh Swihart: founder, ZODL"
+  ],
+  "links": [
+   {
+    "label": "FXStreet",
+    "url": "https://www.fxstreet.com/cryptocurrencies/news/zcash-open-development-lab-raises-over-25-million-in-seed-funding-202603100327"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2026-05-29",
+  "title": "Orchard bug found",
+  "kind": "SECURITY",
+  "pool": "orchard",
+  "height": null,
+  "brief": "Taylor Hornby, engaged by Shielded Labs for an AI-assisted audit, found a soundness bug in the Orchard circuit's variable-base scalar multiplication. It could have allowed unlimited undetectable counterfeit ZEC and had been present since Orchard activated in May 2022. He reported it to ZODL the same day, and no evidence of exploitation was found, though none can be proven.",
+  "people": [
+   "Taylor Hornby: discoverer",
+   "Zooko Wilcox: co-author of disclosure",
+   "Jason McGee: co-author of disclosure"
+  ],
+  "links": [
+   {
+    "label": "Forum disclosure",
+    "url": "https://forum.zcashcommunity.com/t/the-orchard-counterfeiting-vulnerability-and-next-steps/56015"
+   },
+   {
+    "label": "Shielded Labs",
+    "url": "https://shieldedlabs.net/the-orchard-counterfeiting-vulnerability/"
+   },
+   {
+    "label": "zips.z.cash/zip-0257",
+    "url": "https://zips.z.cash/zip-0257"
+   }
+  ],
+  "notes": []
+ },
+ {
+  "date": "2026-06",
+  "title": "Orchard soft fork",
+  "kind": "NETWORK UPGRADE",
+  "pool": "orchard",
+  "height": 3363426,
+  "brief": "An emergency soft fork in zcashd v6.12.5 and zebra v4.5.3 banned all Orchard actions from height 3363426. An earlier attempt at 3363366 failed because some mining pools had not upgraded. It closed the vulnerability window while the fixed circuit was prepared (ZIP 257).",
+  "people": [
+   "Daira-Emma Hopwood: ZIP 257 owner"
+  ],
+  "links": [
+   {
+    "label": "ZIP 257",
+    "url": "https://zips.z.cash/zip-0257"
+   },
+   {
+    "label": "forum.zcashcommunity.com/t/the-orchard-counterfeiting-vulner",
+    "url": "https://forum.zcashcommunity.com/t/the-orchard-counterfeiting-vulnerability-and-next-steps/56015"
+   }
+  ],
+  "hash": "0000000000ad6afa448fea15355139bb30d7504de66a1f5de02c7da046907482",
+  "notes": []
+ },
+ {
+  "date": "2026-06-03",
+  "title": "NU6.2",
+  "kind": "NETWORK UPGRADE",
+  "pool": "orchard",
+  "height": 3364600,
+  "brief": "NU6.2 was an emergency upgrade (Zebra 5.0.0) that re-enabled Orchard with a corrected scalar multiplication gadget and a new verifying key. It also enforced a canonical proof length. Deployment ZIP: 257.",
+  "people": [],
+  "links": [
+   {
+    "label": "z.cash NU6.2",
+    "url": "https://z.cash/upgrade/nu6-2/"
+   },
+   {
+    "label": "ZIP 257",
+    "url": "https://zips.z.cash/zip-0257"
+   }
+  ],
+  "hash": "0000000000806344c408a4cfdf472f4132c632edbdc24cf2f3f672061da8b865",
+  "notes": []
+ },
+ {
+  "date": "2026-08-25",
+  "title": "Zcash ETF (ZCSH)",
+  "kind": "INDUSTRY",
+  "pool": null,
+  "height": null,
+  "brief": "Grayscale's Zcash ETF began trading on NYSE Arca under ZCSH, converted from the trust formed in October 2017. Grayscale called it the first ETP in the world offering spot ZEC exposure.",
+  "people": [
+   "Steve Vanourny: Grayscale Head of Index"
+  ],
+  "links": [
+   {
+    "label": "Press release",
+    "url": "https://www.globenewswire.com/news-release/2026/8/25/3350404/0/en/the-zcash-etf-ticker-zcsh-built-by-grayscale-begins-trading-on-nyse-arca-expanding-investor-access-to-the-leading-privacy-focused-digital-currency.html"
+   },
+   {
+    "label": "Decrypt",
+    "url": "https://decrypt.co/376420/grayscale-launches-zcash-etf-following-critical-privacy-flaw-that-rocked-the-cryptocurrency"
+   }
+  ],
+  "notes": []
+ }
+]
